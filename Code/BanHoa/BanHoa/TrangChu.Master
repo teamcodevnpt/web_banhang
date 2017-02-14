@@ -30,7 +30,10 @@
                   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                       
                       <ul class="nav navbar-nav">
-                      <li><a href="#">Xin chào bạn có thể đăng nhập hoặc tạo tài khoản</a></li>
+                          <li>
+                             <%-- <a href="#">Xin chào bạn có thể đăng nhập hoặc tạo tài khoản</a>--%>
+                                <i class="glyphicon" aria-hidden="true"></i>
+                          </li>
                       </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
@@ -58,16 +61,25 @@
                 </div>
               </nav>
         <div>
-            <h1 style="margin-left:10%;color:#0c84e4">Bán hàng tận nơi</h1>
+            <%--<h1 style="margin-left:10%;color:#0c84e4">Bán hàng tận nơi</h1>--%>
+            <div class="row" style="width:99%;margin:5px auto;">
+				<div class="col-md-4 col-sm-12">
+                    <h2 style="text-align:center">
+					    <a href="http://facebook.com.vn"><span>Bán hàng tận nơi</span></a>
+				    </h2>
+				</div>
+			</div>
         </div>
         <div class="row" style="width:99%;margin:5px auto;">
-            <div class="col-md-8 col-sm-12">
+            <div class="col-md-9 col-sm-12">
             <asp:ContentPlaceHolder ID="Content" runat="server">
 
             </asp:ContentPlaceHolder>
             </div>
-            <div class="col-xs-4">
-                Right menu
+            <div class="col-md-3 col-sm-12">
+               <asp:ContentPlaceHolder ID="Content1" runat="server">
+
+               </asp:ContentPlaceHolder>
             </div>
         </div>
         <div class="row" style="margin:5px auto;width:99%;font-size:15px">
@@ -78,7 +90,26 @@
                         <p><span class="glyphicon glyphicon-home"></span>&nbsp Địa chỉ: Đại lộ Đồng Khởi, TP Bến Tre</p>
                         <p><span class="glyphicon glyphicon-phone-alt"></span>&nbsp 0123456789</p>
                         <p><span class="glyphicon glyphicon-envelope"></span>&nbsp&nbsp<a href="mailto:banhangtannoi@gmail.com">banhangtannoi@gmail.com</a></p>
-
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Liên hệ</div>
+                    <div class="panel-body">
+                        <p><span class="glyphicon glyphicon-home"></span>&nbsp Địa chỉ: Đại lộ Đồng Khởi, TP Bến Tre</p>
+                        <p><span class="glyphicon glyphicon-phone-alt"></span>&nbsp 0123456789</p>
+                        <p><span class="glyphicon glyphicon-envelope"></span>&nbsp&nbsp<a href="mailto:banhangtannoi@gmail.com">banhangtannoi@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Liên hệ</div>
+                    <div class="panel-body">
+                        <p><span class="glyphicon glyphicon-home"></span>&nbsp Địa chỉ: Đại lộ Đồng Khởi, TP Bến Tre</p>
+                        <p><span class="glyphicon glyphicon-phone-alt"></span>&nbsp 0123456789</p>
+                        <p><span class="glyphicon glyphicon-envelope"></span>&nbsp&nbsp<a href="mailto:banhangtannoi@gmail.com">banhangtannoi@gmail.com</a></p>
                     </div>
                 </div>
             </div>
