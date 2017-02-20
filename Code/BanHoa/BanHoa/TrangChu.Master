@@ -1,119 +1,73 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="TrangChu.master.cs" Inherits="BanHoa.TrangChu" %>
+
+<%@ Register Src="~/Module/Master/MBanner.ascx" TagPrefix="uc1" TagName="MBanner" %>
+<%@ Register Src="~/Module/Master/MMenuPhai.ascx" TagPrefix="uc1" TagName="MMenuPhai" %>
+<%@ Register Src="~/Module/Master/MFooter.ascx" TagPrefix="uc1" TagName="MFooter" %>
+<%@ Register Src="~/Module/View/MListSanPham.ascx" TagPrefix="uc1" TagName="MListSanPham" %>
+<%@ Register Src="~/Module/View/SlideShowTrangChuChinh.ascx" TagPrefix="uc1" TagName="SlideShowTrangChuChinh" %>
+<%@ Register Src="~/Module/Master/MMenuNgang.ascx" TagPrefix="uc1" TagName="MMenuNgang" %>
+
+
+
 <!DOCTYPE>
-<html>
-    <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/bootstrap.css" rel="stylesheet" />
+    <%--<link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <script src="scripts/jquery-3.1.1.min.js"></script>
-    <script src="scripts/bootstrap.min.js"></script>
-        <style>
-            #btnsearch:hover{
-                cursor:pointer;
-            }
-        </style>
-    </head>
-    <body style="background-image: url(../img/flowertrail.png)">
-              <nav class="navbar navbar-inverse">
-                <div class="container-fluid">
-                  <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                    </button>
-                  </div>
-
-                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-                      
-                      <ul class="nav navbar-nav">
-                          <li>
-                             <%-- <a href="#">Xin chào bạn có thể đăng nhập hoặc tạo tài khoản</a>--%>
-                                <i class="glyphicon" aria-hidden="true"></i>
-                          </li>
-                      </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tài khoản <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Thông tin tài khoản</a></li>
-                          <li><a href="#">Tuỳ chọn</a></li>
-                          <li><a href="#">Danh sách đơn hàng</a></li>
-                          <li class="divider"></li>
-                          <li><a href="#">Đăng xuất</a></li>
-                        </ul>
-                      </li>
-                        <li><a href="#">Giỏ hàng</a></li>
-                        <li><a href="#">Yêu thích (1)</a></li>
-                        <li>
-                            <form class="navbar-form navbar-left" role="search">
-                                <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Tìm kiếm">
-                                </div>
-                            <span id="btnsearch" class="glyphicon glyphicon-search"></span>
-                        </form>
-                        </li>
-                    </ul>
-                  </div>
-                </div>
-              </nav>
-        <div>
-            <%--<h1 style="margin-left:10%;color:#0c84e4">Bán hàng tận nơi</h1>--%>
-            <div class="row" style="width:99%;margin:5px auto;">
-				<div class="col-md-4 col-sm-12">
-                    <h2 style="text-align:center">
-					    <a href="http://facebook.com.vn"><span>Bán hàng tận nơi</span></a>
-				    </h2>
-				</div>
-			</div>
-        </div>
-        <div class="row" style="width:99%;margin:5px auto;">
-            <div class="col-md-9 col-sm-12">
-            <asp:ContentPlaceHolder ID="Content" runat="server">
-
-            </asp:ContentPlaceHolder>
+    <script src="scripts/bootstrap.min.js"></script>--%>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <%--<link href="<%=ResolveUrl("~/css/bootstrap.css") %>" rel="stylesheet" />--%>
+    <link href="<%=ResolveUrl("~/css/responsiveslides.css")%>" rel="stylesheet" />
+    <link href="<%=ResolveUrl("~/css/demo/demo_responsiveslides.css") %>" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="<%=ResolveUrl("~/css/responsiveslides.min.js") %>"></script>
+    <script src="<%=ResolveUrl("~/scripts/bootstrap.min.js")%>"></script>
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <style>
+        #btnsearch:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body style="background-image: url(../img/flowertrail.png)">
+    <div id="fb-root"></div>
+    <script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+    <uc1:MBanner runat="server" ID="MBanner" />
+    <uc1:MMenuNgang runat="server" ID="MMenuNgang" />
+    <div class="container" style="width: 97%">
+        <div class="row">
+            <div class="col-md-9" style="padding-right: 5px;">
+                <uc1:SlideShowTrangChuChinh runat="server" ID="SlideShowTrangChuChinh" />
             </div>
-            <div class="col-md-3 col-sm-12">
-               <asp:ContentPlaceHolder ID="Content1" runat="server">
-
-               </asp:ContentPlaceHolder>
+            <div class="col-md-3" style="padding-left: 0px;">
+                <asp:Image ID="imgLienHe" runat="server" ImageUrl="~/img/support.jpeg" CssClass="img-responsive" Height="400px" Width="100%" />
             </div>
         </div>
-        <div class="row" style="margin:5px auto;width:99%;font-size:15px">
-            <div class="col-md-6 col-sm-12">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Liên hệ</div>
-                    <div class="panel-body">
-                        <p><span class="glyphicon glyphicon-home"></span>&nbsp Địa chỉ: Đại lộ Đồng Khởi, TP Bến Tre</p>
-                        <p><span class="glyphicon glyphicon-phone-alt"></span>&nbsp 0123456789</p>
-                        <p><span class="glyphicon glyphicon-envelope"></span>&nbsp&nbsp<a href="mailto:banhangtannoi@gmail.com">banhangtannoi@gmail.com</a></p>
-                    </div>
-                </div>
+
+        <div class="row">
+            <div class="col-md-9 col-sm-12" style ="padding-right:5px;">
+                <asp:ContentPlaceHolder ID="Content" runat="server">
+                    <%-- content --%>
+                </asp:ContentPlaceHolder>
             </div>
-            <div class="col-md-3 col-sm-12">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Liên hệ</div>
-                    <div class="panel-body">
-                        <p><span class="glyphicon glyphicon-home"></span>&nbsp Địa chỉ: Đại lộ Đồng Khởi, TP Bến Tre</p>
-                        <p><span class="glyphicon glyphicon-phone-alt"></span>&nbsp 0123456789</p>
-                        <p><span class="glyphicon glyphicon-envelope"></span>&nbsp&nbsp<a href="mailto:banhangtannoi@gmail.com">banhangtannoi@gmail.com</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-12">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Liên hệ</div>
-                    <div class="panel-body">
-                        <p><span class="glyphicon glyphicon-home"></span>&nbsp Địa chỉ: Đại lộ Đồng Khởi, TP Bến Tre</p>
-                        <p><span class="glyphicon glyphicon-phone-alt"></span>&nbsp 0123456789</p>
-                        <p><span class="glyphicon glyphicon-envelope"></span>&nbsp&nbsp<a href="mailto:banhangtannoi@gmail.com">banhangtannoi@gmail.com</a></p>
-                    </div>
-                </div>
+            <div class="col-md-3 col-xs-12" style="padding-left: 0px;">
+                <uc1:MMenuPhai runat="server" ID="MMenuPhai" />
             </div>
         </div>
-    </body>
-    
+        <uc1:MFooter runat="server" ID="MFooter" />
+    </div>
+</body>
+
 </html>

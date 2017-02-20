@@ -13,6 +13,15 @@ namespace BanHoa {
     public partial class TrangChu {
         
         /// <summary>
+        /// MBanner control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::BanHoa.Module.Master.MBanner MBanner;
+        
+        /// <summary>
         /// Content control.
         /// </summary>
         /// <remarks>
@@ -22,12 +31,21 @@ namespace BanHoa {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder Content;
         
         /// <summary>
-        /// Content1 control.
+        /// MMenuPhai control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder Content1;
+        protected global::BanHoa.Module.MMenuPhai MMenuPhai;
+        
+        /// <summary>
+        /// MFooter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::BanHoa.Module.Master.MFooter MFooter;
     }
 }

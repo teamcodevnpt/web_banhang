@@ -1,0 +1,10 @@
+diff a/Code/BanHoa/.vs/config/applicationhost.config b/Code/BanHoa/.vs/config/applicationhost.config	(rejected hunks)
+@@ -163,7 +163,7 @@
+             </site>
+             <site name="BanHoa" id="2">
+                 <application path="/" applicationPool="Clr4IntegratedAppPool">
+-                    <virtualDirectory path="/" physicalPath="D:\WEB\BanHoa\BanHoa\BanHoa" />
++                    <virtualDirectory path="/" physicalPath="D:\WEB\BanHang\Code\BanHoa\BanHoa" />
+                 </application>
+                 <bindings>
+                     <binding protocol="http" bindingInformation="*:58879:localhost" />
