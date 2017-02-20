@@ -100,7 +100,6 @@ D:\WEB\BanHoa\BanHoa\obj\Debug\BanHang.csproj.App.config
 D:\WEB\BanHoa\BanHoa\obj\Debug\BanHang.csprojResolveAssemblyReference.cache
 D:\WEB\BanHoa\BanHoa\obj\Debug\BanHoa.dll
 D:\WEB\BanHoa\BanHoa\obj\Debug\BanHoa.pdb
-D:\WEB\Project_BanHoa\Code\BanHoa\BanHoa\bin\ApplicationInsights.config
 D:\WEB\Project_BanHoa\Code\BanHoa\BanHoa\bin\BanHoa.dll.config
 D:\WEB\Project_BanHoa\Code\BanHoa\BanHoa\bin\BanHoa.dll
 D:\WEB\Project_BanHoa\Code\BanHoa\BanHoa\bin\BanHoa.pdb

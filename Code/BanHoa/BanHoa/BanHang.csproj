@@ -63,48 +63,56 @@
   <ItemGroup>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Module\Master\MBanner.ascx.cs">
       <DependentUpon>MBanner.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\Master\MBanner.ascx.designer.cs">
       <DependentUpon>MBanner.ascx</DependentUpon>
     </Compile>
     <Compile Include="Module\Master\MFooter.ascx.cs">
       <DependentUpon>MFooter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\Master\MFooter.ascx.designer.cs">
       <DependentUpon>MFooter.ascx</DependentUpon>
     </Compile>
     <Compile Include="Module\Master\MLienHe.ascx.cs">
       <DependentUpon>MLienHe.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\Master\MLienHe.ascx.designer.cs">
       <DependentUpon>MLienHe.ascx</DependentUpon>
     </Compile>
     <Compile Include="Module\View\MListSanPham.ascx.cs">
       <DependentUpon>MListSanPham.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\View\MListSanPham.ascx.designer.cs">
       <DependentUpon>MListSanPham.ascx</DependentUpon>
     </Compile>
     <Compile Include="Module\Master\MLuotTruyCap.ascx.cs">
       <DependentUpon>MLuotTruyCap.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\Master\MLuotTruyCap.ascx.designer.cs">
       <DependentUpon>MLuotTruyCap.ascx</DependentUpon>
     </Compile>
     <Compile Include="Module\Master\MMangXaHoi.ascx.cs">
       <DependentUpon>MMangXaHoi.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\Master\MMangXaHoi.ascx.designer.cs">
       <DependentUpon>MMangXaHoi.ascx</DependentUpon>
     </Compile>
     <Compile Include="Module\Master\MMenuPhai.ascx.cs">
       <DependentUpon>MMenuPhai.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Module\Master\MMenuPhai.ascx.designer.cs">
       <DependentUpon>MMenuPhai.ascx</DependentUpon>
@@ -112,6 +120,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrangChu.Master.cs">
       <DependentUpon>TrangChu.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="TrangChu.Master.designer.cs">
       <DependentUpon>TrangChu.Master</DependentUpon>
@@ -119,9 +128,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="TrangChu.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -134,7 +140,11 @@
     <Folder Include="fonts\" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="System" />
     <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
