@@ -337,7 +337,7 @@ go
 create table DANH_GIA_KH (
    MA_DANHGIA_KH        int                  not null,
    MA_SP                int                  not null,
-   TEN_KH               varchar(100)         null,
+   TEN_KH               nvarchar(100)         null,
    NOIDUNG              text                 null,
    DIEM_DANHGIA         int                  null,
    NGAY_DANHGIA         datetime             null,
@@ -360,8 +360,8 @@ create table DON_HANG (
    MA_DON_HANG          int                  not null,
    NGAY_DAT_HANG        datetime             null,
    DIACHI               text                 null,
-   SDT                  varchar(15)          null,
-   EMAIL                varchar(100)         null,
+   SDT                  nvarchar(15)          null,
+   EMAIL                nvarchar(100)         null,
    GHICHU               text                 null,
    TONG_TIEN            decimal(10)          null,
    constraint PK_DON_HANG primary key nonclustered (MA_DON_HANG)
@@ -421,12 +421,12 @@ go
 create table KHACH_HANG (
    MA_KH                int                  not null,
    MA_TT                int                  not null,
-   TEN_KH               varchar(100)         null,
-   TAIKHOAN             varchar(100)         null,
-   MATKHAU              varchar(100)         null,
+   TEN_KH               nvarchar(100)         null,
+   TAIKHOAN             nvarchar(100)         null,
+   MATKHAU              nvarchar(100)         null,
    DIACHI               text                 null,
-   SDT                  varchar(15)          null,
-   EMAIL                varchar(100)         null,
+   SDT                  nvarchar(15)          null,
+   EMAIL                nvarchar(100)         null,
    constraint PK_KHACH_HANG primary key nonclustered (MA_KH)
 )
 go
@@ -444,10 +444,10 @@ go
 /*==============================================================*/
 create table LIENHE (
    MA_LIENHE            int                  not null,
-   TEN_NGUOIGUI         varchar(100)         null,
-   SDT                  varchar(15)          null,
+   TEN_NGUOIGUI         nvarchar(100)         null,
+   SDT                  nvarchar(15)          null,
    DIACHI               text                 null,
-   EMAIL                varchar(100)         null,
+   EMAIL                nvarchar(100)         null,
    NOIDUNG              text                 null,
    NGAY_GUI             datetime             null,
    DA_XEM               bit                  null,
@@ -474,8 +474,8 @@ create table MODULE (
    MA_TT                int                  not null,
    TEN_MODULE           char(100)            null,
    STT                  numeric(5)           null,
-   GIATRI_THAMSO        varchar(100)         null,
-   TEN_THAMSO           varchar(100)         null,
+   GIATRI_THAMSO        nvarchar(100)         null,
+   TEN_THAMSO           nvarchar(100)         null,
    constraint PK_MODULE primary key nonclustered (MA_MODULE)
 )
 go
@@ -495,12 +495,12 @@ create table NGUOI_DUNG (
    MA_ND                int                  not null,
    MA_NHOM_QUYEN        int                  not null,
    MA_TT                int                  not null,
-   TEN_ND               varchar(100)         null,
-   TAIKHOAN             varchar(100)         null,
-   MATKHAU              varchar(100)         null,
+   TEN_ND               nvarchar(100)         null,
+   TAIKHOAN             nvarchar(100)         null,
+   MATKHAU              nvarchar(100)         null,
    DIACHI               text                 null,
-   SDT                  varchar(15)          null,
-   EMAIL                varchar(100)         null,
+   SDT                  nvarchar(15)          null,
+   EMAIL                nvarchar(100)         null,
    constraint PK_NGUOI_DUNG primary key nonclustered (MA_ND)
 )
 go
@@ -527,8 +527,8 @@ go
 create table NHOM_HINH (
    MANHOM_HINH          int                  not null,
    MA_TT                int                  not null,
-   TENNHOM_HINH         varchar(100)         null,
-   ANH_DD               varchar(150)         null,
+   TENNHOM_HINH         nvarchar(100)         null,
+   ANH_DD               nvarchar(150)         null,
    URL                  text                 null,
    constraint PK_NHOM_HINH primary key nonclustered (MANHOM_HINH)
 )
@@ -547,7 +547,7 @@ go
 /*==============================================================*/
 create table NHOM_QUYEN (
    MA_NHOM_QUYEN        int                  not null,
-   TEN_NHOM_QUYEN       varchar(100)         null,
+   TEN_NHOM_QUYEN       nvarchar(100)         null,
    constraint PK_NHOM_QUYEN primary key nonclustered (MA_NHOM_QUYEN)
 )
 go
@@ -558,12 +558,12 @@ go
 create table NHOM_SP (
    MANHOM_SP            int                  not null,
    MA_TT                int                  not null,
-   TENNHOM_HINH         varchar(100)         null,
+   TENNHOM_HINH         nvarchar(100)         null,
    URL                  text                 null,
    STT                  numeric(5)           null,
    MANHOM_CHA           int                  null,
    SLIDE_SHOW           bit                  null,
-   ANH_DD               varchar(150)         null,
+   ANH_DD               nvarchar(150)         null,
    constraint PK_NHOM_SP primary key nonclustered (MANHOM_SP)
 )
 go
@@ -582,7 +582,7 @@ go
 create table SANPHAM (
    MA_SP                int                  not null,
    MA_TT                int                  not null,
-   TEN_SP               varchar(100)         not null,
+   TEN_SP               nvarchar(100)         not null,
    MOTA                 text                 null,
    TRANGTHAI            bit                  not null,
    STT                  numeric(5)           null,
@@ -590,7 +590,7 @@ create table SANPHAM (
    SLIDE_SHOW           bit                  null,
    URL                  text                 not null,
    GIA                  decimal(10)          null,
-   ANH_DD               varchar(150)         null,
+   ANH_DD               nvarchar(150)         null,
    NGAY_DANG            datetime             null,
    UU_TIEN              bit                  null,
    GIA_KM               decimal(10)          null,
@@ -636,14 +636,14 @@ go
 /* Table: THONGTIN_CTY                                          */
 /*==============================================================*/
 create table THONGTIN_CTY (
-   TEN_CTY              varchar(100)         null,
-   SDT                  varchar(15)          null,
-   EMAIL                varchar(100)         null,
+   TEN_CTY              nvarchar(100)         null,
+   SDT                  nvarchar(15)          null,
+   EMAIL                nvarchar(100)         null,
    DIACHI               text                 null,
-   LINK_FACE            varchar(100)         null,
-   LINK_SKYPE           varchar(100)         null,
-   LINK_TWITTER         varchar(100)         null,
-   LINK_GOOGLE          varchar(100)         null,
+   LINK_FACE            nvarchar(100)         null,
+   LINK_SKYPE           nvarchar(100)         null,
+   LINK_TWITTER         nvarchar(100)         null,
+   LINK_GOOGLE          nvarchar(100)         null,
    GHICHU               text                 null
 )
 go
@@ -653,7 +653,7 @@ go
 /*==============================================================*/
 create table TRANGTHAI (
    MA_TT                int                  not null,
-   TEN_TT               varchar(100)         null,
+   TEN_TT               nvarchar(100)         null,
    MOTA_TT              text                 null,
    constraint PK_TRANGTHAI primary key nonclustered (MA_TT)
 )
@@ -664,7 +664,7 @@ go
 /*==============================================================*/
 create table TRANGTHAI_DONHANG (
    MA_TRANGTHAI_DONHANG int                  not null,
-   TEN_TRANGTHAI_DONHANG varchar(100)         null,
+   TEN_TRANGTHAI_DONHANG nvarchar(100)         null,
    MOTA_TRANGTHAI_DONHANG text                 null,
    constraint PK_TRANGTHAI_DONHANG primary key nonclustered (MA_TRANGTHAI_DONHANG)
 )
