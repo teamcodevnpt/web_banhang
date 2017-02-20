@@ -76,6 +76,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
           Inputs="$(MSBuildAllProjects);$(AppConfig);@(_EnsureBindingRedirectReference->'%(HintPath)')"
           Outputs="$(__IntermediateAppConfig)">
 
+
     <EnsureBindingRedirects References="@(_EnsureBindingRedirectReference->'%(HintPath)')"
                             SourceAppConfigPath="$(AppConfig)"
                             DestinationAppConfigPath="$(__IntermediateAppConfig)">
