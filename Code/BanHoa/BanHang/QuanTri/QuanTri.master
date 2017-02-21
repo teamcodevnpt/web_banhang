@@ -48,106 +48,32 @@
                 </li>
 
                 <li class="hi-logo hidden-xs">
-                    <a href="../QuanTri/QuanTri.aspx">Quản trị hệ thống</a>
+                    <a href="../QuanTri/Default.aspx">Quản trị hệ thống</a>
                 </li>
 
                 <li class="pull-right">
                     <ul class="hi-menu">
-
-                        <li data-ma-action="search-open">
-                            <a href=""><i class="him-icon zmdi zmdi-search"></i></a>
-                        </li>
                         <li class="dropdown">
                             <a data-toggle="dropdown" href="">
                                 <i class="him-icon zmdi zmdi-notifications"></i>
-                                <i class="him-counts">9</i>
+                                <i class="him-counts">
+                                    <asp:Label ID="lblLienHe" runat="server" Text="10"></asp:Label></i>
                             </a>
-                        </li>
-                        <li class="dropdown hidden-xs">
-                            <a data-toggle="dropdown" href="">
-                                <i class="him-icon zmdi zmdi-view-list-alt"></i>
-                                <i class="him-counts">2</i>
-                            </a>
-                            <div class="dropdown-menu pull-right dropdown-menu-lg">
-                                <div class="list-group">
-                                    <div class="lg-header">
-                                        Tasks
-                                    </div>
-                                    <div class="lg-body">
-                                        <div class="list-group-item">
-                                            <div class="lgi-heading m-b-5">HTML5 Validation Report</div>
-
-                                            <div class="progress">
-                                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
-                                                    <span class="sr-only">95% Complete (success)</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="list-group-item">
-                                            <div class="lgi-heading m-b-5">Google Chrome Extension</div>
-
-                                            <div class="progress">
-                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                                    <span class="sr-only">80% Complete (success)</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="list-group-item">
-                                            <div class="lgi-heading m-b-5">Social Intranet Projects</div>
-
-                                            <div class="progress">
-                                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                                    <span class="sr-only">20% Complete</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="list-group-item">
-                                            <div class="lgi-heading m-b-5">Bootstrap Admin Template</div>
-
-                                            <div class="progress">
-                                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                                    <span class="sr-only">60% Complete (warning)</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="list-group-item">
-                                            <div class="lgi-heading m-b-5">Youtube Client App</div>
-
-                                            <div class="progress">
-                                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                                    <span class="sr-only">80% Complete (danger)</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <a class="view-more" href="">View All</a>
-                                </div>
-                            </div>
-                        </li>
+                        </li>                        
                         <li class="dropdown">
                             <a data-toggle="dropdown" href=""><i class="him-icon zmdi zmdi-more-vert"></i></a>
                             <ul class="dropdown-menu dm-icon pull-right">
-                                <li class="skin-switch hidden-xs">
-                                    <span class="ss-skin bgm-lightblue" data-ma-action="change-skin" data-ma-skin="lightblue"></span>
-                                    <span class="ss-skin bgm-bluegray" data-ma-action="change-skin" data-ma-skin="bluegray"></span>
-                                    <span class="ss-skin bgm-cyan" data-ma-action="change-skin" data-ma-skin="cyan"></span>
-                                    <span class="ss-skin bgm-teal" data-ma-action="change-skin" data-ma-skin="teal"></span>
-                                    <span class="ss-skin bgm-orange" data-ma-action="change-skin" data-ma-skin="orange"></span>
-                                    <span class="ss-skin bgm-blue" data-ma-action="change-skin" data-sma-kin="blue"></span>
-                                </li>
-                                <li class="divider hidden-xs"></li>
-                                <li class="hidden-xs">
-                                    <a data-ma-action="fullscreen" href=""><i class="zmdi zmdi-fullscreen"></i> Toggle Fullscreen</a>
+                                <li>
+                                    <a href="profile-about.htm"><i class="zmdi zmdi-account"></i>Thông tin</a>
                                 </li>
                                 <li>
-                                    <a data-ma-action="clear-localstorage" href=""><i class="zmdi zmdi-delete"></i> Clear Local Storage</a>
+                                    <a href=""><i class="zmdi zmdi-input-antenna"></i>Cài đặt riêng tư</a>
                                 </li>
                                 <li>
-                                    <a href=""><i class="zmdi zmdi-face"></i> Privacy Settings</a>
+                                    <a href=""><i class="zmdi zmdi-settings"></i> Cài đặt</a>
                                 </li>
                                 <li>
-                                    <a href=""><i class="zmdi zmdi-settings"></i> Other Settings</a>
+                                    <a href="../QuanTri/DangNhap.aspx"><i class="zmdi zmdi-time-restore"></i> Đăng xuất</a>
                                 </li>
                             </ul>
                         </li>
@@ -173,159 +99,53 @@
                         </div>
 
                         <div class="sp-info">
-                            Nguyễn Văn A
+                            <asp:Label ID="lblTenNguoiDung" runat="server" Text=""></asp:Label>
                             <i class="zmdi zmdi-caret-down"></i>
                         </div>
                     </a>
-
-                    <ul class="main-menu">
-                        <li>
-                            <a href="profile-about.htm"><i class="zmdi zmdi-account"></i>Thông tin</a>
-                        </li>
-                        <li>
-                            <a href=""><i class="zmdi zmdi-input-antenna"></i>Cài đặt riêng tư</a>
-                        </li>
-                        <li>
-                            <a href=""><i class="zmdi zmdi-settings"></i> Cài đặt</a>
-                        </li>
-                        <li>
-                            <a href=""><i class="zmdi zmdi-time-restore"></i> Đăng xuất</a>
-                        </li>
-                    </ul>
                 </div>
 
                 <ul class="main-menu">
-                    <li class="active">
-                        <a href="index-1.htm"><i class="zmdi zmdi-home"></i> Trang chủ</a>
-                    </li>
-                    <li class="sub-menu">
-                        <a href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-chart"></i> Menu cha</a>
-
-                        <ul>
-                            <li><a href="dashboards\analytics.htm">Menu con 1</a></li>
-                            <li><a href="dashboards\school.htm">Menu con 2</a></li>
-                        </ul>
-                    </li>
-                    <li class="sub-menu">
-                        <a href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-view-compact"></i> Headers</a>
-
-                        <ul>
-                            <li><a href="textual-menu.htm">Textual menu</a></li>
-                            <li><a href="image-logo.htm">Image logo</a></li>
-                            <li><a href="top-mainmenu.htm">Mainmenu on top</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="typography.htm"><i class="zmdi zmdi-format-underlined"></i> Typography</a></li>
-                    <li class="sub-menu">
-                        <a href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-widgets"></i> Widgets</a>
-
-                        <ul>
-                            <li><a href="widget-templates.htm">Templates</a></li>
-                            <li><a href="widgets.htm">Widgets</a></li>
-                        </ul>
-                    </li>
-                    <li class="sub-menu">
-                        <a href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-view-list"></i> Tables</a>
-
-                        <ul>
-                            <li><a href="tables.htm">Normal Tables</a></li>
-                            <li><a href="data-tables.htm">Data Tables</a></li>
-                        </ul>
-                    </li>
-                    <li class="sub-menu">
-                        <a href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-collection-text"></i> Forms</a>
-
-                        <ul>
-                            <li><a href="form-elements.htm">Basic Form Elements</a></li>
-                            <li><a href="form-components.htm">Form Components</a></li>
-                            <li><a href="form-examples.htm">Form Examples</a></li>
-                            <li><a href="form-validations.htm">Form Validation</a></li>
-                        </ul>
-                    </li>
-                    <li class="sub-menu">
-                        <a href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-swap-alt"></i>User Interface</a>
-                        <ul>
-                            <li><a href="colors.htm">Colors</a></li>
-                            <li><a href="animations.htm">Animations</a></li>
-                            <li><a href="buttons.htm">Buttons</a></li>
-                            <li><a href="icons.htm">Icons</a></li>
-                            <li><a href="alerts.htm">Alerts</a></li>
-                            <li><a href="preloaders.htm">Preloaders</a></li>
-                            <li><a href="notification-dialog.htm">Notifications & Dialogs</a></li>
-                            <li><a href="media.htm">Media</a></li>
-                            <li><a href="components.htm">Components</a></li>
-                            <li><a href="other-components.htm">Others</a></li>
-                        </ul>
-                    </li>
-                    <li class="sub-menu">
-                        <a href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-trending-up"></i>Charts & Maps</a>
-                        <ul>
-                            <li><a href="flot-charts.htm">Flot Charts</a></li>
-                            <li><a href="other-charts.htm">Other Charts</a></li>
-                            <li><a href="maps.htm">Maps</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="calendar.htm"><i class="zmdi zmdi-calendar"></i> Calendar</a></li>
-                    <li class="sub-menu">
-                        <a href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-image"></i>Photo Gallery</a>
-                        <ul>
-                            <li><a href="photos.htm">Default</a></li>
-                            <li><a href="photo-timeline.htm">Timeline</a></li>
-                        </ul>
-                    </li>
-
-                    <li><a href="generic-classes.htm"><i class="zmdi zmdi-layers"></i> Generic Classes</a></li>
-                    <li class="sub-menu">
-                        <a href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-collection-item"></i> Sample Pages</a>
-                        <ul>
-                            <li><a href="profile-about.htm">Profile</a></li>
-                            <li><a href="list-view.htm">List View</a></li>
-                            <li><a href="messages.htm">Messages</a></li>
-                            <li><a href="pricing-table.htm">Pricing Table</a></li>
-                            <li><a href="contacts.htm">Contacts</a></li>
-                            <li><a href="wall.htm">Wall</a></li>
-                            <li><a href="invoice.htm">Invoice</a></li>
-                            <li><a href="login.htm">Login and Sign Up</a></li>
-                            <li><a href="lockscreen.htm">Lockscreen</a></li>
-                            <li><a href="404.htm">Error 404</a></li>
-                        </ul>
-                    </li>
-                    <li class="sub-menu">
-                        <a href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-menu"></i> 3 Level Menu</a>
-
-                        <ul>
-                            <li><a href="form-elements.htm">Level 2 link</a></li>
-                            <li><a href="form-components.htm">Another level 2 Link</a></li>
-                            <li class="sub-menu">
-                                <a href="" data-ma-action="submenu-toggle">I have children too</a>
-
-                                <ul>
-                                    <li><a href="">Level 3 link</a></li>
-                                    <li><a href="">Another Level 3 link</a></li>
-                                    <li><a href="">Third one</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="form-validations.htm">One more 2</a></li>
-                        </ul>
+                    <li>
+                        <a href="../TrangChu/DanhMuc.aspx" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Danh Mục</a>
                     </li>
                     <li>
-                        <a href="https://wrapbootstrap.com/theme/material-admin-responsive-angularjs-WB011H985"><i class="zmdi zmdi-money"></i> Buy this template</a>
+                        <a href="../TrangChu/DanhMuc.aspx" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Sản Phẩm</a>
+                    </li>
+                    <li class ="">
+                        <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Nhóm Sản Phẩm</a>
+                    </li>
+                    <li>
+                        <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Đơn Hàng</a>
+                    </li>
+                    <li>
+                        <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Thông Tin Công Ty</a>
+                    </li>
+                    <li>
+                        <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Liên Hệ Khách Hàng</a>
+                    </li>
+                    <li>
+                        <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Đánh Giá Của Khách Hàng</a>
+                    </li>
+                    <li>
+                        <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Tài Khoản</a>
+                    </li>
+                    <li>
+                        <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Hình</a>
                     </li>
                 </ul>
             </aside>
-                            <asp:ContentPlaceHolder ID="ContentTrangChu" runat="server">
-                            </asp:ContentPlaceHolder>   
+            <asp:ContentPlaceHolder ID="ContentTrangChu" runat="server">
+            </asp:ContentPlaceHolder>   
         </section>
 
         <footer id="footer">
-            Copyright &copy; 2015 Material Admin
+            Bản quyền &copy; 2017 
 
             <ul class="f-menu">
-                <li><a href="">Home</a></li>
-                <li><a href="">Dashboard</a></li>
-                <li><a href="">Reports</a></li>
-                <li><a href="">Support</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="">Trang Chủ</a></li>
+                <li><a href="">Hỗ Trợ</a></li>
+                <li><a href="">Liên Hệ</a></li>
             </ul>
         </footer>
 

@@ -11,40 +11,36 @@
         <link href="../css/bootstrap.min.css" rel="stylesheet" />
         <link href="../font-awesome/css/font-awesome.css" rel="stylesheet" />
         <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="css/DangNhap.css" rel="stylesheet" />
         <script src="../scripts/jquery-3.1.1.min.js"></script>
         <script src="../scripts/bootstrap.min.js"></script>
+        <script src="js/DangNhap.js"></script>
 </head>
-<body>
-    <div class="panel panel-primary" style="width:35%;margin:250px auto;">
-        <div class="panel-heading"><b>Đăng nhập hệ thống</b></div>
-            <div class="panel-body">
-                <form class="form-horizontal">
-          <fieldset>
-            <div class="form-group">
-              <div class="col-lg-12">
-                <input type="text" class="form-control" id="inputEmail" placeholder="Tài khoản">
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-lg-12">
-                <input type="password" class="form-control" id="inputPassword" placeholder="Mật khẩu">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Ghi nhớ đăng nhập
-                  </label>
+<script>
+    //alert("sầd")
+</script>
+<body style="background-image: url(../img/flowertrail.png); background-repeat:repeat">
+    <div class="container">
+        <div class="card card-container">
+            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin" runat="server">
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="text" id="inputTaiKhoan" runat="server" class="form-control" placeholder="Tài Khoản" />
+                <input type="password" id="inputMatKhau" runat="server" class="form-control" placeholder="Mật Khẩu" />
+                <div id="remember" class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember-me" /> Ghi Nhớ Mật Khẩu
+                    </label>
                 </div>
-              </div>
-            </div>
-            
-            <div class="form-group">
-              <div class="col-lg-10 col-lg-offset-0">
-                <button type="reset" class="btn btn-default">Huỷ</button>
-                <button type="submit" class="btn btn-primary">Đăng nhập</button>
-              </div>
-            </div>
-          </fieldset>
-        </form>
-       </div>
-    </div>
+                <%--<button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>--%>
+                <asp:Button ID="btnDangNhap" class="btn btn-lg btn-primary btn-block btn-signin" runat="server" Text="Đăng Nhập" OnClick="btnDangNhap_Click"/>
+            </form><!-- /form -->
+            <a href="#" class="forgot-password">
+                Quên Mật Khẩu
+            </a>
+        </div><!-- /card-container -->
+    </div><!-- /container -->
 </body>
 </html>

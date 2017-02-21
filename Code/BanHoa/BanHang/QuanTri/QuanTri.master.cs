@@ -9,6 +9,6 @@ public partial class QuanTri_QuanTri : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        lblTenNguoiDung.Text = Session["tennguoidung"].ToString();
     }
 }
