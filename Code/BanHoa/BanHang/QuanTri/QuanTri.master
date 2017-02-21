@@ -313,60 +313,8 @@
                     </li>
                 </ul>
             </aside>
-
-            <asp:ContentPlaceHolder ID="ContentTrangChu" runat="server">
-
-            </asp:ContentPlaceHolder>
-
-            <section id="content">
-                <div class="container">
-                    <div class="block-header">
-                        <h2>Tiêu đề trang</h2>
-
-                        <ul class="actions">
-                            <li>
-                                <a href="">
-                                    <i class="zmdi zmdi-trending-up"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <i class="zmdi zmdi-check-all"></i>
-                                </a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="" data-toggle="dropdown">
-                                    <i class="zmdi zmdi-more-vert"></i>
-                                </a>
-
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                    <li>
-                                        <a href="">Refresh</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Manage Widgets</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Widgets Settings</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <h2>Sales Statistics <small>Vestibulum purus quam scelerisque, mollis nonummy metus</small></h2>
-
-                        </div>
-
-                        <div class="card-body" style="height:1000px">
-                            
-                        </div>
-                    </div>
-                </div>
-            </section>
+                            <asp:ContentPlaceHolder ID="ContentTrangChu" runat="server">
+                            </asp:ContentPlaceHolder>   
         </section>
 
         <footer id="footer">
@@ -391,49 +339,4 @@
                 <p>Please wait...</p>
             </div>
         </div>
-
-        <!-- Older IE warning message -->
-        <!--[if lt IE 9]>
-            <div class="ie-warning">
-                <h1 class="c-white">Warning!!</h1>
-                <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
-                <div class="iew-container">
-                    <ul class="iew-download">
-                        <li>
-                            <a href="http://www.google.com/chrome/">
-                                <img src="img/browsers/chrome.png" alt="">
-                                <div>Chrome</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.mozilla.org/en-US/firefox/new/">
-                                <img src="img/browsers/firefox.png" alt="">
-                                <div>Firefox</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.opera.com">
-                                <img src="img/browsers/opera.png" alt="">
-                                <div>Opera</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.apple.com/safari/">
-                                <img src="img/browsers/safari.png" alt="">
-                                <div>Safari</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                                <img src="img/browsers/ie.png" alt="">
-                                <div>IE (New)</div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <p>Sorry for the inconvenience!</p>
-            </div>
-        <![endif]-->
-
-       
     </body>

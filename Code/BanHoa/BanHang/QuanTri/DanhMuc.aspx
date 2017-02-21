@@ -1,10 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="QuanTri_Default" MasterPageFile="~/QuanTri/QuanTri.master" %>
-<%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="DanhMuc.aspx.cs" Inherits="QuanTri_DanhMuc" MasterPageFile="~/QuanTri/QuanTri.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentTrangChu" runat="server">
 <section id="content">
                 <div class="container">
                     <div class="block-header">
-                        <h2>Thông tin chung</h2>
+                        <h2>Quản trị danh mục</h2>
 
                         <ul class="actions">
                             <li>
@@ -38,18 +37,16 @@
 
                     </div>
                      <div class="row">
-        <div class="col-md-6 col-xs-12">
-    <div class="card">
-                        <div class="card-header">
-                        </div>
+                        <div class="col-md-6 col-xs-12">
+                        <div class="card">
+                        <div class="card-header">Nhóm sản phẩm<div>
                         <div class="card-body" style="height:1000px">
                         </div>
                     </div>  
         </div>
          <div class="col-md-6 col-xs-12">
     <div class="card">
-                        <div class="card-header">
-                        </div>
+                        <div class="card-header"></div>
                         <div class="card-body" style="height:1000px">
                         </div>
                     </div>  
