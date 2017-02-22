@@ -37,6 +37,12 @@ public class ConnectionDB
         return dts;
 
     }
+    public DataSet Stored_ExecuteQuery_Dataset_noPara(String storename)
+    {
+        DataSet dts = SqlHelper.ExecuteDataset(SQLConnection, CommandType.StoredProcedure, storename);
+        return dts;
+
+    }
     public DataTable Stored_ExecuteQuery_Datatable(String storename, List<SqlParameter> parameters)
     {
         DataTable dts = new DataTable();
@@ -44,9 +50,21 @@ public class ConnectionDB
         dts.Load(sdr);
         return dts;
     }
+    public DataTable Stored_ExecuteQuery_Datatable_noPara(String storename)
+    {
+        DataTable dts = new DataTable();
+        SqlDataReader sdr = SqlHelper.ExecuteReader(SQLConnection, CommandType.StoredProcedure, storename);
+        dts.Load(sdr);
+        return dts;
+    }
     protected int Stored_ExecuteNonQuery(String storename, List<SqlParameter> parameters)
     {
         int rowsAffected = SqlHelper.ExecuteNonQuery(SQLConnection, CommandType.StoredProcedure, storename, parameters.ToArray());
+        return rowsAffected;
+    }
+    protected int Stored_ExecuteNonQuery_noPara(String storename)
+    {
+        int rowsAffected = SqlHelper.ExecuteNonQuery(SQLConnection, CommandType.StoredProcedure, storename);
         return rowsAffected;
     }
     #endregion 

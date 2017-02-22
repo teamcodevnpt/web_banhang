@@ -4,9 +4,9 @@
         <div class="panel-heading">Liên hệ</div>
         <div class="panel-body" style="min-height:150px">
             <div class="row" style="margin:5px">
-                    <span class="glyphicon glyphicon-home"></span>&nbsp Địa chỉ: Đại lộ Đồng Khởi, TP Bến Tre<br/>
-                    <span class="glyphicon glyphicon-phone-alt"></span>&nbsp 0123456789<br/>
-                    <span class="glyphicon glyphicon-envelope"></span>&nbsp&nbsp<a href="mailto:banhangtannoi@gmail.com" style="color :darkblue">banhangtannoi@gmail.com</a>
+                    <span class="glyphicon glyphicon-home"></span>&nbsp <asp:Label ID="lblDiaChi" runat="server"></asp:Label><br/>
+                    <span class="glyphicon glyphicon-phone-alt"></span>&nbsp <asp:Label ID="lblDienThoai" runat="server"></asp:Label><br/>
+                    <span class="glyphicon glyphicon-envelope"></span>&nbsp&nbsp<asp:Label ID="lblEmail" runat="server"></asp:Label>
             </div>
             </div>
     </div>
