@@ -11,4 +11,5 @@ public partial class QuanTri_QuanTri : System.Web.UI.MasterPage
     {
         lblTenNguoiDung.Text = Session["tennguoidung"].ToString();
     }
+
 }

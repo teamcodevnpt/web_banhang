@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 
 public partial class QuanTri_DangNhap : System.Web.UI.Page
 {
+    clsTaiKhoan myTaiKhoan = new clsTaiKhoan();
     protected void Page_Load(object sender, EventArgs e)
     {
         Session.Clear();
@@ -22,23 +23,34 @@ public partial class QuanTri_DangNhap : System.Web.UI.Page
         }
         else
         {
-            DB db = new DB();
-            DataTable dt = new DataTable();
-            SqlParameter [] pars = new SqlParameter[2];
-            pars[0] = new SqlParameter("taikhoan",DbType.String);
-            pars[0].Value = inputTaiKhoan.Value.Trim();
-            pars[1] = new SqlParameter("matkhau",DbType.String);
-            pars[1].Value = inputMatKhau.Value.Trim();
-            dt = db.getDataTableFromStored("select_NguoiDung",pars);
-            if (dt.Rows.Count == 0)
+            try
             {
-                Response.Write("<script>alert('Tài khoản hoặc mật khẩu không đúng. Vui lòng nhập lại')</script>");
-                inputTaiKhoan.Focus();
+                String taikhoan, matkhau;
+                taikhoan = inputTaiKhoan.Value.Trim();
+                matkhau = inputMatKhau.Value.Trim();
+                DataTable dts = myTaiKhoan.quantri_check_login(taikhoan, matkhau);
+                if (dts.Rows.Count == 0)
+                {
+                    Response.Write("<script>alert('Tài khoản hoặc mật khẩu không đúng. Vui lòng nhập lại')</script>");
+                    inputTaiKhoan.Focus();
+                }
+                else
+                {
+                    DataRow row = dts.Rows[0];
+                    if (row["MA_TRANGTHAI"].ToString() == "2")
+                    {
+                        Response.Write("<script>alert('Tài khoản đã bị khóa, Vui Lòng liên hệ Quản Trị')</script>");
+                    }
+                    else
+                    {
+                        Session["tennguoidung"] = row["HOTEN"].ToString();
+                        Response.Redirect("../QuanTri/Default.aspx");
+                    }
+                }
             }
-            else
+            catch
             {
-                Session["tennguoidung"] = "Võ Nhựt Minh";
-                Response.Redirect("../QuanTri/Default.aspx");
+                Response.Write("<script>alert('Lỗi đường truyền mạng. Vui lòng kiểm tra lại')</script>");
             }
 
         }
