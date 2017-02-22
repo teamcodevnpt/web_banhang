@@ -12,6 +12,6 @@ public partial class QuanTri_ThongTinChung : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         DataTable dts = myThongTinChung.select_ThongTinChung();
-        gridThongTinChung.DataSource = dts;
+        //gridThongTinChung.DataSource = dts;
     }
 }

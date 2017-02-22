@@ -10,7 +10,7 @@
                             <h2>Quản Trị Thông Tin Chung</h2>
                         </div>
                         <div class="card-body" style="min-height:300px">
-                            <asp:GridView ID="gridThongTinChung" runat="server"></asp:GridView>
+                            <%--<asp:GridView ID="gridThongTinChung" runat="server"></asp:GridView>--%>
                         </div>
                     </div>  
                 </div>

@@ -93,57 +93,59 @@
             </div>
         </header>
 
-        <section id="main">
-            <aside id="sidebar" class="sidebar c-overflow">
-                <div class="s-profile">
-                    <a href="" data-ma-action="profile-menu-toggle">
-                        <div class="sp-pic">
-                            <img src="img\demo\profile-pics\1.jpg" alt="">
-                        </div>
+        <form runat="server">
+            <section id="main">
+                <aside id="sidebar" class="sidebar c-overflow">
+                    <div class="s-profile">
+                        <a href="" data-ma-action="profile-menu-toggle">
+                            <div class="sp-pic">
+                                <img src="img\demo\profile-pics\1.jpg" alt="">
+                            </div>
 
-                        <div class="sp-info">
-                            <asp:Label ID="lblTenNguoiDung" runat="server" Text=""></asp:Label>
-                            <i class="zmdi zmdi-caret-down"></i>
-                        </div>
-                    </a>
-                </div>
+                            <div class="sp-info">
+                                <asp:Label ID="lblTenNguoiDung" runat="server" Text=""></asp:Label>
+                                <i class="zmdi zmdi-caret-down"></i>
+                            </div>
+                        </a>
+                    </div>
 
-                <ul class="main-menu">
-                    <li>
-                        <a href="../TrangChu/DanhMuc.aspx" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Danh Mục</a>
-                    </li>
-                    <li>
-                        <a href="../TrangChu/DanhMuc.aspx" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Sản Phẩm</a>
-                    </li>
-                    <li class ="">
-                        <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Nhóm Sản Phẩm</a>
-                    </li>
-                    <li>
-                        <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Đơn Hàng</a>
-                    </li>
-                    <li>
-                        <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Thông Tin Công Ty</a>
-                    </li>
-                    <li>
-                        <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Liên Hệ Khách Hàng</a>
-                    </li>
-                    <li>
-                        <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Đánh Giá Của Khách Hàng</a>
-                    </li>
-                    <li>
-                        <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Tài Khoản</a>
-                    </li>
-                     <li>
-                        <a href="../QuanTri/ThongTinChung.aspx" data-ma-action="submenu-toggle">Quản Trị Thông Tin Chung</a>
-                    </li>
-                    <li>
-                        <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Hình</a>
-                    </li>
-                </ul>
-            </aside>
-            <asp:ContentPlaceHolder ID="ContentTrangChu" runat="server">
-            </asp:ContentPlaceHolder>   
-        </section>
+                    <ul class="main-menu">
+                        <li>
+                            <a href="../TrangChu/DanhMuc.aspx" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Danh Mục</a>
+                        </li>
+                        <li>
+                            <a href="../TrangChu/DanhMuc.aspx" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Sản Phẩm</a>
+                        </li>
+                        <li>
+                            <a href="../QuanTri/DangNhap.aspx" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Nhóm Sản Phẩm</a>
+                        </li>
+                        <li>
+                            <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Đơn Hàng</a>
+                        </li>
+                        <li>
+                            <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Thông Tin Công Ty</a>
+                        </li>
+                        <li>
+                            <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Liên Hệ Khách Hàng</a>
+                        </li>
+                        <li>
+                            <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Đánh Giá Của Khách Hàng</a>
+                        </li>
+                        <li>
+                            <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Tài Khoản</a>
+                        </li>
+                         <li>
+                            <a href="../QuanTri/ThongTinChung.aspx" data-ma-action="submenu-toggle">Quản Trị Thông Tin Chung</a>
+                        </li>
+                        <li>
+                            <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Hình</a>
+                        </li>
+                    </ul>
+                </aside>
+                <asp:ContentPlaceHolder ID="ContentTrangChu" runat="server">
+                </asp:ContentPlaceHolder>   
+            </section>
+        </form>
 
         <footer id="footer">
             Bản quyền &copy; 2017 
