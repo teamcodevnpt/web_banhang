@@ -26,9 +26,12 @@
             <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
             <p id="profile-name" class="profile-name-card"></p>
             <form class="form-signin" runat="server">
-                <span id="reauth-email" class="reauth-email"></span>
-                <input type="text" id="inputTaiKhoan" runat="server" class="form-control" placeholder="Tài Khoản" />
-                <input type="password" id="inputMatKhau" runat="server" class="form-control" placeholder="Mật Khẩu" />
+                <div class="row">
+                    <input type="text" id="inputTaiKhoan" runat="server" class="form-control" placeholder="Tài Khoản" />
+                </div>
+                <div class="row">
+                    <input type="password" id="inputMatKhau" runat="server" class="form-control" placeholder="Mật Khẩu" />
+                </div>
                 <div id="remember" class="checkbox">
                     <label>
                         <input type="checkbox" value="remember-me" /> Ghi Nhớ Mật Khẩu

@@ -133,6 +133,9 @@
                     <li>
                         <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Tài Khoản</a>
                     </li>
+                     <li>
+                        <a href="../QuanTri/ThongTinChung.aspx" data-ma-action="submenu-toggle">Quản Trị Thông Tin Chung</a>
+                    </li>
                     <li>
                         <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Hình</a>
                     </li>
