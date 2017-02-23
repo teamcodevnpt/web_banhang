@@ -27,7 +27,7 @@ public partial class QuanTri_DangNhap : System.Web.UI.Page
             {
                 String taikhoan, matkhau;
                 taikhoan = inputTaiKhoan.Value.Trim();
-                matkhau = inputMatKhau.Value.Trim();
+                matkhau = myTaiKhoan.MD5(inputMatKhau.Value.Trim());
                 DataTable dts = myTaiKhoan.quantri_check_login(taikhoan, matkhau);
                 if (dts.Rows.Count == 0)
                 {
