@@ -89,7 +89,7 @@
                                     <a href=""><i class="zmdi zmdi-settings"></i> Cài đặt</a>
                                 </li>
                                 <li>
-                                    <a href="../QuanTri/DangNhap.aspx"><i class="zmdi zmdi-time-restore"></i> Đăng xuất</a>
+                                    <a href="../QuanTri/DangXuat.aspx"><i class="zmdi zmdi-time-restore"></i> Đăng xuất</a>
                                 </li>
                             </ul>
                         </li>
@@ -105,68 +105,61 @@
                 </div>
             </div>
         </header>
+        <section id="main">
+            <aside id="sidebar" class="sidebar c-overflow">
+                <div class="s-profile">
+                    <a href="" data-ma-action="profile-menu-toggle">
+                        <div class="sp-pic">
+                            <img src="img/avt.jpg" />
+                        </div>
 
-        <form runat="server">
-            <section id="main">
-                <aside id="sidebar" class="sidebar c-overflow">
-                    <div class="s-profile">
-                        <a href="" data-ma-action="profile-menu-toggle">
-                            <div class="sp-pic">
-                                <img src="img\demo\profile-pics\1.jpg" alt="">
-                            </div>
-
-                            <div class="sp-info">
-                                <asp:Label ID="lblTenNguoiDung" runat="server" Text=""></asp:Label>
-                                <i class="zmdi zmdi-caret-down"></i>
-                            </div>
-                        </a>
-                    </div>
+                        <div class="sp-info">
+                            <asp:Label ID="lblTenNguoiDung" runat="server" Text=""></asp:Label>
+                            <i class="zmdi zmdi-caret-down"></i>
+                        </div>
+                    </a>
 
                     <ul class="main-menu">
                         <li>
-                            <a href="../TrangChu/DanhMuc.aspx" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Danh Mục</a>
+                            <a href="#"><i class="zmdi zmdi-account"></i>Thông tin</a>
                         </li>
                         <li>
-                            <a href="../TrangChu/DanhMuc.aspx" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Sản Phẩm</a>
+                            <a href=""><i class="zmdi zmdi-settings"></i> Cài đặt</a>
                         </li>
                         <li>
-                            <a href="../QuanTri/DangNhap.aspx" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Nhóm Sản Phẩm</a>
-                        </li>
-                        <li>
-                            <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Đơn Hàng</a>
-                        </li>
-                        <li>
-                            <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Thông Tin Công Ty</a>
-                        </li>
-                        <li>
-                            <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Liên Hệ Khách Hàng</a>
-                        </li>
-                        <li>
-                            <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Đánh Giá Của Khách Hàng</a>
-                        </li>
-                        <li>
-                            <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Tài Khoản</a>
-                        </li>
-                         <li>
-                            <a href="../QuanTri/ThongTinChung.aspx" data-ma-action="submenu-toggle">Quản Trị Thông Tin Chung</a>
-                        </li>
-                        <li>
-                            <a href="#" data-ma-action="submenu-toggle"><i class="glyphicon glyphicon-arrow-right"></i>Quản Trị Hình</a>
+                            <a href="../QuanTri/DangXuat.aspx"><i class="zmdi zmdi-time-restore"></i> Đăng xuất</a>
                         </li>
                     </ul>
-                </aside>
-                <asp:ContentPlaceHolder ID="ContentTrangChu" runat="server">
-                </asp:ContentPlaceHolder>   
-            </section>
-        </form>
+                </div>
+
+                <ul class="main-menu">
+                    <li class="active">
+                        <a href="../QuanTri/Default.aspx"><i class="zmdi zmdi-home"></i> Trang chủ</a>
+                    </li>
+                    <li class="active">
+                        <a href="../QuanTri/DanhMuc.aspx"><i class="zmdi zmdi-home"></i> Quản Trị Danh Mục</a>
+                    </li>
+                    <li class="active">
+                        <a href="../QuanTri/ThongTinChung.aspx"><i class="zmdi zmdi-home"></i> Quản Trị Thông Tin Chung</a>
+                    </li>
+                     <li class="active">
+                        <a href="#"><i class="zmdi zmdi-home"></i> Quản Trị Tài Khoản</a>
+                    </li>
+                </ul>
+            </aside>
+            <form runat="server">
+                            <asp:ContentPlaceHolder ID="ContentTrangChu" runat="server">
+                            </asp:ContentPlaceHolder>
+            </form>   
+        </section>
 
         <footer id="footer">
             Bản quyền &copy; 2017 
 
             <ul class="f-menu">
-                <li><a href="">Trang Chủ</a></li>
-                <li><a href="">Hỗ Trợ</a></li>
-                <li><a href="">Liên Hệ</a></li>
+                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="#">Hỗ Trợ</a></li>
+                <li><a href="#">Liên Hệ</a></li>
             </ul>
         </footer>
 

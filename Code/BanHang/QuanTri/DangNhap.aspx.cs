@@ -12,7 +12,6 @@ public partial class QuanTri_DangNhap : System.Web.UI.Page
     clsTaiKhoan myTaiKhoan = new clsTaiKhoan();
     protected void Page_Load(object sender, EventArgs e)
     {
-        Session.Clear();
     }
     protected void btnDangNhap_Click(object sender, EventArgs e)
     {
@@ -27,7 +26,8 @@ public partial class QuanTri_DangNhap : System.Web.UI.Page
             {
                 String taikhoan, matkhau;
                 taikhoan = inputTaiKhoan.Value.Trim();
-                matkhau = myTaiKhoan.MD5(inputMatKhau.Value.Trim());
+                //matkhau = myTaiKhoan.MD5(inputMatKhau.Value.Trim());
+                matkhau = inputMatKhau.Value.Trim();
                 DataTable dts = myTaiKhoan.quantri_check_login(taikhoan, matkhau);
                 if (dts.Rows.Count == 0)
                 {
@@ -37,7 +37,7 @@ public partial class QuanTri_DangNhap : System.Web.UI.Page
                 else
                 {
                     DataRow row = dts.Rows[0];
-                    if (row["MA_TRANGTHAI"].ToString() == "2")
+                    if (row["MA_TRANGTHAI"].ToString() == "0")
                     {
                         Response.Write("<script>alert('Tài khoản đã bị khóa, Vui Lòng liên hệ Quản Trị')</script>");
                     }
