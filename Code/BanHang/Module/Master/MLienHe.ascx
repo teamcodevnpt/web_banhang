@@ -3,11 +3,7 @@
     <div class="panel panel-primary">
         <div class="panel-heading">Liên hệ</div>
         <div class="panel-body" style="min-height:150px">
-            <div class="row" style="margin:5px">
-                    <span class="glyphicon glyphicon-home"></span>&nbsp <asp:Label ID="lblDiaChi" runat="server"></asp:Label><br/>
-                    <span class="glyphicon glyphicon-phone-alt"></span>&nbsp <asp:Label ID="lblDienThoai" runat="server"></asp:Label><br/>
-                    <span class="glyphicon glyphicon-envelope"></span>&nbsp&nbsp<asp:Label ID="lblEmail" runat="server"></asp:Label>
-            </div>
-            </div>
+            <asp:Literal ID="ltrLienHe" runat="server"></asp:Literal>
+        </div>
     </div>
 </div>

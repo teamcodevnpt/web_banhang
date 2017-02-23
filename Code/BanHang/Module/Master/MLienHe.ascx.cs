@@ -15,9 +15,11 @@ public partial class Module_Master_MLienHe : System.Web.UI.UserControl
         if (dts.Rows.Count > 0)
         {
             DataRow row = dts.Rows[0];
-            lblDiaChi.Text = row["DIACHI"].ToString();
-            lblDienThoai.Text = row["DIENTHOAI"].ToString();
-            lblEmail.Text = row["EMAIL"].ToString();
+            ltrLienHe.Text += "<div class='row' style='margin:5px'>";
+            ltrLienHe.Text += "<span class='glyphicon glyphicon-home'></span>&nbsp&nbsp" + row["DIACHI"].ToString() + "<br/>";
+            ltrLienHe.Text += "<span class='glyphicon glyphicon-phone-alt'></span>&nbsp " + row["DIENTHOAI"].ToString() + "<br/>";
+            ltrLienHe.Text += "<span class='glyphicon glyphicon-envelope'></span>&nbsp&nbsp<a href='mailto:" + row["EMAIL"].ToString() + "?subject=Comments'>" + row["EMAIL"].ToString() + "</a>";
+            ltrLienHe.Text += "</div>";
         }
     }
 }
