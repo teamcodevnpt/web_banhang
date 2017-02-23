@@ -5,16 +5,11 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
-/// <summary>
-/// Summary description for clsThongTinChung
-/// </summary>
 public class clsThongTinChung
 {
 	public clsThongTinChung()
 	{
-		//
-		// TODO: Add constructor logic here
-		//
+
 	}
     ConnectionDB myConn = new ConnectionDB();
     public DataTable select_ThongTinChung()
@@ -23,7 +18,9 @@ public class clsThongTinChung
         dts = myConn.Stored_ExecuteQuery_Datatable_noPara("select_thongtinchung");
         return dts;
     }
-    public int update_ThongTinChung(String tencongty, String dienthoai, String email, String diachi, String link_face, String link_skype, String link_twitter, String link_google, String ghichu)
+    public int update_ThongTinChung(String tencongty, String dienthoai, String email, String diachi,
+                                    String link_face, String link_skype, String link_twitter,
+                                    String link_google, String ghichu)
     {
         int rowsAffected;
         List<SqlParameter> parameters = new List<SqlParameter>();
