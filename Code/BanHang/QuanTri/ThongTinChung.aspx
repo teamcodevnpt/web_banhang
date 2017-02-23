@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="panel panel-success">
-                        <div class="panel-heading" style="min-height:50px">Thông tin WebSite</div>
+                        <div class="panel-heading" style="min-height:50px; text-align:center"><h3 style="color:blue; margin:5px">Thông tin WebSite</h3></div>
                         <div class="panel-body form-horizontal">
                             <div class="col-xs-12">
                                 <asp:Literal ID="ltr_thongbao" runat="server"></asp:Literal>
@@ -63,8 +63,9 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
-           </div>
+           </div>          
         </div>  
     </section>
 </asp:Content>
