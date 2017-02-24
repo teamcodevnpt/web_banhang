@@ -18,9 +18,9 @@
 
     });
 </script>
-<div class="panel panel-info">
-    <div class="panel-body" style ="padding:0px;">
-        <div class="callbacks_container">
+<div class="panel" style ="margin-bottom:0px; padding-bottom:0px;">
+    <div class="panel-body" style ="padding:0px; margin-bottom:0px;">
+        <div class="callbacks_container" style ="padding:0px; margin-bottom:0px;">
             <ul class="rslides" id="slider4" >
                 <asp:Literal ID="ltr_noidung" runat="server"></asp:Literal>
             </ul>

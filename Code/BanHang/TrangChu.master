@@ -1,11 +1,13 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="TrangChu.master.cs" Inherits="TrangChu" %>
 
 <%@ Register Src="~/Module/Master/MBanner.ascx" TagPrefix="uc1" TagName="MBanner" %>
-<%@ Register Src="~/Module/Master/MMenuPhai.ascx" TagPrefix="uc1" TagName="MMenuPhai" %>
+<%--<%@ Register Src="~/Module/Master/MMenuPhai.ascx" TagPrefix="uc1" TagName="MMenuPhai" %>--%>
 <%@ Register Src="~/Module/Master/MFooter.ascx" TagPrefix="uc1" TagName="MFooter" %>
-<%@ Register Src="~/Module/View/MListSanPham.ascx" TagPrefix="uc1" TagName="MListSanPham" %>
-<%@ Register Src="~/Module/View/SlideShowTrangChuChinh.ascx" TagPrefix="uc1" TagName="SlideShowTrangChuChinh" %>
+<%--<%@ Register Src="~/Module/View/MListSanPham.ascx" TagPrefix="uc1" TagName="MListSanPham" %>--%>
+<%--<%@ Register Src="~/Module/View/SlideShowTrangChuChinh.ascx" TagPrefix="uc1" TagName="SlideShowTrangChuChinh" %>--%>
 <%@ Register Src="~/Module/Master/MMenuNgang.ascx" TagPrefix="uc1" TagName="MMenuNgang" %>
+<%--<%@ Register Src="~/Module/View/MSlideShowTrangChuChinhN.ascx" TagPrefix="uc1" TagName="MSlideShowTrangChuChinhN" %>--%>
+
 
 
 
@@ -27,6 +29,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="<%=ResolveUrl("~/css/responsiveslides.min.js") %>"></script>
     <script src="<%=ResolveUrl("~/scripts/bootstrap.min.js")%>"></script>
+
+    <link href="<%=ResolveUrl("~/css/owl/owl.carousel.css")%>" rel="stylesheet" />
+    <script src="<%=ResolveUrl("~/css/owl/owl.carousel.js") %>"></script>
+    <script src="<%=ResolveUrl("~/css/owl/owl.carousel.min.js") %>"></script>
+    <link href="<%=ResolveUrl("~/css/owl/owl.theme.css") %>" rel="stylesheet" />
+    <link href="<%=ResolveUrl("~/css/owl/owl.transitions.css") %>" rel="stylesheet" />
+
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <style>
@@ -45,29 +54,19 @@
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
     <uc1:MBanner runat="server" ID="MBanner" />
-    <uc1:MMenuNgang runat="server" ID="MMenuNgang" />
     <div class="container" style="width: 97%">
         <div class="row">
-            <div class="col-md-9" style="padding-right: 5px;">
-                
-                <uc1:SlideShowTrangChuChinh runat="server" ID="SlideShowTrangChuChinh" />
-            </div>
-            <div class="col-md-3" style="padding-left: 0px;">
-                <asp:Image ID="imgLienHe" runat="server" ImageUrl="~/img/support.jpeg" CssClass="img-responsive" Height="400px" Width="100%" />
+            <div class="col-md-12" style="padding: 0px;">
+                <uc1:MMenuNgang runat="server" ID="MMenuNgang" />
             </div>
         </div>
-
+        <asp:ContentPlaceHolder ID="Content" runat="server">
+        </asp:ContentPlaceHolder>
         <div class="row">
-            <div class="col-md-9 col-sm-12" style ="padding-right:5px;">
-                <asp:ContentPlaceHolder ID="Content" runat="server">
-                    <%-- content --%>
-                </asp:ContentPlaceHolder>
-            </div>
-            <div class="col-md-3 col-xs-12" style="padding-left: 0px;">
-                <uc1:MMenuPhai runat="server" ID="MMenuPhai" />
+            <div class="col-xs-12">
+                <uc1:MFooter runat="server" ID="MFooter" />
             </div>
         </div>
-        <uc1:MFooter runat="server" ID="MFooter" />
     </div>
 </body>
 
