@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -25,13 +26,37 @@ public partial class QuanTri_ThongTinTaiKhoan : System.Web.UI.Page
                     txtDiaChi.Text = dr["DIACHI"].ToString();
                     txtDienThoai.Text = dr["DIENTHOAI"].ToString();
                     txtEmail.Text = dr["EMAIL"].ToString();
-                    txtAvatar.Text = "Chưa có";
+                    //txtAvatar.Text = "Chưa có";
                 }
             }
             else
             {
                 Response.Redirect("../QuanTri/DangNhap.aspx");
             }
+        }
+    }
+
+
+    protected void btn_capnhat_Click(object sender, EventArgs e)
+    {
+        String FileName = "";
+        String Patch = Server.MapPath("~/QuanTri/Avatar/");
+        if (fileAvatar.HasFile)
+        {
+            FileName = Session["MaTaiKhoan"].ToString() + "_" + Session["TaiKhoan"].ToString() + fileAvatar.FileName.Substring(fileAvatar.FileName.LastIndexOf("."));
+            File.Delete(Patch + FileName);
+            fileAvatar.SaveAs(Patch + FileName);
+        }
+        int ma_taikhoan = int.Parse(Session["MaTaiKhoan"].ToString());
+        int count = myTaiKhoan.update_thongtin(ma_taikhoan, txtHoTen.Text, txtDiaChi.Text, txtDienThoai.Text, txtEmail.Text, "../QuanTri/Avatar/" + FileName);
+        if (count == 1)
+        {
+            Session["Avatar"] = "../QuanTri/Avatar/" + FileName;
+            Response.Redirect("../QuanTri/ThongTinTaiKhoan.aspx");
+        }
+        else
+        {
+            Response.Write("<script>alert('Cập Nhật Không Thành Công')</script>");
         }
     }
 }

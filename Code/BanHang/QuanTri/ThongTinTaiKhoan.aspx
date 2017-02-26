@@ -37,12 +37,12 @@
                             <div class="form-group">
                                 <label class="control-label col-sm-3">Ảnh đại diện:</label>
                                 <div class="col-sm-9">
-                                    <asp:TextBox ID="txtAvatar" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:FileUpload ID="fileAvatar" runat="server"  accept="image/*"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-xs-5 col-xs-offset-5">
-                                    <asp:Button ID="btn_capnhat" runat="server" Text="Cập nhật" CssClass="btn btn-group" ValidationGroup="vung1"  />
+                                    <asp:Button ID="btn_capnhat" runat="server" Text="Cập nhật" CssClass="btn btn-group" ValidationGroup="vung1" OnClick="btn_capnhat_Click"  />
                                 </div>
                             </div>
                         </div>

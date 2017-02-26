@@ -32,8 +32,8 @@ public partial class QuanTri_DangNhap : System.Web.UI.Page
             }
             else
             {
-                try
-                {
+                //try
+                //{
                     String taikhoan, matkhau;
                     taikhoan = inputTaiKhoan.Value.Trim();
                     //matkhau = myTaiKhoan.MD5(inputMatKhau.Value.Trim());
@@ -54,15 +54,17 @@ public partial class QuanTri_DangNhap : System.Web.UI.Page
                         else
                         {
                             Session["MaTaiKhoan"] = row["MA_TAIKHOAN"].ToString();
+                            Session["TaiKhoan"] = row["TAIKHOAN"].ToString();
                             Session["HoTen"] = row["HOTEN"].ToString();
+                            Session["Avatar"] = row["AVATAR"].ToString();
                             Response.Redirect("../QuanTri/Default.aspx");
                         }
                     }
-                }
-                catch
-                {
-                    Response.Write("<script>alert('Lỗi đường truyền mạng. Vui lòng kiểm tra lại')</script>");
-                }
+                //}
+                //catch
+                //{
+                //    Response.Write("<script>alert('Lỗi đường truyền mạng. Vui lòng kiểm tra lại')</script>");
+                //}
             }
         }
     }

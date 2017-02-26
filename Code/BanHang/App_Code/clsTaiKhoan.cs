@@ -40,6 +40,19 @@ public class clsTaiKhoan
         rowEffect = myConn.Stored_ExecuteNonQuery("update_matkhau", parameters);
         return rowEffect;
     }
+    public int update_thongtin(int ma_taikhoan, String hoten, String diachi, String dienthoai, String email, String avatar)
+    {
+        int rowEffect;
+        List<SqlParameter> parameters = new List<SqlParameter>();
+        parameters.Add(new SqlParameter("@ma_taikhoan", ma_taikhoan));
+        parameters.Add(new SqlParameter("@hoten", hoten));
+        parameters.Add(new SqlParameter("@diachi", diachi));
+        parameters.Add(new SqlParameter("@dienthoai", dienthoai));
+        parameters.Add(new SqlParameter("@email", email));
+        parameters.Add(new SqlParameter("@avatar", avatar));
+        rowEffect = myConn.Stored_ExecuteNonQuery("update_thongtin", parameters);
+        return rowEffect;
+    }
     public byte[] encryptData(string data)
     {
         System.Security.Cryptography.MD5CryptoServiceProvider md5Hasher = new System.Security.Cryptography.MD5CryptoServiceProvider();

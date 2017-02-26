@@ -110,7 +110,8 @@
                 <div class="s-profile">
                     <a href="" data-ma-action="profile-menu-toggle">
                         <div class="sp-pic">
-                            <img src="img/avt.jpg" />
+                            <asp:Literal ID="ltrAvatar" runat="server"></asp:Literal>
+                            <%--<img src='../QuanTri/Avatar/636237183342626216.jpg'/>--%>
                         </div>
 
                         <div class="sp-info">
@@ -137,7 +138,7 @@
 
                 <ul class="main-menu">
                     <li class="active">
-                        <a href="../QuanTri/Default.aspx"><i class="zmdi zmdi-home"></i> Trang chủ</a>
+                        <a href="../QuanTri/Default.aspx"><i class="glyphicon glyphicon-home"></i> Trang chủ</a>
                     </li>
                     <li class="active">
                         <a href="../QuanTri/DanhMuc.aspx"><i class="zmdi zmdi-home"></i> Quản Trị Nhóm Sản Phẩm</a>
@@ -149,10 +150,10 @@
                         <a href="../QuanTri/ThongTinChung.aspx"><i class="zmdi zmdi-home"></i> Quản Trị Thông Tin Chung</a>
                     </li>
                     <li class="active">
-                        <a href="../QuanTri/LienHe.aspx"><i class="zmdi zmdi-home"></i>Khách Hàng Liên Hệ</a>
+                        <a href="../QuanTri/LienHe.aspx"><i class="glyphicon glyphicon-phone-alt"></i>Khách Hàng Liên Hệ</a>
                     </li>
                      <li class="active">
-                        <a href="#"><i class="zmdi zmdi-home"></i> Quản Trị Tài Khoản</a>
+                        <a href="#"><i class="glyphicon glyphicon-user" aria-hidden="true"></i> Quản Trị Tài Khoản</a>
                     </li>
                 </ul>
             </aside>

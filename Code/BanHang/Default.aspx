@@ -9,6 +9,8 @@
 <%@ Register Src="~/Module/View/SlideShowTrangChuChinh.ascx" TagPrefix="uc1" TagName="SlideShowTrangChuChinh" %>
 <%@ Register Src="~/Module/Master/MMenuNgang.ascx" TagPrefix="uc1" TagName="MMenuNgang" %>
 <%@ Register Src="~/Module/View/MSlideShowTrangChuChinhN.ascx" TagPrefix="uc1" TagName="MSlideShowTrangChuChinhN" %>
+<%@ Register Src="~/Module/View/MNhomHinh.ascx" TagPrefix="uc1" TagName="MNhomHinh" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" runat="server">
     <div class="row" style="padding-top:5px;">
@@ -22,6 +24,7 @@
     <div class="row">
         <div class="col-md-9 col-sm-12" style="padding:2px;">
             <uc1:MDanhMucNganhHang runat="server" ID="MDanhMucNganhHang" />
+            <uc1:MNhomHinh runat="server" ID="MNhomHinh" />
         </div>
         <div class="col-md-3 col-xs-12" style="padding:2px;">
             <uc1:MMenuPhai runat="server" ID="MMenuPhai" />
