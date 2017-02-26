@@ -22,37 +22,48 @@ public partial class QuanTri_DangNhap : System.Web.UI.Page
         }
         else
         {
-            try
+            if (txtCaptcha.Value == "")
             {
-                String taikhoan, matkhau;
-                taikhoan = inputTaiKhoan.Value.Trim();
-                //matkhau = myTaiKhoan.MD5(inputMatKhau.Value.Trim());
-                matkhau = inputMatKhau.Value.Trim();
-                DataTable dts = myTaiKhoan.quantri_check_login(taikhoan, matkhau);
-                if (dts.Rows.Count == 0)
+                Response.Write("<script>alert('Vui Lòng Nhập Mã Captcha')</script>");
+            }
+            else if (txtCaptcha.Value != Session["Captcha"].ToString())
+            {
+                Response.Write("<script>alert('Mã Captcha không đúng')</script>");
+            }
+            else
+            {
+                try
                 {
-                    Response.Write("<script>alert('Tài khoản hoặc mật khẩu không đúng. Vui lòng nhập lại')</script>");
-                    inputTaiKhoan.Focus();
-                }
-                else
-                {
-                    DataRow row = dts.Rows[0];
-                    if (row["MA_TRANGTHAI"].ToString() == "0")
+                    String taikhoan, matkhau;
+                    taikhoan = inputTaiKhoan.Value.Trim();
+                    //matkhau = myTaiKhoan.MD5(inputMatKhau.Value.Trim());
+                    matkhau = inputMatKhau.Value.Trim();
+                    DataTable dts = myTaiKhoan.quantri_check_login(taikhoan, matkhau);
+                    if (dts.Rows.Count == 0)
                     {
-                        Response.Write("<script>alert('Tài khoản đã bị khóa, Vui Lòng liên hệ Quản Trị')</script>");
+                        Response.Write("<script>alert('Tài khoản hoặc mật khẩu không đúng. Vui lòng nhập lại')</script>");
+                        inputTaiKhoan.Focus();
                     }
                     else
                     {
-                        Session["tennguoidung"] = row["HOTEN"].ToString();
-                        Response.Redirect("../QuanTri/Default.aspx");
+                        DataRow row = dts.Rows[0];
+                        if (row["MA_TRANGTHAI"].ToString() == "0")
+                        {
+                            Response.Write("<script>alert('Tài khoản đã bị khóa, Vui Lòng liên hệ Quản Trị')</script>");
+                        }
+                        else
+                        {
+                            Session["MaTaiKhoan"] = row["MA_TAIKHOAN"].ToString();
+                            Session["HoTen"] = row["HOTEN"].ToString();
+                            Response.Redirect("../QuanTri/Default.aspx");
+                        }
                     }
                 }
+                catch
+                {
+                    Response.Write("<script>alert('Lỗi đường truyền mạng. Vui lòng kiểm tra lại')</script>");
+                }
             }
-            catch
-            {
-                Response.Write("<script>alert('Lỗi đường truyền mạng. Vui lòng kiểm tra lại')</script>");
-            }
-
         }
     }
 }

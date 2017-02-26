@@ -37,6 +37,15 @@
                         <input type="checkbox" value="remember-me" /> Ghi Nhớ Mật Khẩu
                     </label>
                 </div>
+                <div class="row">
+                    <div class ="col-md-6 col-xs-12">
+                        <input type="text" id="txtCaptcha" runat="server" class="form-control"/>
+                    </div>
+                    <div class ="col-md-6 col-xs-12">
+                         <img id="imgCaptcha" src="Captcha.aspx" alt="Captcha image" runat="server" />
+                    </div>
+                </div>
+                
                 <%--<button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>--%>
                 <asp:Button ID="btnDangNhap" class="btn btn-lg btn-primary btn-block btn-signin" runat="server" Text="Đăng Nhập" OnClick="btnDangNhap_Click"/>
             </form><!-- /form -->

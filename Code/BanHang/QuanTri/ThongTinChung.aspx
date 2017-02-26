@@ -2,14 +2,14 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentTrangChu" Runat="Server">
      <section id="content">
+        <div class="container">
             <div class="row">
-                <div class="col-xs-12">
-                    <div class="panel panel-success">
-                        <div class="panel-heading" style="min-height:50px; text-align:center"><h3 style="color:blue; margin:5px">Thông tin WebSite</h3></div>
-                        <div class="panel-body form-horizontal">
-                            <div class="col-xs-12">
-                                <asp:Literal ID="ltr_thongbao" runat="server"></asp:Literal>
-                            </div>
+                <div class="col-md-12 col-xs-12">
+                    <div class="card">
+                        <div class="card-header" style="text-align:center">
+                            <h3>THÔNG TIN CHUNG</h3>
+                        </div>
+                        <div class="card-body" style="min-height :370px">
                             <div class="form-group">
                                 <label class="control-label col-sm-3">Tên công ty:</label>
                                 <div class="col-sm-9">
@@ -47,22 +47,15 @@
                                 <div class="col-sm-9">
                                     <asp:TextBox ID="txtGhiChu" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
-                            </div>
-                            <div class="col-xs-5 col-xs-offset-5">
-                                <asp:Button ID="btn_capnhat" runat="server" Text="Cập nhật" CssClass="btn btn-group" ValidationGroup="vung1" OnClick="btn_capnhat_Click" />
-                            </div>
-                            <div class="col-xs-12" style="padding-top:20px;">
-                                <div class="alert alert-danger">
-                                    <h3><b><u>Lưu ý:</u></b></h3>
-                                    <ul style="list-style:square;">
-                                        <li>Các keyword cách nhau bởi dấu phẩy</li>
-                                        <li>Số điện thoại và Email sẽ được hiển thị ở trang LIÊN HỆ</li>
-                                    </ul>
+                                <div class="col-xs-5 col-xs-offset-5">
+                                    <asp:Button ID="btn_capnhat" runat="server" Text="Cập nhật" CssClass="btn btn-group" ValidationGroup="vung1" OnClick="btn_capnhat_Click" />
                                 </div>
                             </div>
+
                         </div>
                     </div>
-           </div>          
+                </div> 
+            </div>         
         </div>  
     </section>
 </asp:Content>

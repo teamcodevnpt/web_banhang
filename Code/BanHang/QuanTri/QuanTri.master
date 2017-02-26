@@ -76,7 +76,7 @@
                                     <asp:Label ID="lblLienHe" runat="server" Text="10"></asp:Label></i>
                             </a>
                         </li>                        
-                        <li class="dropdown">
+<%--                        <li class="dropdown">
                             <a data-toggle="dropdown" href=""><i class="him-icon zmdi zmdi-more-vert"></i></a>
                             <ul class="dropdown-menu dm-icon pull-right">
                                 <li>
@@ -92,7 +92,7 @@
                                     <a href="../QuanTri/DangXuat.aspx"><i class="zmdi zmdi-time-restore"></i> Đăng xuất</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li>--%>
                     </ul>
                 </li>
             </ul>
@@ -121,13 +121,16 @@
 
                     <ul class="main-menu">
                         <li>
-                            <a href="#"><i class="zmdi zmdi-account"></i>Thông tin</a>
+                            <a href="ThongTinTaiKhoan.aspx"><i class="zmdi zmdi-account"></i>Thông tin</a>
+                        </li>
+                         <li>
+                            <a href="DoiMatKhau.aspx"><i class="zmdi zmdi-account"></i>Đổi Mật Khẩu</a>
                         </li>
                         <li>
                             <a href=""><i class="zmdi zmdi-settings"></i> Cài đặt</a>
                         </li>
                         <li>
-                            <a href="../QuanTri/DangXuat.aspx"><i class="zmdi zmdi-time-restore"></i> Đăng xuất</a>
+                            <a href="DangXuat.aspx"><i class="zmdi zmdi-time-restore"></i> Đăng xuất</a>
                         </li>
                     </ul>
                 </div>
@@ -137,10 +140,16 @@
                         <a href="../QuanTri/Default.aspx"><i class="zmdi zmdi-home"></i> Trang chủ</a>
                     </li>
                     <li class="active">
-                        <a href="../QuanTri/DanhMuc.aspx"><i class="zmdi zmdi-home"></i> Quản Trị Danh Mục</a>
+                        <a href="../QuanTri/DanhMuc.aspx"><i class="zmdi zmdi-home"></i> Quản Trị Nhóm Sản Phẩm</a>
+                    </li>
+                    <li class="active">
+                        <a href="../QuanTri/DanhMuc.aspx"><i class="zmdi zmdi-home"></i> Quản Trị Sản Phẩm</a>
                     </li>
                     <li class="active">
                         <a href="../QuanTri/ThongTinChung.aspx"><i class="zmdi zmdi-home"></i> Quản Trị Thông Tin Chung</a>
+                    </li>
+                    <li class="active">
+                        <a href="../QuanTri/LienHe.aspx"><i class="zmdi zmdi-home"></i>Khách Hàng Liên Hệ</a>
                     </li>
                      <li class="active">
                         <a href="#"><i class="zmdi zmdi-home"></i> Quản Trị Tài Khoản</a>
@@ -148,11 +157,11 @@
                 </ul>
             </aside>
             <form runat="server">
-                            <asp:ContentPlaceHolder ID="ContentTrangChu" runat="server">
-                            </asp:ContentPlaceHolder>
+                <asp:ContentPlaceHolder ID="ContentTrangChu" runat="server">
+                </asp:ContentPlaceHolder>
             </form>   
         </section>
-
+        <popup >
         <footer id="footer">
             Bản quyền &copy; 2017 
 

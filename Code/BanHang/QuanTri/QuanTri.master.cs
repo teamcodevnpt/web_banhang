@@ -9,13 +9,13 @@ public partial class QuanTri_QuanTri : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["tennguoidung"] == null || Session["tennguoidung"].ToString() == "")
+        if (Session["HoTen"] == null || Session["HoTen"].ToString() == "")
         {
             Response.Redirect("../QuanTri/DangNhap.aspx");
         }
         else
         {
-            lblTenNguoiDung.Text = Session["tennguoidung"].ToString();
+            lblTenNguoiDung.Text = Session["HoTen"].ToString();
         }
     }
 
