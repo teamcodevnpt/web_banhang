@@ -1,4 +1,9 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="QuanTri.master.cs" Inherits="QuanTri_QuanTri" %>
+
+<%@ Register Src="~/QuanTri/MThongTinTaiKhoan.ascx" TagPrefix="uc1" TagName="MThongTinTaiKhoan" %>
+<%@ Register Src="~/QuanTri/MDoiMatKhau.ascx" TagPrefix="uc1" TagName="MDoiMatKhau" %>
+
+
 <!DOCTYPE html>
 <!--[if IE 9 ]><html class="ie9"><![endif]-->
     <head>
@@ -111,7 +116,6 @@
                     <a href="" data-ma-action="profile-menu-toggle">
                         <div class="sp-pic">
                             <asp:Literal ID="ltrAvatar" runat="server"></asp:Literal>
-                            <%--<img src='../QuanTri/Avatar/636237183342626216.jpg'/>--%>
                         </div>
 
                         <div class="sp-info">
@@ -122,13 +126,13 @@
 
                     <ul class="main-menu">
                         <li>
-                            <a href="ThongTinTaiKhoan.aspx"><i class="zmdi zmdi-account"></i>Thông tin</a>
+                            <a href="#" data-toggle="modal" data-target="#myThongTin"><i class="zmdi zmdi-account"></i>Thông tin</a>
                         </li>
                          <li>
-                            <a href="DoiMatKhau.aspx"><i class="zmdi zmdi-account"></i>Đổi Mật Khẩu</a>
+                            <a href="#" data-toggle="modal" data-target="#myDoiMatKhau" ><i class="zmdi zmdi-account"></i>Đổi Mật Khẩu</a>
                         </li>
                         <li>
-                            <a href=""><i class="zmdi zmdi-settings"></i> Cài đặt</a>
+                            <a href="#"><i class="zmdi zmdi-settings"></i> Cài đặt</a>
                         </li>
                         <li>
                             <a href="DangXuat.aspx"><i class="zmdi zmdi-time-restore"></i> Đăng xuất</a>
@@ -158,11 +162,13 @@
                 </ul>
             </aside>
             <form runat="server">
-                <asp:ContentPlaceHolder ID="ContentTrangChu" runat="server">
+                <uc1:MDoiMatKhau runat="server" ID="MDoiMatKhau" />
+                <uc1:MThongTinTaiKhoan runat="server" ID="MThongTinTaiKhoan" />
+                <asp:ContentPlaceHolder ID="ContentTrangChu" runat="server">  
                 </asp:ContentPlaceHolder>
             </form>   
         </section>
-        <popup >
+        
         <footer id="footer">
             Bản quyền &copy; 2017 
 

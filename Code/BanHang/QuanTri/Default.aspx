@@ -38,23 +38,23 @@
 
                     </div>
                      <div class="row">
-        <div class="col-md-6 col-xs-12">
-    <div class="card">
-                        <div class="card-header">
-                        </div>
-                        <div class="card-body" style="height:1000px">
-                        </div>
-                    </div>  
-        </div>
-         <div class="col-md-6 col-xs-12">
-    <div class="card">
-                        <div class="card-header">
-                        </div>
-                        <div class="card-body" style="height:1000px">
-                        </div>
-                    </div>  
-        </div>
-    </div>    
+                        <div class="col-md-6 col-xs-12">
+                        <div class="card">
+                                            <div class="card-header">
+                                            </div>
+                                            <div class="card-body" style="height:1000px">
+                                            </div>
+                                        </div>  
+                            </div>
+                             <div class="col-md-6 col-xs-12">
+                        <div class="card">
+                                            <div class="card-header">
+                                            </div>
+                                            <div class="card-body" style="height:1000px">
+                                            </div>
+                                        </div>  
+                            </div>
+                        </div>    
                 </div>
             </section>
     
