@@ -44,4 +44,10 @@ public class clsDanhMuc
         Params.Add(new SqlParameter("@MANHOM_SANPHAM", MANHOM_SANPHAM));
         DB.Stored_ExecuteNonQuery("UPDATE_NHOM_SANPHAM", Params);
     }
+    public DataTable select_nhomsp_from_sanpham(String MANHOM_SANPHAM)
+    {
+        List<SqlParameter> Params = new List<SqlParameter>();
+        Params.Add(new SqlParameter("@MANHOM_SANPHAM", MANHOM_SANPHAM));
+       return DB.Stored_ExecuteQuery_Datatable("SELECT_NHOMSP_FROM_SANPHAM", Params);
+    }
 }

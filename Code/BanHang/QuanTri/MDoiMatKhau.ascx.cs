@@ -43,19 +43,20 @@ public partial class QuanTri_MDoiMatKhau : System.Web.UI.UserControl
             Response.Write("<script>alert('Mật khẩu mới và xác nhận mật khẩu không giống nhau')</script>");
             txtPassNew1.Focus();
         }
-        else if (txtPassNew.Text == txtPassOld.Text)
+        else if (myTaiKhoan.MD5(txtPassNew.Text) == myTaiKhoan.MD5(txtPassOld.Text))
         {
             Response.Write("<script>alert('Mật khẩu mới không được giống mật khẩu cũ')</script>");
             txtPassOld.Focus();
         }
-        else if (txtPassOld.Text != txtPass.Text)
+        else if (myTaiKhoan.MD5(txtPassOld.Text) != txtPass.Text)
         {
             Response.Write("<script>alert('Mật khẩu cũ không đúng')</script>");
             txtPassOld.Focus();
         }
         else
         {
-            int count = myTaiKhoan.update_matkhau(txtTaiKhoan.Text, txtPassNew.Text);
+            String passmoi = myTaiKhoan.MD5(txtPassNew.Text);
+            int count = myTaiKhoan.update_matkhau(txtTaiKhoan.Text, passmoi);
             if (count == 1)
             {
                 Response.Write("<script>alert('Đổi Mật Khẩu Thành Công')</script>");

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 using System.Data;
+using Microsoft.ApplicationBlocks.Data;
 /// <summary>
 /// Summary description for clsTaiKhoan
 /// </summary>
@@ -52,6 +53,24 @@ public class clsTaiKhoan
         parameters.Add(new SqlParameter("@avatar", avatar));
         rowEffect = myConn.Stored_ExecuteNonQuery("update_thongtin", parameters);
         return rowEffect;
+    }
+    public int insert_taikhoan(int manhomquyen, int matrangthai, string tennguoidung, string taikhoan, string matkhau, string diachi, string sodt, string email)
+    {
+        SqlParameter[] para = new SqlParameter[9];
+        para[0] = new SqlParameter("@MaNhomQuyen", manhomquyen);
+        para[1] = new SqlParameter("@MaTrangThai", matrangthai);
+        para[2] = new SqlParameter("@TenNguoiDung", tennguoidung);
+        para[3] = new SqlParameter("@TaiKhoan", taikhoan);
+        para[4] = new SqlParameter("@MatKhau", matkhau);
+        para[5] = new SqlParameter("@DiaChi", diachi);
+        para[6] = new SqlParameter("@SDT", sodt);
+        para[7] = new SqlParameter("@Email", email);
+        para[8] = new SqlParameter("@Sluong", SqlDbType.Int);
+        para[8].Direction = ParameterDirection.Output;
+        SqlHelper.ExecuteNonQuery(myConn.SQLConnection, CommandType.StoredProcedure, "insert_taikhoan", para);
+        //myConn.Stored_ExecuteNonQuery("ThemNguoiDung", para);
+        return Convert.ToInt32(para[8].Value);
+
     }
     public byte[] encryptData(string data)
     {

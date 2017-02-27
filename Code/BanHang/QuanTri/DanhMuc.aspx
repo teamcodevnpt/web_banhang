@@ -65,7 +65,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <asp:GridView id="gridNhomSP" runat="server" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" CssClass="table table-bordered" DataSourceID="sourceNhomSP" DataKeyNames="MANHOM_SANPHAM" OnRowUpdating="gridNhomSP_RowUpdating">
+                                <asp:GridView id="gridNhomSP" runat="server" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" CssClass="table table-bordered" DataSourceID="sourceNhomSP" DataKeyNames="MANHOM_SANPHAM" OnRowUpdating="gridNhomSP_RowUpdating" OnRowDeleting="gridNhomSP_RowDeleting">
                                     <Columns>
                                         <asp:BoundField HeaderText="STT" DataField="THUTU" ControlStyle-CssClass="form-control" />
                                         <asp:BoundField HeaderText="Tên nhóm sản phẩm" DataField="TENNHOM_SANPHAM" ControlStyle-CssClass="form-control"/>
@@ -102,18 +102,31 @@
                                         </asp:TemplateField>
                                         <asp:TemplateField HeaderText="Ảnh đại diện">
                                             <ItemStyle HorizontalAlign="Center" />
-                                            <ItemTemplate>
+                                            <ItemTemplate>                                                
                                                 <a href='<%# Eval("AVATAR") %>' target="_blank"><i class="zmdi zmdi-image"></i></a>
                                             </ItemTemplate>
                                             <EditItemTemplate>
+                                                <asp:Literal ID="lblAvatar" runat="server" Text='<%# Eval("AVATAR") %>' Visible="false"></asp:Literal>
                                                <asp:FileUpload ID="FileAnhDD_N" runat="server" />
                                             </EditItemTemplate>
                                         </asp:TemplateField>
                                         
-                                        <asp:CommandField HeaderText="Thao tác" ShowDeleteButton="True" ShowEditButton="True" CancelImageUrl="~/QuanTri/img/icons/Cancel.png" EditImageUrl="~/QuanTri/img/icons/Edit.png" DeleteImageUrl="~/QuanTri/img/icons/Delete.png" UpdateImageUrl="~/QuanTri/img/icons/Save.png" ButtonType="Image">
+                                        <asp:TemplateField HeaderText="Thao tác">
                                             <HeaderStyle HorizontalAlign="Center" />
+                                            <EditItemTemplate>
+                                            <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="True" CommandName="Update" ImageUrl="~/QuanTri/img/icons/Save.png" Text="Update" 
+                                                ValidationGroup="vung2"/>
+                                            &nbsp;<asp:ImageButton ID="ImageButton2" runat="server" CausesValidation="False" CommandName="Cancel" ImageUrl="~/QuanTri/img/icons/Cancel.png" Text="Cancel" 
+                                                ValidationGroup="vung2"/>
+                                        </EditItemTemplate>
+                                        <ItemTemplate>
+                                            <asp:ImageButton ID="ImageButton3" runat="server" CausesValidation="False" CommandName="Edit" ImageUrl="~/QuanTri/img/icons/Edit.png" Text="Edit" />
+                                            &nbsp;<asp:ImageButton ID="ImageButton4" runat="server" CausesValidation="False" CommandName="Delete" ImageUrl="~/QuanTri/img/icons/Delete.png" OnClientClick="return confirm('Bạn có muốn xoá nhóm sản phẩm này?');" 
+                                                Text="Delete" ValidationGroup="vung2"/>
+                                        </ItemTemplate>
                                         <ItemStyle HorizontalAlign="Center" />
-                                        </asp:CommandField>
+                                        <ItemStyle HorizontalAlign="Center" />
+                                        </asp:TemplateField>
                                     </Columns>
                                 </asp:GridView>
                             </div>
@@ -127,7 +140,7 @@
     <asp:SqlDataSource ID="sourceNhomSP" runat="server" ConnectionString="<%$ ConnectionStrings:SQLConnections %>" ProviderName="System.Data.SqlClient"
         SelectCommand="SELECT_NHOM_SANPHAM" SelectCommandType="StoredProcedure"
         DeleteCommand="DELETE FROM NHOM_SANPHAM WHERE MANHOM_SANPHAM=@MANHOM_SANPHAM" DeleteCommandType="Text"
-         UpdateCommand="UPDATE_NHOM_SANPHAM" UpdateCommandType="StoredProcedure" OnUpdating="sourceNhomSP_Updating">
+         UpdateCommand="UPDATE_NHOM_SANPHAM" UpdateCommandType="StoredProcedure" OnUpdating="sourceNhomSP_Updating" OnDeleting="sourceNhomSP_Deleting">
         <DeleteParameters>
             <asp:Parameter Name="MANHOM_SANPHAM" />
         </DeleteParameters>

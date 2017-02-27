@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 
 public partial class QuanTri_DanhMuc : System.Web.UI.Page
 {
@@ -37,6 +38,7 @@ public partial class QuanTri_DanhMuc : System.Web.UI.Page
         }
         DM.insert_NhomSP(txtTenNhom_SP.Text, txtSTT.Text, cmbNhomSPCha.SelectedValue, cmbSlideShow.SelectedValue, "../Images/NhomSP/" +FileName);
         gridNhomSP.DataBind();
+        Response.Redirect("DanhMuc.aspx");
     }
 
 
@@ -52,8 +54,15 @@ public partial class QuanTri_DanhMuc : System.Web.UI.Page
          nhom_sanpham_cha =(gridNhomSP.Rows[e.RowIndex].FindControl("cmbNhomSPCha_N") as DropDownList).SelectedValue.ToString();
          slide_show=(gridNhomSP.Rows[e.RowIndex].FindControl("cmbSlideShow_N") as DropDownList).SelectedValue.ToString();
          ma_trangthai = (gridNhomSP.Rows[e.RowIndex].FindControl("cmbTrangThai_N") as DropDownList).SelectedValue.ToString();
-         avatar="";
-
+        String P = Server.MapPath("~/Images/NhomSP/");
+        String F= (gridNhomSP.Rows[e.RowIndex].FindControl("lblAvatar") as Literal).Text;
+        P += F.Substring(F.LastIndexOf("/"));
+        if (File.Exists(P))
+        {
+            File.Delete(P);
+        }
+        avatar ="";
+        
         FileUpload Anh = gridNhomSP.Rows[e.RowIndex].FindControl("FileAnhDD_N") as FileUpload;
         if (Anh.HasFile)
         {
@@ -75,5 +84,27 @@ public partial class QuanTri_DanhMuc : System.Web.UI.Page
         e.Command.Parameters["@AVATAR"].Value = avatar;
         e.Command.Parameters["@MA_TRANGTHAI"].Value = ma_trangthai;
         //ScriptManager.RegisterClientScriptBlock(this, GetType(), "s", "alert('" + e.Command.Parameters["@MANHOM_SANPHAM"].Value + "');", true);
+    }
+
+    protected void sourceNhomSP_Deleting(object sender, SqlDataSourceCommandEventArgs e)
+    {
+        clsDanhMuc DM = new clsDanhMuc();
+        if (DM.select_nhomsp_from_sanpham(e.Command.Parameters[0].Value.ToString()).Rows.Count > 0)
+        {
+
+        }
+        ScriptManager.RegisterClientScriptBlock(this, GetType(), "DeleteAlert", "alert('Nhóm sản phẩm đã được sử dụng. Không thể xoá!')", true);
+        e.Cancel = true;
+    }
+
+    protected void gridNhomSP_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        //clsDanhMuc DM = new clsDanhMuc();
+        //if (DM.select_nhomsp_from_sanpham(e.Command.Parameters[0].Value.ToString()).Rows.Count > 0)
+        //{
+
+        //}
+        //ScriptManager.RegisterClientScriptBlock(this, GetType(), "DeleteAlert", "alert('Nhóm sản phẩm đã được sử dụng/n Không thể xoá')", true);
+        //e.Cancel = true;
     }
 }
