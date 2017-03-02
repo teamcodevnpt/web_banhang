@@ -24,11 +24,11 @@ public partial class Module_View_MDanhMucNganhHang : System.Web.UI.UserControl
         for (int i=0; i<dt_ds.Rows.Count; i++)
         {
             str += "<div class='col-md-3 col-xs-6'>" +
-                "<div class='media'>" +
-                "<a href='" + ResolveUrl(dt_ds.Rows[i]["URL"].ToString()) +"' class='thumbnail'  style='text-decoration:none;'>" +
-                "<img class='img-responsive' style='height:150px;' src ='" + ResolveUrl(dt_ds.Rows[i]["AVATAR"].ToString()) + "'/>" +
-                "<p style='color: orangered; font-size: medium; margin: 0px; text-align: center'>" + dt_ds.Rows[i]["TENNHOM_SANPHAM"] + "</p>" +
-                "</a></div></div>";
+                    "<div class='media'>" +
+                    "<a href='" + ResolveUrl(dt_ds.Rows[i]["URL"].ToString()) +"' class='thumbnail'  style='text-decoration:none;'>" +
+                    "<img class='img-responsive' style='height:150px;' src ='" + ResolveUrl(dt_ds.Rows[i]["AVATAR"].ToString()) + "'/>" +
+                    "<p style='color: orangered; font-size: medium; margin: 0px; text-align: center'>" + dt_ds.Rows[i]["TENNHOM_SANPHAM"] + "</p>" +
+                    "</a></div></div>";
             ltrDanhSach.Text = str;
 
         }

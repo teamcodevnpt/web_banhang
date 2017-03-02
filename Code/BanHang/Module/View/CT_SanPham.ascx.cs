@@ -26,49 +26,48 @@ public partial class Module_View_CT_SanPham : System.Web.UI.UserControl
         {
             ConnectionDB myconn = new ConnectionDB();
             myconn.Open();
-            DataSet dsCT = new DataSet();
+            DataTable dts = new DataTable();
             List<SqlParameter> para = new List<SqlParameter>();
             para.Add(new SqlParameter("@MA_SAN_PHAM", masanpham));
-            dsCT = myconn.Stored_ExecuteQuery_Dataset("get_SAN_PHAM",para);
-            DataTable dt = new DataTable();
-            dt = dsCT.Tables[0];
-            if (dt.Rows.Count > 0)
+            dts = myconn.Stored_ExecuteQuery_Datatable("get_SAN_PHAM", para);
+            if (dts.Rows.Count> 0)
             {
-                if (dt.Rows[0]["TEN_SANPHAM"] != null)
+                DataRow row = dts.Rows[0];
+                if (row["TEN_SANPHAM"] != null)
                 {
-                    ltrTenSP.Text = "<h4>" + dt.Rows[0]["TEN_SANPHAM"].ToString() + "</h4>";
+                    ltrTenSP.Text = "<h4>" + row["TEN_SANPHAM"].ToString() + "</h4>";
                 }
                 else
                 {
                     ltrTenSP.Text = "";
                 }
-                if (dt.Rows[0]["NOIDUNG"] != null)
+                if (row["NOIDUNG"] != null)
                 {
-                    ltrNoidung.Text = dt.Rows[0]["NOIDUNG"].ToString();
+                    ltrNoidung.Text = row["NOIDUNG"].ToString();
                 }
                 else
                 {
                     ltrNoidung.Text = "";
                 }
-                if (dt.Rows[0]["AVATAR"] != null)
+                if (row["AVATAR"] != null)
                 {
-                    ltrHinhAnh.Text = "<img class='img-responsive' style='height:150px;' src = '" + ResolveUrl(dt.Rows[0]["AVATAR"].ToString()) + "'/>";
+                    ltrHinhAnh.Text = "<img class='img-responsive' style='height:150px;' src = '" + ResolveUrl(row["AVATAR"].ToString()) + "'/>";
                 }
                 else
                 {
                     ltrHinhAnh.Text = "";
                 }
-                if (dt.Rows[0]["GIA"] != null)
+                if (row["GIA"] != null)
                 {
-                    ltrGia.Text = dt.Rows[0]["GIA"].ToString();
+                    ltrGia.Text = row["GIA"].ToString();
                 }
                 else
                 {
                     ltrGia.Text = "Vui lòng liên hệ";
                 }
-                if (dt.Rows[0]["MOTA"] != null)
+                if (row["MOTA"] != null)
                 {
-                    ltrMota.Text = dt.Rows[0]["MOTA"].ToString();
+                    ltrMota.Text = row["MOTA"].ToString();
                 }
                 else
                 {
