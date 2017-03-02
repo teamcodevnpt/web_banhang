@@ -59,26 +59,30 @@ public partial class QuanTri_ChiTiet_SanPham : System.Web.UI.Page
 
     protected void btnThemSP_Click(object sender, EventArgs e)
     {
-        clsSanPham SP = new clsSanPham();
-        String FileName = "";
-        String Patch = Server.MapPath("~/Images/SanPham/");
-        //try
-        //{
-            if (FileAnhDD.HasFile)
-            {
-                FileName = DateTime.Now.Ticks + FileAnhDD.FileName.Substring(FileAnhDD.FileName.LastIndexOf("."));
-                FileAnhDD.SaveAs(Patch + FileName);
-            }
-            if (SP.insert_sanpham(Convert.ToInt32(cmbNhomSP.SelectedValue.ToString()), Convert.ToInt32( cmbTrangThai.SelectedValue.ToString()), txtTenSanPham.Text, txtMoTa.Text,Convert.ToInt32(txtThuTu.Text), ckNoiDung.Text,Convert.ToInt32( cmbSlideShow.SelectedValue.ToString()),Convert.ToDecimal( txtGia.Text.ToString()), "~/Images/SanPham/" + FileName, 
-               Convert.ToInt32( cmbUuTien.SelectedValue.ToString()),Convert.ToDecimal( txtGiaKhuyenMai.Text)) > 0)
-            {
-                Response.Redirect("ChiTiet_SanPham.aspx");
-            }
-        //}
-        //catch(Exception)
-        //{
+        if (txtTenSanPham.Text == "" || txtThuTu.Text == "" || txtGia.Text == "") {
+            ScriptManager.RegisterClientScriptBlock(this, GetType(), "ThieuThongTin", "alert('Vui lòng nhập đủ thông tin');", true);
+        }else {
+            clsSanPham SP = new clsSanPham();
+            String FileName = "";
+            String Patch = Server.MapPath("~/Images/SanPham/");
+            //try
+            //{
+                if (FileAnhDD.HasFile)
+                {
+                    FileName = DateTime.Now.Ticks + FileAnhDD.FileName.Substring(FileAnhDD.FileName.LastIndexOf("."));
+                    FileAnhDD.SaveAs(Patch + FileName);
+                }
+                if (SP.insert_sanpham(cmbNhomSP.SelectedValue.ToString(),  cmbTrangThai.SelectedValue.ToString(), txtTenSanPham.Text, txtMoTa.Text,txtThuTu.Text, ckNoiDung.Text, cmbSlideShow.SelectedValue.ToString(),txtGia.Text.ToString(), "~/Images/SanPham/" + FileName, 
+                    cmbUuTien.SelectedValue.ToString(),txtGiaKhuyenMai.Text) > 0)
+                {
+                    Response.Redirect("ChiTiet_SanPham.aspx");
+                }
+                //}
+                //catch(Exception)
+                //{
 
-        //}
+                //}
+        }
     }
 
     protected void btnCapNhatSP_Click(object sender, EventArgs e)

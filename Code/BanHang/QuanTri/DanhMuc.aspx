@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="col-md-2 col-xs-2">
                                     <label>Ảnh đại diện</label>
-                                    <asp:FileUpload ID="FileAnhDD" runat="server" />
+                                    <asp:FileUpload ID="FileAnhDD" runat="server" accept="image/*"/>
                                 </div>
                                 <div class="col-md-2 col-xs-2">
                                     <asp:Button ID="btnThemNhomSP" runat="server" CssClass="btn btn-default bgm-lightgreen form-control" Text="Thêm" OnClick="btnThemNhomSP_Click1"/>
@@ -142,7 +142,7 @@
     </div>    
 </section>
     <asp:SqlDataSource ID="sourceNhomSPCha" runat="server" ConnectionString="<%$ ConnectionStrings:SQLConnections %>" ProviderName="System.Data.SqlClient"
-         SelectCommand="SELECT NULL AS MANHOM_SANPHAM,NULL AS TENNHOM_SANPHAM UNION SELECT MANHOM_SANPHAM,TENNHOM_SANPHAM FROM NHOM_SANPHAM"></asp:SqlDataSource>
+         SelectCommand="SELECT 0 AS MANHOM_SANPHAM,NULL AS TENNHOM_SANPHAM UNION SELECT MANHOM_SANPHAM,TENNHOM_SANPHAM FROM NHOM_SANPHAM"></asp:SqlDataSource>
     <asp:SqlDataSource ID="sourceNhomSP" runat="server" ConnectionString="<%$ ConnectionStrings:SQLConnections %>" ProviderName="System.Data.SqlClient"
         SelectCommand="SELECT_NHOM_SANPHAM" SelectCommandType="StoredProcedure"
         DeleteCommand="DELETE FROM NHOM_SANPHAM WHERE MANHOM_SANPHAM=@MANHOM_SANPHAM" DeleteCommandType="Text"

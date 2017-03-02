@@ -68,7 +68,6 @@ public class clsTaiKhoan
         para[8] = new SqlParameter("@Sluong", SqlDbType.Int);
         para[8].Direction = ParameterDirection.Output;
         SqlHelper.ExecuteNonQuery(myConn.SQLConnection, CommandType.StoredProcedure, "insert_taikhoan", para);
-        //myConn.Stored_ExecuteNonQuery("ThemNguoiDung", para);
         return Convert.ToInt32(para[8].Value);
 
     }

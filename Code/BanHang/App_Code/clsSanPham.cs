@@ -17,7 +17,7 @@ public class clsSanPham
         //
     }
     ConnectionDB DB = new ConnectionDB();
-    public int insert_sanpham(Int32 manhom_sanpham ,Int32 ma_trangthai,string ten_sanpham,string mota,Int32 thutu,string noidung,Int32 slide_show,decimal gia,string avarta,Int32 uu_tien,decimal gia_khuyenmai)
+    public int insert_sanpham(string manhom_sanpham , string ma_trangthai,string ten_sanpham,string mota, string thutu,string noidung, string slide_show, string gia,string avarta, string uu_tien, string gia_khuyenmai)
     {
         List<SqlParameter> Params = new List<SqlParameter>();
         Params.Add(new SqlParameter("@MANHOM_SANPHAM", manhom_sanpham));
@@ -30,7 +30,14 @@ public class clsSanPham
         Params.Add(new SqlParameter("@GIA", gia));
         Params.Add(new SqlParameter("@AVATAR", avarta));
         Params.Add(new SqlParameter("@UU_TIEN", uu_tien));
-        Params.Add(new SqlParameter("@GIA_KHUYENMAI",gia_khuyenmai));
+        if (gia_khuyenmai == "")
+        {
+            Params.Add(new SqlParameter("@GIA_KHUYENMAI",0));
+        }
+        else
+        {
+            Params.Add(new SqlParameter("@GIA_KHUYENMAI", gia_khuyenmai));
+        }
         return DB.Stored_ExecuteNonQuery("INSERT_SANPHAM", Params);
     }
     public int update_sanpham(string manhom_sanpham, string ma_trangthai, string ten_sanpham, string mota, string thutu, string noidung, string slide_show, string gia, string avarta, string uu_tien, string gia_khuyenmai,string ma_sanpham)
@@ -43,10 +50,16 @@ public class clsSanPham
         Params.Add(new SqlParameter("@THUTU", thutu));
         Params.Add(new SqlParameter("@NOIDUNG", noidung));
         Params.Add(new SqlParameter("@SLIDE_SHOW", slide_show));
-        Params.Add(new SqlParameter("@GIA", gia));
+        Params.Add(new SqlParameter("@GIA",gia));
         Params.Add(new SqlParameter("@AVATAR", avarta));
         Params.Add(new SqlParameter("@UU_TIEN", uu_tien));
-        Params.Add(new SqlParameter("@GIA_KHUYENMAI", gia_khuyenmai));
+        if (gia_khuyenmai == "") {
+            Params.Add(new SqlParameter("@GIA_KHUYENMAI",(Decimal)(0)));
+        }
+        else
+        {
+            Params.Add(new SqlParameter("@GIA_KHUYENMAI", gia_khuyenmai));
+        }
         Params.Add(new SqlParameter("@MA_SANPHAM", ma_sanpham));
         return DB.Stored_ExecuteNonQuery("UPDATE_SANPHAM", Params);
     }

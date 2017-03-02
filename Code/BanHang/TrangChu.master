@@ -56,6 +56,14 @@
     <uc1:MBanner runat="server" ID="MBanner" />
     <div class="container" style="width: 97%">
         <div class="row">
+            <div class="col-md-4 col-xs-12">
+                <asp:Literal ID="ltrLogo" runat="server"></asp:Literal>
+            </div>
+            <div class="col-md-8 col-xs-12">
+                <asp:Literal ID="ltr_AnhBanner" runat="server"></asp:Literal>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-12" style="padding: 0px;">
                 <uc1:MMenuNgang runat="server" ID="MMenuNgang" />
             </div>

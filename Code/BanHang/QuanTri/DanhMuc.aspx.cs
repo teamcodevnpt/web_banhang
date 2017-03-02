@@ -28,17 +28,24 @@ public partial class QuanTri_DanhMuc : System.Web.UI.Page
     }
     protected void btnThemNhomSP_Click1(object sender, EventArgs e)
     {
-        String FileName="";
+        String FileName = "";
         String Patch = Server.MapPath("~/Images/NhomSP/");
         clsDanhMuc DM = new clsDanhMuc();
-        if (FileAnhDD.HasFile)
+        if (FileAnhDD.HasFile && FileAnhDD.FileName.Substring(FileAnhDD.FileName.LastIndexOf(".")) != ".jpg" && FileAnhDD.FileName.Substring(FileAnhDD.FileName.LastIndexOf(".")) != ".png")
         {
-            FileName = DateTime.Now.Ticks + FileAnhDD.FileName.Substring(FileAnhDD.FileName.LastIndexOf("."));
-            FileAnhDD.SaveAs(Patch + FileName);
+            ScriptManager.RegisterClientScriptBlock(this, GetType(), "SaiAnh", "alert('Vui lòng chọn định dạng ảnh là .jpg hoặc .png')",true);
         }
-        DM.insert_NhomSP(txtTenNhom_SP.Text, txtSTT.Text, cmbNhomSPCha.SelectedValue, cmbSlideShow.SelectedValue, "../Images/NhomSP/" +FileName);
-        gridNhomSP.DataBind();
-        Response.Redirect("DanhMuc.aspx");
+        else
+        {
+            if (FileAnhDD.HasFile)
+            {
+                FileName = DateTime.Now.Ticks + FileAnhDD.FileName.Substring(FileAnhDD.FileName.LastIndexOf("."));
+                FileAnhDD.SaveAs(Patch + FileName);
+            }
+            DM.insert_NhomSP(txtTenNhom_SP.Text, txtSTT.Text, cmbNhomSPCha.SelectedValue, cmbSlideShow.SelectedValue, "~/Images/NhomSP/" + FileName);
+            gridNhomSP.DataBind();
+            Response.Redirect("DanhMuc.aspx");
+        }
     }
 
 
@@ -48,10 +55,7 @@ public partial class QuanTri_DanhMuc : System.Web.UI.Page
         
         String Patch = Server.MapPath("~/Images/NhomSP/");
         clsDanhMuc DM = new clsDanhMuc();
-         //ThuTu=(gridNhomSP.Rows[e.RowIndex].FindControl("STT") as TextBox).Text;
-         //manhom_sanpham = (gridNhomSP.Rows[e.RowIndex].FindControl("MANHOM_SANPHAM") as TextBox).Text;
-         //tennhom_sanpham = (gridNhomSP.Rows[e.RowIndex].FindControl("TENNHOM_SANPHAM") as TextBox).Text;
-         nhom_sanpham_cha =(gridNhomSP.Rows[e.RowIndex].FindControl("cmbNhomSPCha_N") as DropDownList).SelectedValue.ToString();
+        nhom_sanpham_cha =(gridNhomSP.Rows[e.RowIndex].FindControl("cmbNhomSPCha_N") as DropDownList).SelectedValue.ToString();
          slide_show=(gridNhomSP.Rows[e.RowIndex].FindControl("cmbSlideShow_N") as DropDownList).SelectedValue.ToString();
          ma_trangthai = (gridNhomSP.Rows[e.RowIndex].FindControl("cmbTrangThai_N") as DropDownList).SelectedValue.ToString();
          if ((gridNhomSP.Rows[e.RowIndex].FindControl("lblAvatar") as Literal).Text != "")
@@ -79,9 +83,6 @@ public partial class QuanTri_DanhMuc : System.Web.UI.Page
 
     protected void sourceNhomSP_Updating(object sender, SqlDataSourceCommandEventArgs e)
     {
-        //e.Command.Parameters["@MA_TRANGTHAI"].Value = ma_trangthai;
-        //e.Command.Parameters["@TENNHOM_SANPHAM"].Value = tennhom_sanpham;
-        //e.Command.Parameters["@THUTU"].Value = ThuTu;
         e.Command.Parameters["@MANHOM_CHA"].Value = nhom_sanpham_cha;
         e.Command.Parameters["@SLIDE_SHOW"].Value = slide_show ;
         e.Command.Parameters["@AVATAR"].Value = avatar;
@@ -96,7 +97,10 @@ public partial class QuanTri_DanhMuc : System.Web.UI.Page
         {
 
         }
-        ScriptManager.RegisterClientScriptBlock(this, GetType(), "DeleteAlert", "alert('Nhóm sản phẩm đã được sử dụng. Không thể xoá!')", true);
+        else
+        {
+            ScriptManager.RegisterClientScriptBlock(this, GetType(), "DeleteAlert", "alert('Nhóm sản phẩm đã được sử dụng. Không thể xoá!')", true);
+        }
         e.Cancel = true;
     }
 
@@ -114,20 +118,19 @@ public partial class QuanTri_DanhMuc : System.Web.UI.Page
     {
         if (e.Row.RowType == DataControlRowType.DataRow && gridNhomSP.EditIndex == e.Row.RowIndex)
         {
-            DropDownList ddlCountries = (e.Row.FindControl("cmbNhomSPCha_N") as DropDownList);
-            if (ddlCountries.Items.Count >0)
+            DropDownList ddlNhomSP = (e.Row.FindControl("cmbNhomSPCha_N") as DropDownList);
+            if (ddlNhomSP.Items.Count > 0)
             {
                 string NhomSPCha = (e.Row.FindControl("lblNhomSPCha_N") as Label).Text;
-                //
-                //    ddlCountries.Items.FindByValue(NhomSPCha).Selected = true;
+                ddlNhomSP.Items.FindByValue(NhomSPCha).Selected = true;
+                ////}
+                //if (NhomSPCha.ToString().Trim() != "")
+                //{
+                //    ddlNhomSP.SelectedItem.Text = NhomSPCha;
                 //}
-                if (NhomSPCha.ToString ().Trim() != "") 
-                {
-                ddlCountries.SelectedItem.Text = NhomSPCha;
-                }
-                
+
             }
-            
+
         }
 
     }
