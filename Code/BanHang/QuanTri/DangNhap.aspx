@@ -70,6 +70,7 @@
                 <div class="row">
                     <input type="password" class="form-control" id="inputMatKhau" runat="server" placeholder="Mật Khẩu" required=""/>
                 </div>
+                 <asp:TextBox ID="txtSolanSai" runat="server" Text="0" CssClass="form-control" Visible="false"></asp:TextBox>
                 <div id="remember">
                     <label class="checkbox">
                         <input type="checkbox" value="remember-me" /> Ghi Nhớ Mật Khẩu
@@ -80,7 +81,7 @@
                         <input type="text" id="txtCaptcha" runat="server" class="form-control" placeholder="Captcha"/>
                     </div>
                     <div class ="col-md-6 col-xs-12">
-                         <img id="imgCaptcha" src="Captcha.aspx" alt="Captcha image" runat="server" style="width:100%;height:100%"/>
+                         <img id="imgCaptcha" src="Captcha.aspx" alt="Captcha image" runat="server" style="width:100%"/>
                     </div>
                 </div>
                 <asp:Button ID="btnDangNhap" class="btn btn-lg btn-primary btn-block btn-signin" runat="server" Text="Đăng Nhập" OnClick="btnDangNhap_Click"/>        
