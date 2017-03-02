@@ -7,6 +7,3 @@
 </div>
     </div>
 </div>
-<%--<div class="list-group">
-    <asp:Literal ID="ltrDanhMuc" runat="server"></asp:Literal>
-</div>--%>

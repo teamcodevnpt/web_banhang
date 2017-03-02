@@ -7,29 +7,29 @@
                         <h2>Thông tin sản phẩm</h2>
                         <ul class="actions">
                             <li>
-                                <a href="">
+                                <a href="#">
                                     <i class="zmdi zmdi-trending-up"></i>
                                 </a>
                             </li>
                             <li>    
-                                <a href="">     
+                                <a href="#">     
                                     <i class="zmdi zmdi-check-all"></i>
                                 </a>
                             </li>
                             <li class="dropdown">
-                                <a href="" data-toggle="dropdown">
+                                <a href="#" data-toggle="dropdown">
                                     <i class="zmdi zmdi-more-vert"></i>
                                 </a>
 
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     <li>
-                                        <a href="">Refresh</a>
+                                        <a href="#">Refresh</a>
                                     </li>
                                     <li>
-                                        <a href="">Manage Widgets</a>
+                                        <a href="#">Manage Widgets</a>
                                     </li>
                                     <li>
-                                        <a href="">Widgets Settings</a>
+                                        <a href="#">Widgets Settings</a>
                                     </li>
                                 </ul>
                             </li>
@@ -85,39 +85,39 @@
                                         </asp:DropDownList>
                                     </div>
                                 </div>
-                                     <div class="row">
-                                    <div class="col-md-4 col-xs-12">
-                                        <div class="form-group">   
-                                            <label>Giá sản phẩm<span style="color:red">&nbsp*</span></label>
-                                            <asp:TextBox ID="txtGia" runat="server" Width="100%" Type="number" MaxLength="12"></asp:TextBox>
-                                         </div>
-                                    </div>
-                                    <div class="col-md-4 col-xs-12">
-                                        <div class="form-group">   
-                                            <label>Giá khuyến mãi</label>
-                                            <asp:TextBox ID="txtGiaKhuyenMai" runat="server" Width="100%" Type="number">
-                                            </asp:TextBox>
-                                         </div>
-                                    </div>
-                                         <div class="col-md-4 col-xs-12">
-                                             <div class="form-group">   
-                                                 <label>Ảnh sản phẩm</label>
-                                                 <asp:FileUpload ID="FileAnhDD" runat="server" accept="image/*"/>
-                                              </div>
-                                         </div>
-                                </div>
+                                    <div class="row">
+                                        <div class="col-md-4 col-xs-12">
+                                            <div class="form-group">   
+                                                <label>Giá sản phẩm<span style="color:red">&nbsp*</span></label>
+                                                <asp:TextBox ID="txtGia" runat="server" Width="100%" Type="number" MaxLength="12"></asp:TextBox>
+                                             </div>
                                         </div>
-                                    <div class="col-md-3 col-xs-3">
-                                                  <asp:Image ID="imgSanPham" runat="server" Width="100%" Height="165px" />
-                                                 <div class="form-group">
-                                                 <asp:Button ID="btnThemSP" runat="server" CssClass="btn btn-default bgm-lightgreen form-control" Text="Thêm sản phẩm" OnClick="btnThemSP_Click"/>
-                                                 <asp:Button ID="btnCapNhatSP" runat="server" CssClass="btn btn-default bgm-lightgreen form-control" Text="Cập nhật" OnClick="btnCapNhatSP_Click1"/>
-                                         </div>
+                                        <div class="col-md-4 col-xs-12">
+                                            <div class="form-group">   
+                                                <label>Giá khuyến mãi</label>
+                                                <asp:TextBox ID="txtGiaKhuyenMai" runat="server" Width="100%" Type="number">
+                                                </asp:TextBox>
+                                             </div>
+                                        </div>
+                                        <div class="col-md-4 col-xs-12">
+                                            <div class="form-group">   
+                                                <label>Ảnh sản phẩm</label>
+                                                <asp:FileUpload ID="FileAnhDD" runat="server" accept="image/*"/>
+                                            </div>
+                                        </div>
                                     </div>
-                                  </div>
+                                </div>
+                                    <div class="col-md-3 col-xs-3">
+                                        <asp:Image ID="imgSanPham" runat="server" Width="100%" Height="165px" />
+                                        <div class="form-group">
+                                        <asp:Button ID="btnThemSP" runat="server" CssClass="btn btn-default bgm-lightgreen form-control" Text="Thêm sản phẩm" OnClick="btnThemSP_Click"/>
+                                        <asp:Button ID="btnCapNhatSP" runat="server" CssClass="btn btn-default bgm-lightgreen form-control" Text="Cập nhật" OnClick="btnCapNhatSP_Click"/>
+                                    </div>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="col-md-12 col-xs-12">
-                                            <label for="">Mô tả sản phẩm:</label><asp:TextBox ID="txtMoTa" runat="server" TextMode="MultiLine" Height="100px" Width="100%"/>
+                                        <label for="">Mô tả sản phẩm:</label><asp:TextBox ID="txtMoTa" runat="server" TextMode="MultiLine" Height="100px" Width="100%"/>
                                     </div>
                                 </div>
                                 <div class="row">

@@ -6,29 +6,29 @@
                         <h2>Danh sách sản phẩm</h2>
                         <ul class="actions">
                             <li>
-                                <a href="">
+                                <a href="#">
                                     <i class="zmdi zmdi-trending-up"></i>
                                 </a>
                             </li>
                             <li>    
-                                <a href="">     
+                                <a href="#">     
                                     <i class="zmdi zmdi-check-all"></i>
                                 </a>
                             </li>
                             <li class="dropdown">
-                                <a href="" data-toggle="dropdown">
+                                <a href="#" data-toggle="dropdown">
                                     <i class="zmdi zmdi-more-vert"></i>
                                 </a>
 
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     <li>
-                                        <a href="">Refresh</a>
+                                        <a href="#">Refresh</a>
                                     </li>
                                     <li>
-                                        <a href="">Manage Widgets</a>
+                                        <a href="#">Manage Widgets</a>
                                     </li>
                                     <li>
-                                        <a href="">Widgets Settings</a>
+                                        <a href="#">Widgets Settings</a>
                                     </li>
                                 </ul>
                             </li>
