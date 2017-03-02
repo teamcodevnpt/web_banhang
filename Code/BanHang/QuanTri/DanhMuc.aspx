@@ -41,23 +41,28 @@
                         <div class="card-body danhmuc-body">
                             <div class="row">
                                 <div class="col-md-1 col-xs-1">
-                                    <asp:TextBox ID="txtSTT" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <label>Số thứ tự</label>
+                                    <asp:TextBox ID="txtSTT" runat="server" Width="100%"></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="txtSTT_N" runat="server" ControlToValidate="txtSTT" ErrorMessage="Chỉ được nhập số" ForeColor="Red" ValidationExpression="\d+"></asp:RegularExpressionValidator>
                                 </div>
                                 <div class="col-md-3 col-xs-3">
-                                    <asp:TextBox ID="txtTenNhom_SP" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <label>Tên nhóm sản phẩm</label>
+                                    <asp:TextBox ID="txtTenNhom_SP" runat="server" Width="100%"></asp:TextBox>
                                 </div>
                                 <div class="col-md-2 col-xs-2">
-                                    <asp:DropDownList ID="cmbNhomSPCha" runat="server" CssClass="form-control" DataSourceID="sourceNhomSPCha" DataTextField="TENNHOM_SANPHAM" DataValueField="MANHOM_SANPHAM">
+                                    <label>Nhóm sản phẩm cha</label>
+                                    <asp:DropDownList ID="cmbNhomSPCha" runat="server" Width="100%" DataSourceID="sourceNhomSPCha" DataTextField="TENNHOM_SANPHAM" DataValueField="MANHOM_SANPHAM">
                                     </asp:DropDownList>
                                 </div>
                                 <div class="col-md-2 col-xs-2">
-                                <asp:DropDownList ID="cmbSlideShow" runat="server" CssClass="form-control">
+                                    <label>Hiển thị slide show</label>
+                                <asp:DropDownList ID="cmbSlideShow" runat="server" Width="100%" >
                                     <asp:ListItem Value="1" Text="Hiển thị Slide Show"></asp:ListItem>
                                     <asp:ListItem Value="0" Text="Không hiển thị Slide Show"></asp:ListItem>
                                 </asp:DropDownList>
                                 </div>
                                 <div class="col-md-2 col-xs-2">
+                                    <label>Ảnh đại diện</label>
                                     <asp:FileUpload ID="FileAnhDD" runat="server" />
                                 </div>
                                 <div class="col-md-2 col-xs-2">
@@ -65,7 +70,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <asp:GridView id="gridNhomSP" runat="server" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" CssClass="table table-bordered" DataSourceID="sourceNhomSP" DataKeyNames="MANHOM_SANPHAM" OnRowUpdating="gridNhomSP_RowUpdating" OnRowDeleting="gridNhomSP_RowDeleting">
+                                <asp:GridView id="gridNhomSP" runat="server" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" CssClass="table table-bordered" DataSourceID="sourceNhomSP" DataKeyNames="MANHOM_SANPHAM" OnRowUpdating="gridNhomSP_RowUpdating" OnRowDeleting="gridNhomSP_RowDeleting" OnRowDataBound="gridNhomSP_RowDataBound">
                                     <Columns>
                                         <asp:BoundField HeaderText="STT" DataField="THUTU" ControlStyle-CssClass="form-control" />
                                         <asp:BoundField HeaderText="Tên nhóm sản phẩm" DataField="TENNHOM_SANPHAM" ControlStyle-CssClass="form-control"/>
@@ -74,6 +79,7 @@
                                                 <asp:Label ID="lblTenNhomSP" runat="server" Text='<%# Bind("TENNHOM_SANPHAM_CHA") %>'></asp:Label>
                                             </ItemTemplate>
                                             <EditItemTemplate>
+                                                <asp:Label id="lblNhomSPCha_N" runat="server" Text='<%# Bind("MANHOM_CHA") %>' Visible="false"></asp:Label>
                                                 <asp:DropDownList ID="cmbNhomSPCha_N" runat="server" CssClass="form-control" DataSourceID="sourceNhomSPCha" DataTextField="TENNHOM_SANPHAM" DataValueField="MANHOM_SANPHAM">
                                                 </asp:DropDownList>
                                             </EditItemTemplate>

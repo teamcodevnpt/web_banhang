@@ -1,8 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" MasterPageFile="~/TrangChu.master" %>
 
-<%--<%@ Register Src="~/Module/View/MListSanPham.ascx" TagPrefix="uc1" TagName="MListSanPham" %>--%>
 <%@ Register Src="~/Module/View/MDanhMucNganhHang.ascx" TagPrefix="uc1" TagName="MDanhMucNganhHang" %>
-<%@ Register Src="~/Module/Master/MBanner.ascx" TagPrefix="uc1" TagName="MBanner" %>
 <%@ Register Src="~/Module/Master/MMenuPhai.ascx" TagPrefix="uc1" TagName="MMenuPhai" %>
 <%@ Register Src="~/Module/Master/MFooter.ascx" TagPrefix="uc1" TagName="MFooter" %>
 <%@ Register Src="~/Module/View/MListSanPham.ascx" TagPrefix="uc1" TagName="MListSanPham" %>

@@ -52,7 +52,7 @@
                     <asp:BoundField  DataField="NGAY_DANG" HeaderText="Ngày đăng"/>
                     <asp:TemplateField HeaderText="Thao tác">
                         <ItemTemplate>
-                            <a target="_blank" href='ChiTiet_SanPham.aspx?id=<%# Eval("MA_SANPHAM") %>'><img src="img/icons/detail.png"/></a>
+                            <a style="margin-top:-5px" target="_blank" href='ChiTiet_SanPham.aspx?id=<%# Eval("MA_SANPHAM") %>'><img src="img/icons/detail.png"/></a>
                             &nbsp<asp:ImageButton ID="ImageButton4" runat="server" CausesValidation="False" CommandName="Delete" ImageUrl="~/QuanTri/img/icons/Delete.png" OnClientClick="return confirm('Bạn có muốn xoá sản phẩm này?');" 
                                   Text="Delete" ValidationGroup="vung2"/>
                         </ItemTemplate>

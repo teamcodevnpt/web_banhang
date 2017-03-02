@@ -75,7 +75,7 @@
                         <input type="checkbox" value="remember-me" /> Ghi Nhớ Mật Khẩu
                     </label>
                 </div>
-                <div class="row">
+                <div class="row" id="divCaptcha" runat="server">
                     <div class ="col-md-6 col-xs-12">
                         <input type="text" id="txtCaptcha" runat="server" class="form-control" placeholder="Captcha"/>
                     </div>

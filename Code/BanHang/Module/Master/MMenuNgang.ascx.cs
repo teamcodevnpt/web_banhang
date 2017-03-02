@@ -26,7 +26,7 @@ public partial class Module_Master_MMenuNgang : System.Web.UI.UserControl
         dt_menu = ds_menu.Tables[0];
         for (int i=0; i<dt_menu.Rows.Count; i++)
         {
-            str += "<li><a href='" + ResolveUrl(dt_menu.Rows[i]["URL"].ToString ()) +"'>" + dt_menu.Rows[i]["TEN_SANPHAM"] +"</a></li>";
+            str += "<li><a href='" + ResolveUrl(dt_menu.Rows[i]["URL"].ToString ()) +"'>" + dt_menu.Rows[i]["TEN_MENU"] +"</a></li>";
         }
         ltrMenu.Text = str;
 

@@ -17,7 +17,7 @@ public class clsSanPham
         //
     }
     ConnectionDB DB = new ConnectionDB();
-    public int insert_sanpham(string manhom_sanpham,string ma_trangthai,string ten_sanpham,string mota,string thutu,string noidung,string slide_show,string gia,string avarta,string uu_tien,string gia_khuyenmai)
+    public int insert_sanpham(Int32 manhom_sanpham ,Int32 ma_trangthai,string ten_sanpham,string mota,Int32 thutu,string noidung,Int32 slide_show,decimal gia,string avarta,Int32 uu_tien,decimal gia_khuyenmai)
     {
         List<SqlParameter> Params = new List<SqlParameter>();
         Params.Add(new SqlParameter("@MANHOM_SANPHAM", manhom_sanpham));

@@ -62,22 +62,23 @@ public partial class QuanTri_ChiTiet_SanPham : System.Web.UI.Page
         clsSanPham SP = new clsSanPham();
         String FileName = "";
         String Patch = Server.MapPath("~/Images/SanPham/");
-        try
-        {
+        //try
+        //{
             if (FileAnhDD.HasFile)
             {
                 FileName = DateTime.Now.Ticks + FileAnhDD.FileName.Substring(FileAnhDD.FileName.LastIndexOf("."));
                 FileAnhDD.SaveAs(Patch + FileName);
             }
-            if (SP.insert_sanpham(cmbNhomSP.SelectedValue, cmbTrangThai.SelectedValue, txtTenSanPham.Text, txtMoTa.Text, txtThuTu.Text, ckNoiDung.Text, cmbSlideShow.SelectedValue, txtGia.Text, "../Images/SanPham/" + FileName, cmbUuTien.SelectedValue, txtGiaKhuyenMai.Text) > 0)
+            if (SP.insert_sanpham(Convert.ToInt32(cmbNhomSP.SelectedValue.ToString()), Convert.ToInt32( cmbTrangThai.SelectedValue.ToString()), txtTenSanPham.Text, txtMoTa.Text,Convert.ToInt32(txtThuTu.Text), ckNoiDung.Text,Convert.ToInt32( cmbSlideShow.SelectedValue.ToString()),Convert.ToDecimal( txtGia.Text.ToString()), "~/Images/SanPham/" + FileName, 
+               Convert.ToInt32( cmbUuTien.SelectedValue.ToString()),Convert.ToDecimal( txtGiaKhuyenMai.Text)) > 0)
             {
                 Response.Redirect("ChiTiet_SanPham.aspx");
             }
-        }
-        catch(Exception)
-        {
+        //}
+        //catch(Exception)
+        //{
 
-        }
+        //}
     }
 
     protected void btnCapNhatSP_Click(object sender, EventArgs e)
@@ -92,17 +93,20 @@ public partial class QuanTri_ChiTiet_SanPham : System.Web.UI.Page
         clsSanPham SP = new clsSanPham();
         String FileName = "";
         String Patch = Server.MapPath("~/Images/SanPham/");
-        String P = Server.MapPath("~/Images/SanPham/");
-        String F = imgSanPham.ImageUrl;
-        P += F.Substring(F.LastIndexOf("/"));
-        if (File.Exists(P))
+        if (imgSanPham.ImageUrl != null && imgSanPham.ImageUrl != "")
         {
-            File.Delete(P);
-        }
-        if (FileAnhDD.HasFile)
-        {
-            FileName = DateTime.Now.Ticks + FileAnhDD.FileName.Substring(FileAnhDD.FileName.LastIndexOf("."));
-            FileAnhDD.SaveAs(Patch + FileName);
+            String P = Server.MapPath("~/Images/SanPham/");
+            String F = imgSanPham.ImageUrl;
+            P += F.Substring(F.LastIndexOf("/"));
+            if (File.Exists(P))
+            {
+                File.Delete(P);
+            }
+            if (FileAnhDD.HasFile)
+            {
+                FileName = DateTime.Now.Ticks + FileAnhDD.FileName.Substring(FileAnhDD.FileName.LastIndexOf("."));
+                FileAnhDD.SaveAs(Patch + FileName);
+            }
         }
         if (SP.update_sanpham(cmbNhomSP.SelectedValue, cmbTrangThai.SelectedValue, txtTenSanPham.Text, txtMoTa.Text, txtThuTu.Text, ckNoiDung.Text, cmbSlideShow.SelectedValue, txtGia.Text, "../Images/SanPham/" + FileName, cmbUuTien.SelectedValue, txtGiaKhuyenMai.Text, Request.QueryString["id"].ToString()) > 0)
         {

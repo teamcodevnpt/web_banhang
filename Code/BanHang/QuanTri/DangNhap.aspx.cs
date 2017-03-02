@@ -12,6 +12,7 @@ public partial class QuanTri_DangNhap : System.Web.UI.Page
     clsTaiKhoan myTaiKhoan = new clsTaiKhoan();
     protected void Page_Load(object sender, EventArgs e)
     {
+        //divCaptcha.Attributes.Add("style","display:none");
     }
     protected void btnDangNhap_Click(object sender, EventArgs e)
     {

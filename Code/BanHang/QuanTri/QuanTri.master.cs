@@ -16,7 +16,7 @@ public partial class QuanTri_QuanTri : System.Web.UI.MasterPage
         else
         {
             lblTenNguoiDung.Text = Session["HoTen"].ToString();
-            ltrAvatar.Text = "<img src='" + Session["Avatar"].ToString() +"'/>";
+            ltrAvatar.Text = "<img src='" + Session["Avatar"].ToString() + "'/>";
         }
     }
 

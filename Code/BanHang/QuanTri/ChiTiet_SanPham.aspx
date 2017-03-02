@@ -80,8 +80,8 @@
                                     <div class="col-md-4 col-xs-12">
                                          <label>Trạng thái<span style="color:red">&nbsp*</span></label>
                                         <asp:DropDownList ID="cmbTrangThai" runat="server" Width="100%">
-                                            <asp:ListItem Value="0" Text="Hoạt động"></asp:ListItem>
-                                            <asp:ListItem Value="1" Text="Không hoạt động"></asp:ListItem>
+                                            <asp:ListItem Value="1" Text="Hoạt động"></asp:ListItem>
+                                            <asp:ListItem Value="0" Text="Không hoạt động"></asp:ListItem>
                                         </asp:DropDownList>
                                     </div>
                                 </div>
@@ -95,7 +95,7 @@
                                     <div class="col-md-4 col-xs-12">
                                         <div class="form-group">   
                                             <label>Giá khuyến mãi</label>
-                                            <asp:TextBox ID="txtGiaKhuyenMai" runat="server" Width="100%">
+                                            <asp:TextBox ID="txtGiaKhuyenMai" runat="server" Width="100%" Type="number">
                                             </asp:TextBox>
                                          </div>
                                     </div>

@@ -54,13 +54,16 @@ public partial class QuanTri_DanhMuc : System.Web.UI.Page
          nhom_sanpham_cha =(gridNhomSP.Rows[e.RowIndex].FindControl("cmbNhomSPCha_N") as DropDownList).SelectedValue.ToString();
          slide_show=(gridNhomSP.Rows[e.RowIndex].FindControl("cmbSlideShow_N") as DropDownList).SelectedValue.ToString();
          ma_trangthai = (gridNhomSP.Rows[e.RowIndex].FindControl("cmbTrangThai_N") as DropDownList).SelectedValue.ToString();
-        String P = Server.MapPath("~/Images/NhomSP/");
-        String F= (gridNhomSP.Rows[e.RowIndex].FindControl("lblAvatar") as Literal).Text;
-        P += F.Substring(F.LastIndexOf("/"));
-        if (File.Exists(P))
-        {
-            File.Delete(P);
-        }
+         if ((gridNhomSP.Rows[e.RowIndex].FindControl("lblAvatar") as Literal).Text != "")
+         {
+             String P = Server.MapPath("~/Images/NhomSP/");
+             String F = (gridNhomSP.Rows[e.RowIndex].FindControl("lblAvatar") as Literal).Text;
+             P += F.Substring(F.LastIndexOf("/"));
+             if (File.Exists(P))
+             {
+                 File.Delete(P);
+             }
+         }
         avatar ="";
         
         FileUpload Anh = gridNhomSP.Rows[e.RowIndex].FindControl("FileAnhDD_N") as FileUpload;
@@ -68,7 +71,7 @@ public partial class QuanTri_DanhMuc : System.Web.UI.Page
         {
             FileName = DateTime.Now.Ticks + Anh.FileName.Substring(Anh.FileName.LastIndexOf("."));
             Anh.SaveAs(Patch + FileName);
-            avatar = "../Images/NhomSP/" + FileName;
+            avatar = "~/Images/NhomSP/" + FileName;
         }
         //ScriptManager.RegisterClientScriptBlock(this, GetType(), "s", "alert('" + tennhom_sanpham + "');",true);
         //DM.update_NhomSP(tennhom_sanpham, ThuTu, nhom_sanpham_cha, slide_show, avatar,ma_trangthai,gridNhomSP.DataKeys[e.RowIndex]["MANHOM_SANPHAM"].ToString());
@@ -106,5 +109,26 @@ public partial class QuanTri_DanhMuc : System.Web.UI.Page
         //}
         //ScriptManager.RegisterClientScriptBlock(this, GetType(), "DeleteAlert", "alert('Nhóm sản phẩm đã được sử dụng/n Không thể xoá')", true);
         //e.Cancel = true;
+    }
+    protected void gridNhomSP_RowDataBound(object sender, GridViewRowEventArgs e)
+    {
+        if (e.Row.RowType == DataControlRowType.DataRow && gridNhomSP.EditIndex == e.Row.RowIndex)
+        {
+            DropDownList ddlCountries = (e.Row.FindControl("cmbNhomSPCha_N") as DropDownList);
+            if (ddlCountries.Items.Count >0)
+            {
+                string NhomSPCha = (e.Row.FindControl("lblNhomSPCha_N") as Label).Text;
+                //
+                //    ddlCountries.Items.FindByValue(NhomSPCha).Selected = true;
+                //}
+                if (NhomSPCha.ToString ().Trim() != "") 
+                {
+                ddlCountries.SelectedItem.Text = NhomSPCha;
+                }
+                
+            }
+            
+        }
+
     }
 }
