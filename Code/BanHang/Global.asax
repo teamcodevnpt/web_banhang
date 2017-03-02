@@ -49,7 +49,7 @@
     protected void RegisterRoutes(RouteCollection routes)
     {
         routes.MapPageRoute("Trangchu", "Trang-chu", "~/Default.aspx");
-        routes.MapPageRoute("Lienhe", "Lien-he", "~/Pages/Lienhe.aspx");
+        routes.MapPageRoute("LienHe", "Lien-he", "~/Pages/LienHe.aspx");
         routes.MapPageRoute("DanhSachSanPham", "Danh-sach-san-pham/{Ten-nhom-san-pham}/{ID_NHOM_SAN_PHAM}", "~/Pages/DanhSachSanPham.aspx");
         routes.MapPageRoute("ChiTietSanPham", "Chi-tiet-san-pham/{Ten-san-pham}/{ID_SAN_PHAM}", "~/Pages/ChiTietSanPham.aspx");
     }

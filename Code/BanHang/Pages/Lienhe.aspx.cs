@@ -9,40 +9,20 @@ using System.Data;
 
 public partial class Pages_Lienhe : System.Web.UI.Page
 {
+    clsThongTinChung myThongTinChung = new clsThongTinChung();
     protected void Page_Load(object sender, EventArgs e)
     {
         try
         {
-            ConnectionDB myconn = new ConnectionDB();
-            myconn.Open();
-            DataTable dt = new DataTable();
-            dt = myconn.Stored_ExecuteQuery_Datatable_noPara("select_thongtinchung");
-            if (dt.Rows.Count > 0)
+            DataTable dts = myThongTinChung.select_ThongTinChung();
+            if (dts.Rows.Count > 0)
             {
-                if (dt.Rows[0]["DIENTHOAI"].ToString() != "")
-                {
-                    ltrSDT.Text = dt.Rows[0]["DIENTHOAI"].ToString();
-                }
-                else
-                {
-                    ltrSDT.Text = "Đang cập nhật";
-                }
-                if (dt.Rows[0]["EMAIL"].ToString() != "")
-                {
-                    ltrEmail.Text = dt.Rows[0]["EMAIL"].ToString();
-                }
-                else
-                {
-                    ltrEmail.Text = "Đang cập nhật";
-                }
-                if (dt.Rows[0]["DIACHI"].ToString() != "")
-                {
-                    ltrDiaChi.Text = dt.Rows[0]["DIACHI"].ToString();
-                }
-                else
-                {
-                    ltrDiaChi.Text = "Đang cập nhật";
-                }
+                DataRow row = dts.Rows[0];
+                ltrLienHe.Text += "<div class='row' style='margin:5px'>";
+                ltrLienHe.Text += "<span class='glyphicon glyphicon-home'></span>&nbsp&nbsp Địa chỉ:" + row["DIACHI"].ToString() + "<br/>";
+                ltrLienHe.Text += "<span class='glyphicon glyphicon-phone-alt'></span>&nbsp Điện thoại: " + row["DIENTHOAI"].ToString() + "<br/>";
+                ltrLienHe.Text += "<span class='glyphicon glyphicon-envelope'></span>&nbsp&nbsp Email: <a href='mailto:" + row["EMAIL"].ToString() + "?subject=Comments'>" + row["EMAIL"].ToString() + "</a>";
+                ltrLienHe.Text += "</div>";
             }
         }
         catch

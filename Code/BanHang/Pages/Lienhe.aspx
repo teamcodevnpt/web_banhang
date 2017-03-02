@@ -9,9 +9,7 @@
             <div class="panel-body" style="padding: 5px;">
                 <h4>Liên hệ:</h4>
                 <ul>
-                    <li>Số điện thoại: <asp:Literal ID="ltrSDT" runat="server"></asp:Literal></li>
-                    <li>Email: <asp:Literal ID="ltrEmail" runat="server"></asp:Literal></li>
-                    <li>Địa chỉ: <asp:Literal ID="ltrDiaChi" runat="server"></asp:Literal></li>
+                    <asp:Literal ID="ltrLienHe" runat="server"></asp:Literal>
                 </ul>
             </div>
         </div>
