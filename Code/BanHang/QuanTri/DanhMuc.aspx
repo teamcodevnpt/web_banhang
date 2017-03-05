@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="DanhMuc.aspx.cs" Inherits="QuanTri_DanhMuc" MasterPageFile="~/QuanTri/QuanTri.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentTrangChu" runat="server">
-    <section id="content">
+<section id="content">
                 <div class="container">
                     <div class="block-header">
                         <h2>Quản trị danh mục</h2>
@@ -40,33 +40,9 @@
                         <div class="card-header">Nhóm sản phẩm</div>
                         <div class="card-body danhmuc-body">
                             <div class="row">
-                                <div class="col-md-1 col-xs-1">
-                                    <label>Số thứ tự</label>
-                                    <asp:TextBox ID="txtSTT" runat="server" Width="100%"></asp:TextBox>
-                                    <asp:RegularExpressionValidator ID="txtSTT_N" runat="server" ControlToValidate="txtSTT" ErrorMessage="Chỉ được nhập số" ForeColor="Red" ValidationExpression="\d+"></asp:RegularExpressionValidator>
-                                </div>
                                 <div class="col-md-3 col-xs-3">
-                                    <label>Tên nhóm sản phẩm</label>
-                                    <asp:TextBox ID="txtTenNhom_SP" runat="server" Width="100%"></asp:TextBox>
-                                </div>
-                                <div class="col-md-2 col-xs-2">
-                                    <label>Nhóm sản phẩm cha</label>
-                                    <asp:DropDownList ID="cmbNhomSPCha" runat="server" Width="100%" DataSourceID="sourceNhomSPCha" DataTextField="TENNHOM_SANPHAM" DataValueField="MANHOM_SANPHAM">
-                                    </asp:DropDownList>
-                                </div>
-                                <div class="col-md-2 col-xs-2">
-                                    <label>Hiển thị slide show</label>
-                                <asp:DropDownList ID="cmbSlideShow" runat="server" Width="100%" >
-                                    <asp:ListItem Value="1" Text="Hiển thị Slide Show"></asp:ListItem>
-                                    <asp:ListItem Value="0" Text="Không hiển thị Slide Show"></asp:ListItem>
-                                </asp:DropDownList>
-                                </div>
-                                <div class="col-md-2 col-xs-2">
-                                    <label>Ảnh đại diện</label>
-                                    <asp:FileUpload ID="FileAnhDD" runat="server" accept="image/*"/>
-                                </div>
-                                <div class="col-md-2 col-xs-2">
-                                    <asp:Button ID="btnThemNhomSP" runat="server" CssClass="btn btn-default bgm-lightgreen form-control" Text="Thêm" OnClick="btnThemNhomSP_Click1"/>
+                                    <a href="#" data-toggle="modal" data-target="#myNhomSanPham"><input class="btn btn-default bgm-lightgreen form-control" type="button" value="Thêm nhóm sản phẩm"/>
+                                    </a>
                                 </div>
                             </div>
                             <div class="row">
@@ -139,10 +115,79 @@
                         </div>
                         </div>  
                     </div>
+       </div>
     </div>    
 </section>
+    <div id="myNhomSanPham" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+    <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h2 class="modal-title">Thêm nhóm sản phẩm</h2>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Số thứ tự</label>
+                    <div class="col-sm-9">
+                        <div class="form-group">
+                        <div class="fg-line">
+                        <asp:TextBox ID="txtSTT" runat="server" Width="100%" CssClass="form-control input-sm" Type="number"></asp:TextBox>
+                     </div>
+                        </div>
+                   </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Tên nhóm sản phẩm</label>
+                    <div class="col-sm-9">
+                        <div class="form-group">
+                        <div class="fg-line">
+                        <asp:TextBox ID="txtTenNhom_SP" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+                        </div></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Nhóm sản phẩm cha</label>
+                    <div class="col-sm-9">
+                    <div class="form-group">
+                        <div class="fg-line">
+                            <asp:DropDownList ID="cmbNhomSPCha" runat="server" CssClass="form-control" Width="100%" DataSourceID="sourceNhomSPCha" DataTextField="TENNHOM_SANPHAM" DataValueField="MANHOM_SANPHAM">
+                                    </asp:DropDownList>
+                        </div></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Hiển thị slide show</label>
+                    <div class="col-sm-9">
+                        <div class="form-group">
+                        <div class="fg-line">
+                            <asp:DropDownList ID="cmbSlideShow" runat="server" CssClass="form-control" Width="100%" >
+                                    <asp:ListItem Value="1" Text="Hiển thị Slide Show"></asp:ListItem>
+                                    <asp:ListItem Value="0" Text="Không hiển thị Slide Show"></asp:ListItem>
+                                </asp:DropDownList>
+                        </div></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Ảnh đại diện</label>
+                    <div class="col-sm-9">
+                        <div class="form-group">
+                        <div class="fg-line">
+                            <asp:FileUpload ID="FileAnhDD" runat="server" accept="image/*"/>
+                        </div></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <asp:Button ID="btnThem" runat="server" CssClass="btn btn-default bgm-lightgreen" Text="Thêm" OnClick="btnThemNhomSP_Click1" />
+                    <input type="button" class="btn btn-default bgm-gray" data-dismiss="modal" value="Đóng"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
     <asp:SqlDataSource ID="sourceNhomSPCha" runat="server" ConnectionString="<%$ ConnectionStrings:SQLConnections %>" ProviderName="System.Data.SqlClient"
-         SelectCommand="SELECT 0 AS MANHOM_SANPHAM,NULL AS TENNHOM_SANPHAM UNION SELECT MANHOM_SANPHAM,TENNHOM_SANPHAM FROM NHOM_SANPHAM"></asp:SqlDataSource>
+         SelectCommand="SELECT 0 AS MANHOM_SANPHAM,N'Chọn nhóm sản phẩm' AS TENNHOM_SANPHAM UNION SELECT MANHOM_SANPHAM,TENNHOM_SANPHAM FROM NHOM_SANPHAM"></asp:SqlDataSource>
     <asp:SqlDataSource ID="sourceNhomSP" runat="server" ConnectionString="<%$ ConnectionStrings:SQLConnections %>" ProviderName="System.Data.SqlClient"
         SelectCommand="SELECT_NHOM_SANPHAM" SelectCommandType="StoredProcedure"
         DeleteCommand="DELETE FROM NHOM_SANPHAM WHERE MANHOM_SANPHAM=@MANHOM_SANPHAM" DeleteCommandType="Text"

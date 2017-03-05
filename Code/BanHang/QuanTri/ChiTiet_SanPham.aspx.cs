@@ -70,10 +70,12 @@ public partial class QuanTri_ChiTiet_SanPham : System.Web.UI.Page
             {
                 if (FileAnhDD.HasFile)
                     {
+                        
                         FileName = DateTime.Now.Ticks + FileAnhDD.FileName.Substring(FileAnhDD.FileName.LastIndexOf("."));
                         FileAnhDD.SaveAs(Patch + FileName);
-                    }
-                if (mySanPham.insert_sanpham(cmbNhomSP.SelectedValue.ToString(), cmbTrangThai.SelectedValue.ToString(), txtTenSanPham.Text, txtMoTa.Text, txtThuTu.Text, ckNoiDung.Text, cmbSlideShow.SelectedValue.ToString(), txtGia.Text.ToString(), "~/Images/SanPham/" + FileName, 
+                    FileName = "~/Images/SanPham/" + FileName;
+                }
+                if (mySanPham.insert_sanpham(cmbNhomSP.SelectedValue.ToString(), cmbTrangThai.SelectedValue.ToString(), txtTenSanPham.Text, txtMoTa.Text, txtThuTu.Text, ckNoiDung.Text, cmbSlideShow.SelectedValue.ToString(), txtGia.Text.ToString(), FileName, 
                         cmbUuTien.SelectedValue.ToString(),txtGiaKhuyenMai.Text) > 0)
                     {
                         Response.Redirect("ChiTiet_SanPham.aspx");
