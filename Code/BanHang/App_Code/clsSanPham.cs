@@ -70,4 +70,9 @@ public class clsSanPham
         Params.Add(new SqlParameter("@MA_SANPHAM", ma_sanpham));
         return DB.Stored_ExecuteQuery_Datatable("SELECT_SANPHAM_FROM_MASP", Params);
     }
+    public DataTable select_slideshow_from_sanpham()
+    {
+        List<SqlParameter> Params = new List<SqlParameter>();
+        return DB.Stored_ExecuteQuery_Datatable("select_slideshow_from_sanpham", Params);
+    }
 }
