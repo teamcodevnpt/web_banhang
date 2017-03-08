@@ -31,12 +31,30 @@
             <li>
                 <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Tìm kiếm">
+                    <input type="text" id="txtTimKiem" class="form-control" placeholder="Tìm kiếm" onkeydown="EnterTimKiem(event)">
                     </div>
-                <span id="btnsearch" class="glyphicon glyphicon-search"></span>
+                <a href="#" onclick="btnTimKiem()"><span id="btnsearch" class="glyphicon glyphicon-search"></span></a>
+                <%--<asp:Button ID="btnTimKiem" runat="server" Text="Tìm Kiếm" OnClick="btnTimKiem_Click" />--%>
             </form>
             </li>
         </ul>
         </div>
     </div>
     </nav>
+<script>
+    function EnterTimKiem(e) {
+        if (e.keyCode == 13) {
+            e.preventDefault();
+            window.location.href = "/Tim-Kiem/" + document.getElementById("txtTimKiem").value;
+        }
+    }
+    function btnTimKiem()
+    {
+        if (document.getElementById("txtTimKiem").value != "")
+        {
+            var url = "../Tim-Kiem/" + document.getElementById("txtTimKiem").value;
+            window.location.href = url
+        }    
+       // alert(url);
+    }
+</script>

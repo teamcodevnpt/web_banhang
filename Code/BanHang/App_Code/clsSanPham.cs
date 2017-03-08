@@ -75,4 +75,10 @@ public class clsSanPham
         List<SqlParameter> Params = new List<SqlParameter>();
         return DB.Stored_ExecuteQuery_Datatable("select_slideshow_from_sanpham", Params);
     }
+    public DataTable search_sanpham(string keyword)
+    {
+        List<SqlParameter> Params = new List<SqlParameter>();
+        Params.Add(new SqlParameter("@keyword", keyword));
+        return DB.Stored_ExecuteQuery_Datatable("search_sanpham", Params);
+    }
 }

@@ -52,5 +52,6 @@
         routes.MapPageRoute("LienHe", "Lien-he", "~/Pages/LienHe.aspx");
         routes.MapPageRoute("DanhSachSanPham", "Danh-sach-san-pham/{Ten-nhom-san-pham}/{ID_NHOM_SAN_PHAM}", "~/Pages/DanhSachSanPham.aspx");
         routes.MapPageRoute("ChiTietSanPham", "Chi-tiet-san-pham/{Ten-san-pham}/{ID_SAN_PHAM}", "~/Pages/ChiTietSanPham.aspx");
+        routes.MapPageRoute("TimKiem", "Tim-kiem/{TimKiem_ID}", "~/Pages/TimKiem.aspx");
     }
 </script>

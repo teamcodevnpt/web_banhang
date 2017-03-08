@@ -48,6 +48,7 @@
 
         <script src="js/jquery.jexcel.js"></script>
         <script src="js/jquery.jcalendar.js"></script>
+
         <!-- Placeholder for IE9 -->
         <!--[if IE 9 ]>
         <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
@@ -133,6 +134,9 @@
                     <li class="active">
                         <a href="../QuanTri/SanPham.aspx"><i class="zmdi zmdi-home"></i> Quản Trị Sản Phẩm</a>
                     </li>
+					<li class="active">
+                        <a href="../QuanTri/QTSlideShow.aspx"><i class="zmdi zmdi-home"></i> Quản Trị SlideShow</a>
+                    </li>
                     <li class="active">
                         <a href="../QuanTri/ThongTinChung.aspx"><i class="zmdi zmdi-home"></i> Quản Trị Thông Tin Chung</a>
                     </li>
@@ -145,6 +149,7 @@
                 </ul>
             </aside>
             <form runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                 <uc1:MDoiMatKhau runat="server" ID="MDoiMatKhau" />
                 <uc1:MThongTinTaiKhoan runat="server" ID="MThongTinTaiKhoan" />
                 <asp:ContentPlaceHolder ID="ContentTrangChu" runat="server">  
