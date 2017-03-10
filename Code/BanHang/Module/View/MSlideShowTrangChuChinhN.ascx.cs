@@ -22,7 +22,7 @@ public partial class Module_View_MSlideShowTrangChuChinhN : System.Web.UI.UserCo
             {
                 ltrSilder.Text += "<div class='item'>";
                 ltrSilder.Text += "<a href='" + ResolveUrl(dts.Rows[i]["URL"].ToString()) + "'>";
-                ltrSilder.Text += "<img style='height:400px; width=100%' class='img-responsive' src='" + ResolveUrl(dts.Rows[i]["AVATAR"].ToString()) + "' alt='" + dts.Rows[i]["TEN_SANPHAM"].ToString() + "'>";
+                ltrSilder.Text += "<img style='height:350px; width=100%' class='img-responsive' src='" + ResolveUrl(dts.Rows[i]["AVATAR"].ToString()) + "' alt='" + dts.Rows[i]["TEN_SANPHAM"].ToString() + "'>";
                 ltrSilder.Text += "</a></div>";
             }
         }

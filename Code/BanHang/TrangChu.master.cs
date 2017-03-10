@@ -13,7 +13,7 @@ public partial class TrangChu : System.Web.UI.MasterPage
     }
     void load_anh_BAnner()
     {
-        ltrLogo.Text = "<img class='img-responsive' src='" + ResolveUrl("~/Images/AnhChung/logo.png") + "' alt='Chania' style='height:300px;'>";
-        ltr_AnhBanner.Text = "<img class='img-responsive' src='" + ResolveUrl("~/Images/AnhChung/giaohang.jpg") + "' alt='Chania' style='height:300px;'>";
+        ltrLogo.Text = "<img class='img-responsive' src='" + ResolveUrl("~/Images/AnhChung/logo.png") + "' alt='Chania' style='height:200px; width:100%'>";
+        ltr_AnhBanner.Text = "<img class='img-responsive' src='" + ResolveUrl("~/Images/AnhChung/giaohang.jpg") + "' alt='Chania' style='height:200px;width:100%'>";
     }
 }

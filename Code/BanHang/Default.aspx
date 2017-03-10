@@ -14,7 +14,7 @@
             <uc1:MSlideShowTrangChuChinhN runat="server" ID="MSlideShowTrangChuChinhN" />
         </div>
         <div class="col-md-3 col-xs-12" style="padding:2px;">
-            <asp:Image ID="imgLienHe" runat="server" ImageUrl="~/img/support.jpeg" CssClass="img-responsive" Height="400px" Width="100%" />
+            <asp:Image ID="imgLienHe" runat="server" ImageUrl="~/img/support.jpeg" CssClass="img-responsive" Height="382px" Width="100%" />
         </div>
     </div>
     <div class="row">

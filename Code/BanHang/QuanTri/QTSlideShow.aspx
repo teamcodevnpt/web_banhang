@@ -75,7 +75,7 @@
                                                     <asp:CheckBoxField HeaderText="Slideshow" DataField="SLIDE_SHOW"/>
                                                     <asp:TemplateField HeaderText="Chọn" ShowHeader="false">
                                                         <ItemTemplate>
-                                                            <asp:Button ID="btn_chon" runat="server" Text=">>" CssClass="btn btn-info" CommandName="Update" CausesValidation="False" />
+                                                            <asp:Button ID="btn_chon" runat="server" Text=">>" class="btn btn-default bgm-green form-control" CommandName="Update" CausesValidation="False" />
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                     
@@ -99,7 +99,7 @@
                                         <Columns>
                                             <asp:TemplateField HeaderText="Thao tác" ShowHeader="false" ItemStyle-VerticalAlign="Middle">
                                                 <ItemTemplate>
-                                                    <asp:Button ID="btn_bochon" runat="server" Text="<<" CssClass="btn btn-info" CommandName="Update" CausesValidation="False" />
+                                                    <asp:Button ID="btn_bochon" runat="server" Text="<<" class="btn btn-default bgm-green form-control" CommandName="Update" CausesValidation="False" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:BoundField DataField="MA_SANPHAM" HeaderText="Mã Sản phẩm" InsertVisible="False" ReadOnly="True" SortExpression="MA_SANPHAM" />

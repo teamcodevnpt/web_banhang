@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="MBanner.ascx.cs" Inherits="Module_Master_MBanner" %>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse" style="margin-bottom:2px;">
     <div class="container-fluid">
         <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
