@@ -25,32 +25,29 @@ public partial class Module_View_MListSanPham : System.Web.UI.UserControl
     }
     void loadsanpham(int manhomsp)
     {
-        try
+        ConnectionDB myconn = new ConnectionDB();
+        myconn.Open();
+        String str = "";
+        DataSet dsDSSP = new DataSet();
+        List<SqlParameter> para = new List<SqlParameter>();
+        para.Add(new SqlParameter("@MA_NHOM_SP", manhomsp));
+        dsDSSP = myconn.Stored_ExecuteQuery_Dataset("get_DS_SP_THEO_NHOM", para);
+        DataTable dt = new DataTable();
+        dt = dsDSSP.Tables[0];
+        for (int i = 0; i < dt.Rows.Count; i++)
         {
-            ConnectionDB myconn = new ConnectionDB();
-            myconn.Open();
-            String str = "";
-            DataSet dsDSSP = new DataSet();
-            List<SqlParameter> para = new List<SqlParameter>();
-            para.Add(new SqlParameter("@MA_NHOM_SP", manhomsp));
-            dsDSSP = myconn.Stored_ExecuteQuery_Dataset("get_DS_SP_THEO_NHOM", para);
-            DataTable dt = new DataTable();
-            dt = dsDSSP.Tables[0];
-            for (int i = 0; i < dt.Rows.Count; i++)
+            String tensanpham  = dt.Rows[i]["TEN_SANPHAM"].ToString();
+            if (tensanpham.Length > 15)
             {
-                str += "<div class='col-md-3 col-xs-6'>" +
-                    "<div class='media'>" +
-                        "<a href='" + ResolveUrl(dt.Rows[i]["URL"].ToString()) + "' class='thumbnail' style='text-decoration:none;'>" +
-                        "<img class='img-responsive' style='height:150px;' src = '" + ResolveUrl(dt.Rows[i]["AVATAR"].ToString()) + "'/>" +
-                        "<h4 style='color:blue;margin:0px; text-align:center'>" + dt.Rows[i]["TEN_SANPHAM"] + "</h4>" +
-                        "<h3 style='text-align:center; color:red;'>" + dt.Rows[i]["GIA"] + "</h3></a></div></div>";
+                tensanpham = tensanpham.Substring(0, 15) + "...";
             }
-            ltrDSSP.Text = str;
+            str += "<div class='col-md-3 col-xs-6'>" +
+                "<div class='media'>" +
+                    "<a href='" + ResolveUrl(dt.Rows[i]["URL"].ToString()) + "' class='thumbnail' style='text-decoration:none;'>" +
+                    "<img class='img-responsive' style='height:150px;' src = '" + ResolveUrl(dt.Rows[i]["AVATAR"].ToString()) + "' alt = '" + dt.Rows[i]["TEN_SANPHAM"] + "'/>" +
+                    "<p style='color:blue;margin:0px;font-size:medium; text-align:center'>" + tensanpham + "</p>" +
+                    "<p style='text-align:center;font-size:large; color:red;'>" + dt.Rows[i]["GIA"] + "</p></a></div></div>";
         }
-        catch
-        {
-            Response.Redirect("~/Trang-chu");
-        }
-
+        ltrDSSP.Text = str;
     }
 }

@@ -46,7 +46,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <asp:GridView id="gridNhomSP" runat="server" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" CssClass="table table-bordered" DataSourceID="sourceNhomSP" DataKeyNames="MANHOM_SANPHAM" OnRowUpdating="gridNhomSP_RowUpdating" OnRowDeleting="gridNhomSP_RowDeleting" OnRowDataBound="gridNhomSP_RowDataBound">
+                                <asp:GridView id="gridNhomSP" runat="server" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" CssClass="table table-bordered" DataSourceID="sourceNhomSP" DataKeyNames="MANHOM_SANPHAM" OnRowUpdating="gridNhomSP_RowUpdating" OnRowDeleting="gridNhomSP_RowDeleting" OnRowDataBound="gridNhomSP_RowDataBound" OnRowDeleted="gridNhomSP_RowDeleted">
                                     <Columns>
                                         <asp:BoundField HeaderText="STT" DataField="THUTU" ControlStyle-CssClass="form-control" />
                                         <asp:BoundField HeaderText="Tên nhóm sản phẩm" DataField="TENNHOM_SANPHAM" ControlStyle-CssClass="form-control"/>

@@ -1,5 +1,11 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/QuanTri/QuanTri.master" CodeFile="SanPham.aspx.cs" Inherits="QuanTri_SanPham" %>
+
 <asp:Content ID="Content" runat="server" ContentPlaceHolderID="ContentTrangChu">
+    <script>
+            $(document).ready(function () {
+                $('#ContentTrangChu_gridSanPham').DataTable();
+            });
+        </script>
     <section id="content">
                 <div class="container">
                     <div class="block-header">
@@ -40,14 +46,20 @@
                 <br />
             <a href="ChiTiet_SanPham.aspx"><input class="btn btn-default bgm-green form-control" type="button" value="Thêm sản phẩm" /></a>
             </div>
-            <asp:GridView ID="gridSanPham" runat="server" ShowHeaderWhenEmpty="true" AutoGenerateColumns="false" CssClass="table table-bordered" Width="100%" DataSourceID="sourceSanPham" DataKeyNames="MA_SANPHAM">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <div class="fg-line">
+                <br />
+                <asp:DropDownList ID="cmbNhomSP" AutoPostBack="true" runat="server" CssClass="form-control" DataSourceID="sourceNhomSP" DataTextField="TENNHOM_SANPHAM" DataValueField="MANHOM_SANPHAM"></asp:DropDownList>
+            </div></div></div>
+            <asp:GridView ID="gridSanPham" runat="server" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" CssClass="table table-bordered" Width="100%" DataSourceID="sourceSanPham" DataKeyNames="MA_SANPHAM" AllowPaging="True" AllowSorting="True">
+                <PagerSettings Mode="NumericFirstLast" Visible="true" />
                 <Columns>
                     <asp:BoundField  DataField="THUTU" HeaderText="Thứ tự"/>
                     <asp:BoundField  DataField="TEN_SANPHAM" HeaderText="Tên sản phẩm"/>
+                    <asp:BoundField  DataField="TENNHOM_SANPHAM" HeaderText="Nhóm SP" />
                     <asp:BoundField  DataField="TRANGTHAI" HeaderText="Trạng thái"/>
-                    <asp:BoundField  DataField="SLIDE_SHOW" HeaderText="Slide show"/>
-                    <asp:BoundField  DataField="UU_TIEN" HeaderText="Ưu tiên"/>
-                    <asp:BoundField  DataField="GIA" HeaderText="Giá bán"/>
+                    <asp:BoundField  DataField="GIA" HeaderText="Giá bán" ItemStyle-HorizontalAlign="Right"/>
                     <asp:BoundField  DataField="GIA_KHUYENMAI" HeaderText="Giá khuyến mãi"/>            
                     <asp:BoundField  DataField="NGAY_DANG" HeaderText="Ngày đăng"/>
                     <asp:TemplateField HeaderText="Thao tác">
@@ -63,11 +75,18 @@
         </div>
     </div>
                 </div></section>
+
     <asp:SqlDataSource ID="sourceSanPham" runat="server" ConnectionString="<%$ ConnectionStrings:SQLConnections %>" ProviderName="System.Data.SqlClient"
          SelectCommand="SELECT_LIST_SANPHAM" SelectCommandType="StoredProcedure"
         DeleteCommand="DELETE_SANPHAM" DeleteCommandType="StoredProcedure">
         <DeleteParameters>
             <asp:Parameter Name="MA_SANPHAM" />
         </DeleteParameters>
+        <SelectParameters>
+            <asp:ControlParameter ControlID="cmbNhomSP" Name="MANHOM_SANPHAM" PropertyName="SelectedValue" />
+        </SelectParameters>
     </asp:SqlDataSource>
+    <asp:SqlDataSource ID="sourceNhomSP" runat="server" ConnectionString="<%$ ConnectionStrings:SQLConnections %>" ProviderName="System.Data.SqlClient"
+         SelectCommand="SELECT 0 AS MANHOM_SANPHAM,N'Tất cả' AS TENNHOM_SANPHAM UNION SELECT MANHOM_SANPHAM,TENNHOM_SANPHAM FROM NHOM_SANPHAM"></asp:SqlDataSource>
+    
 </asp:Content>

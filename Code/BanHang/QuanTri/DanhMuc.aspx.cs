@@ -85,11 +85,11 @@ public partial class QuanTri_DanhMuc : System.Web.UI.Page
     }
     protected void sourceNhomSP_Deleting(object sender, SqlDataSourceCommandEventArgs e)
     {
-        if (myDanhMuc.select_nhomsp_from_sanpham(e.Command.Parameters[0].Value.ToString()).Rows.Count == 0)
+        if (myDanhMuc.select_nhomsp_from_sanpham(e.Command.Parameters[0].Value.ToString()).Rows.Count > 0)
         {
             ScriptManager.RegisterClientScriptBlock(this, GetType(), "DeleteAlert", "alert('Nhóm sản phẩm đã được sử dụng. Không thể xoá!')", true);
-        }
         e.Cancel = true;
+        }
     }
 
     protected void gridNhomSP_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -108,5 +108,10 @@ public partial class QuanTri_DanhMuc : System.Web.UI.Page
         }
 
     }
-    
+
+
+    protected void gridNhomSP_RowDeleted(object sender, GridViewDeletedEventArgs e)
+    {
+        cmbNhomSPCha.DataBind();
+    }
 }

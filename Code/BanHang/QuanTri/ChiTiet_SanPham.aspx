@@ -56,8 +56,8 @@
                                                  <div class="form-group">   
                                                     <label>Ưu tiên hiển thị<span style="color:red">&nbsp*</span></label>
                                                     <asp:DropDownList ID="cmbUuTien" runat="server" Width="100%">
-                                                        <asp:ListItem Text="Có" Value="1"></asp:ListItem>
                                                         <asp:ListItem Text="Không" Value="0"></asp:ListItem>
+                                                        <asp:ListItem Text="Có" Value="1"></asp:ListItem>
                                                     </asp:DropDownList>
                                                  </div>
                                             </div>
@@ -71,8 +71,8 @@
                                         <div class="form-group">   
                                             <label>Hiển thị slide show<span style="color:red">&nbsp*</span></label>
                                             <asp:DropDownList ID="cmbSlideShow" runat="server" Width="100%">
-                                                <asp:ListItem Text="Có" Value="1"></asp:ListItem>
                                                 <asp:ListItem Text="Không" Value="0"></asp:ListItem>
+                                                <asp:ListItem Text="Có" Value="1"></asp:ListItem>
                                             </asp:DropDownList>
                                          </div> 
                                      </div>
@@ -117,7 +117,9 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12 col-xs-12">
-                                        <label for="">Mô tả sản phẩm:</label><asp:TextBox ID="txtMoTa" runat="server" TextMode="MultiLine" Height="100px" Width="100%"/>
+                                        <label for="">Mô tả sản phẩm:</label>
+                                        <%--<asp:TextBox ID="txtMoTa" runat="server" TextMode="MultiLine" Height="100px" Width="100%"/>--%>
+                                        <CKEditor:CKEditorControl ID="ckMoTa" runat="server" Width="100%" Height="250px" FilebrowserImageBrowseUrl="../Images/SanPham/" EnableTheming="true"></CKEditor:CKEditorControl>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -131,5 +133,5 @@
                 </div>
     </section>
         <asp:SqlDataSource ID="sourceNhomSP" runat="server" ConnectionString="<%$ ConnectionStrings:SQLConnections %>" ProviderName="System.Data.SqlClient"
-         SelectCommand="SELECT MANHOM_SANPHAM,TENNHOM_SANPHAM FROM NHOM_SANPHAM"></asp:SqlDataSource>
+         SelectCommand="SELECT MANHOM_SANPHAM,TENNHOM_SANPHAM FROM NHOM_SANPHAM ORDER BY TENNHOM_SANPHAM"></asp:SqlDataSource>
 </asp:Content>

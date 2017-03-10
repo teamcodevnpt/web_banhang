@@ -32,7 +32,7 @@ public partial class QuanTri_ChiTiet_SanPham : System.Web.UI.Page
                         DataRow DR = DT.Rows[0];
                         txtTenSanPham.Text = DR["TEN_SANPHAM"].ToString();
                         txtThuTu.Text = DR["THUTU"].ToString();
-                        txtMoTa.Text = DR["MOTA"].ToString();
+                        ckMoTa.Text = DR["MOTA"].ToString();
                         txtGia.Text = DR["GIA"].ToString();
                         txtGiaKhuyenMai.Text = DR["GIA_KHUYENMAI"].ToString();
                         ckNoiDung.Text = DR["NOIDUNG"].ToString();
@@ -75,7 +75,7 @@ public partial class QuanTri_ChiTiet_SanPham : System.Web.UI.Page
                         FileAnhDD.SaveAs(Patch + FileName);
                     FileName = "~/Images/SanPham/" + FileName;
                 }
-                if (mySanPham.insert_sanpham(cmbNhomSP.SelectedValue.ToString(), cmbTrangThai.SelectedValue.ToString(), txtTenSanPham.Text, txtMoTa.Text, txtThuTu.Text, ckNoiDung.Text, cmbSlideShow.SelectedValue.ToString(), txtGia.Text.ToString(), FileName, 
+                if (mySanPham.insert_sanpham(cmbNhomSP.SelectedValue.ToString(), cmbTrangThai.SelectedValue.ToString(), txtTenSanPham.Text, ckMoTa.Text, txtThuTu.Text, ckNoiDung.Text, cmbSlideShow.SelectedValue.ToString(), txtGia.Text.ToString(), FileName, 
                         cmbUuTien.SelectedValue.ToString(),txtGiaKhuyenMai.Text) > 0)
                     {
                         Response.Redirect("ChiTiet_SanPham.aspx");
@@ -104,12 +104,14 @@ public partial class QuanTri_ChiTiet_SanPham : System.Web.UI.Page
             }
             if (FileAnhDD.HasFile)
             {
+
                 FileName = DateTime.Now.Ticks + FileAnhDD.FileName.Substring(FileAnhDD.FileName.LastIndexOf("."));
                 FileAnhDD.SaveAs(Patch + FileName);
+                FileName = "~/Images/SanPham/" + FileName;
             }
         }
         //------------------------------
-        if (mySanPham.update_sanpham(cmbNhomSP.SelectedValue, cmbTrangThai.SelectedValue, txtTenSanPham.Text, txtMoTa.Text, txtThuTu.Text, ckNoiDung.Text, cmbSlideShow.SelectedValue, txtGia.Text, "../Images/SanPham/" + FileName, cmbUuTien.SelectedValue, txtGiaKhuyenMai.Text, Request.QueryString["id"].ToString()) > 0)
+        if (mySanPham.update_sanpham(cmbNhomSP.SelectedValue, cmbTrangThai.SelectedValue, txtTenSanPham.Text, ckMoTa.Text, txtThuTu.Text, ckNoiDung.Text, cmbSlideShow.SelectedValue, txtGia.Text, FileName, cmbUuTien.SelectedValue, txtGiaKhuyenMai.Text, Request.QueryString["id"].ToString()) > 0)
         {
             Response.Redirect(Request.RawUrl);
         }
