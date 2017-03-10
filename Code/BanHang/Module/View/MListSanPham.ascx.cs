@@ -42,8 +42,8 @@ public partial class Module_View_MListSanPham : System.Web.UI.UserControl
                     "<div class='media'>" +
                         "<a href='" + ResolveUrl(dt.Rows[i]["URL"].ToString()) + "' class='thumbnail' style='text-decoration:none;'>" +
                         "<img class='img-responsive' style='height:150px;' src = '" + ResolveUrl(dt.Rows[i]["AVATAR"].ToString()) + "'/>" +
-                        "<p style='color:orangered; font-size: medium; margin:0px; text-align:center'>" + dt.Rows[i]["TEN_SANPHAM"] + "</p>" +
-                        "<p style='text-align:center'>" + dt.Rows[i]["GIA"] + "</p></a></div></div>";
+                        "<h4 style='color:blue;margin:0px; text-align:center'>" + dt.Rows[i]["TEN_SANPHAM"] + "</h4>" +
+                        "<h3 style='text-align:center; color:red;'>" + dt.Rows[i]["GIA"] + "</h3></a></div></div>";
             }
             ltrDSSP.Text = str;
         }

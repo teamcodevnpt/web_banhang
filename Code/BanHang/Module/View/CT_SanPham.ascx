@@ -40,7 +40,9 @@
                     </p>
                 </div>
                 <div class="tab-pane fade" id="danhgia">
-                    <p style="margin-right:10px;margin-left:5px">Sunhouse là thương hiệu thuộc tập đoàn Sunhouse, một doanh nghiệp đi tiên phong trong lĩnh vực sản xuất và kinh doanh đồ gia dụng tại Việt Nam. Sunhouse có nhà máy với diện tích hơn 12000 m2 tại Việt Nam và 1 nhà máy đặt tại Hàn Quốc, dây chuyền sản xuất nhập khẩu từ Hàn Quốc và đội ngũ nhân viên lành nghề được đào tạo bởi các chuyên gia nước ngoài. Sản phẩm của Sunhouse được sản xuất trên dây chuyền và công nghệ hiện đại và kênh phân phối sản phẩm rộng khắp, đáp ứng tối đa nhu cầu về tính thẩm mỹ và sự tiện dụng so với các loại sản phẩm gia dụng hiện có trên thị trường.</p>
+                    <p style="margin-right:10px;margin-left:5px">
+                      Chưa có đánh giá cho sản phẩm này
+                    </p>
                 </div>
             </div>
         </div>          

@@ -13,7 +13,8 @@ public partial class TrangChu : System.Web.UI.MasterPage
     }
     void load_anh_BAnner()
     {
-        ltrLogo.Text = "<img class='img-responsive' src='" + ResolveUrl("~/Images/AnhChung/logo.png") + "' alt='Chania' style='height:200px; width:100%'>";
-        ltr_AnhBanner.Text = "<img class='img-responsive' src='" + ResolveUrl("~/Images/AnhChung/giaohang.jpg") + "' alt='Chania' style='height:200px;width:100%'>";
+        ltrLogo.Text = "<img class='img-responsive' src='" + ResolveUrl("~/Images/AnhChung/logo.png") + "' alt='Bán Hàng Tận Nơi' style='height:200px; width:100%'>";
+        ltr_AnhBanner.Text = "<img class='img-responsive' src='" + ResolveUrl("~/Images/AnhChung/giaohang.jpg") + "' style='height:200px;width:100%'>";
+        ltr_Hotline.Text = "<img class='img-responsive' src='" + ResolveUrl("~/Images/AnhChung/hotline.jpg") + "' alt='HotLine' style='height:200px;width:100%'>";
     }
 }
