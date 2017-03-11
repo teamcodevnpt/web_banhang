@@ -41,7 +41,7 @@
                     <ContentTemplate>
 
 
-                        <div class="col-xs-6">
+                        <div class="col-xs-6" style="text-align: center">
                             <div class="panel panel-primary">
                                 <div class="panel-heading" style="text-align: center">
                                     <h4><b>Danh sách sản phẩm</b></h4>
@@ -87,7 +87,7 @@
                             </div>
                         </div>
 
-                        <div class="col-xs-6">
+                        <div class="col-xs-6" style="text-align: center">
                             <div class="panel panel-primary">
                                 <div class="panel-heading" style="text-align: center">
                                     <h4><b>Sản phẩm slideshow</b></h4>

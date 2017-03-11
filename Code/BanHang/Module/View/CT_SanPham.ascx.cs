@@ -59,7 +59,16 @@ public partial class Module_View_CT_SanPham : System.Web.UI.UserControl
                 }
                 if (row["GIA"] != null)
                 {
-                    ltrGia.Text = row["GIA"].ToString();
+                    String gia = row["GIA"].ToString();
+                    if (gia == "0")
+                    {
+                        gia = "Liên hệ";
+                    }
+                    else
+                    {
+                        gia = String.Format("{0:0,0}", Convert.ToInt32(gia)) + "đ";
+                    }
+                    ltrGia.Text = gia;
                 }
                 else
                 {

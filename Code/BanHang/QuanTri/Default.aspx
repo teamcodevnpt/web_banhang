@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="QuanTri_Default" MasterPageFile="~/QuanTri/QuanTri.master" %>
 <%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentTrangChu" runat="server">
-    <section id="content">
+    <%--<section id="content">
                 <div class="container">
                     <div class="block-header">
                         <h2>Thông tin chung</h2>
@@ -56,6 +56,6 @@
                             </div>
                         </div>    
                 </div>
-            </section>
+            </section>--%>
     
 </asp:Content>

@@ -40,8 +40,8 @@
                         <div class="card-header">Nhóm sản phẩm</div>
                         <div class="card-body danhmuc-body">
                             <div class="row">
-                                <div class="col-md-3 col-xs-3">
-                                    <a href="#" data-toggle="modal" data-target="#myNhomSanPham"><input class="btn btn-default bgm-lightgreen form-control" type="button" value="Thêm nhóm sản phẩm"/>
+                                <div class="col-xs-2 col-xs-offset-5">
+                                    <a href="#" data-toggle="modal" data-target="#myNhomSanPham"><input class="btn btn-default bgm-lightgreen form-control" type="button" value="Thêm"/>
                                     </a>
                                 </div>
                             </div>
@@ -178,8 +178,15 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <asp:Button ID="btnThem" runat="server" CssClass="btn btn-default bgm-lightgreen" Text="Thêm" OnClick="btnThemNhomSP_Click1" />
-                    <input type="button" class="btn btn-default bgm-gray" data-dismiss="modal" value="Đóng"/>
+                    <div class="row">
+                        <div class="col-md-4 col-xs-12"></div>
+                        <div class="col-md-2 col-xs-12">
+                            <asp:Button ID="btnThem" runat="server" CssClass="btn btn-default bgm-lightgreen form-control" Text="Thêm" OnClick="btnThemNhomSP_Click1" />
+                        </div>
+                        <div class="col-md-2 col-xs-12">
+                            <input type="button" class="btn btn-default bgm-lightgreen form-control" data-dismiss="modal" value="Đóng"/>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

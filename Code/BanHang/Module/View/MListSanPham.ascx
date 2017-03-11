@@ -3,5 +3,7 @@
     <div class="panel-heading">Danh sách sản phẩm</div>
     <div class="panel-body" style="padding-top:2px; padding-left:0px;padding-right:0px; padding-bottom:0px;">
         <asp:Literal ID="ltrDSSP" runat="server"></asp:Literal>
+         
     </div>
+    <asp:Literal ID="ltrPhanTrang" runat="server"></asp:Literal>
 </div>

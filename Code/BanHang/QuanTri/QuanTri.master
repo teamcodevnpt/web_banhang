@@ -141,7 +141,7 @@
                         <a href="../QuanTri/ThongTinChung.aspx"><i class="zmdi zmdi-home"></i> Quản Trị Thông Tin Chung</a>
                     </li>
                     <li class="active">
-                        <a href="../QuanTri/LienHe.aspx"><i class="glyphicon glyphicon-phone-alt"></i>Khách Hàng Liên Hệ</a>
+                        <a href="../DangXayDung.html"><i class="glyphicon glyphicon-phone-alt"></i>Khách Hàng Liên Hệ</a>
                     </li>
                      <li class="active">
                         <a href="../QuanTri/ThemNguoiDung.aspx"><i class="glyphicon glyphicon-user" aria-hidden="true"></i> Quản Trị Tài Khoản</a>

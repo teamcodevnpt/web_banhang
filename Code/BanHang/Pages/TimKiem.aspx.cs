@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -25,12 +26,21 @@ public partial class Pages_TimKiem : System.Web.UI.Page
                     {
                         tensanpham = tensanpham.Substring(0, 15) + "...";
                     }
+                    String gia = dts.Rows[i]["GIA"].ToString();
+                    if (gia == "0")
+                    {
+                        gia = "Liên hệ";
+                    }
+                    else
+                    {
+                        gia = String.Format("{0:0,0}", Convert.ToInt32(gia)) + "đ";
+                    }
                     str += "<div class='col-md-3 col-xs-6' alt = '" + dts.Rows[i]["TEN_SANPHAM"] + "'>" +
                         "<div class='media'>" +
                             "<a href='" + ResolveUrl(dts.Rows[i]["URL"].ToString()) + "' class='thumbnail' style='text-decoration:none;'>" +
                             "<img class='img-responsive' style='height:150px;' src = '" + ResolveUrl(dts.Rows[i]["AVATAR"].ToString()) + "' alt = '" + dts.Rows[i]["TEN_SANPHAM"] + "'/>" +
                             "<p style='color:orangered; font-size: medium; margin:0px; text-align:center'>" + tensanpham + "</p>" +
-                            "<p style='text-align:center; font-size: large'>" + dts.Rows[i]["GIA"] + "</p></a></div></div>";
+                            "<p style='text-align:center; font-size: large'>" + gia + "</p></a></div></div>";
                 }
             }
             else

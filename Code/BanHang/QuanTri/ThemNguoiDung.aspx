@@ -71,12 +71,17 @@
                                 </div>
                          
                                 </div>
-                                <div class="form-group">
+                                <div class="row">
                                     <div class="col-md-4 col-xs-12"></div>
-                                    <div class="col-md-8 col-xs-12">
-                                            <asp:Button id="btnThemNguoiDung" CssClass="btn btn-primary" OnClick="btnThemNguoiDung_Click" Text="Thêm Người Dùng" runat="server"/>
-                                            <button type="reset" class="btn btn-default">Hủy</button>                                           
+                                    <div class="col-md-2 col-xs-12">
+                                        <asp:Button ID="btnThemNguoiDung" runat="server" CssClass="btn btn-default bgm-lightgreen form-control" Text="Thêm Người Dùng" OnClick="btnThemNguoiDung_Click"/>
+                                            <%--<asp:Button id="btnThemNguoiDung" CssClass="btn btn-default bgm-green" OnClick="btnThemNguoiDung_Click" Text="Thêm Người Dùng" runat="server"/>--%>                                    
                                     </div>
+                                    <div class="col-md-1 col-xs-12">
+                                        <input class="btn btn-default bgm-lightgreen form-control" type="reset" value="Hủy" />
+                                        <%--<button type="reset" class="btn btn-default">Hủy</button>--%> 
+                                    </div>
+                                        
                                 </div>
                                 </div>
                             </div>
@@ -189,6 +194,7 @@
                                         </UpdateParameters>
                                     </asp:SqlDataSource>
                                     </div>
+                                
                             </div>  
                         </div>
                     </div>

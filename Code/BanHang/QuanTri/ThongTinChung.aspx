@@ -47,8 +47,9 @@
                                 <div class="col-sm-9">
                                     <asp:TextBox ID="txtGhiChu" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
-                                <div class="col-xs-5 col-xs-offset-5">
-                                    <asp:Button ID="btn_capnhat" runat="server" Text="Cập nhật" CssClass="btn btn-group" ValidationGroup="vung1" OnClick="btn_capnhat_Click" />
+                                <div class="col-xs-2 col-xs-offset-5">
+                                    <%--<asp:Button ID="btn_capnhat" runat="server" Text="Cập nhật" CssClass="" ValidationGroup="vung1" OnClick="btn_capnhat_Click" />--%>
+                                    <asp:Button ID="btn_capnhat" runat="server" CssClass="btn btn-default bgm-lightgreen form-control" Text="Cập nhật" OnClick="btn_capnhat_Click"/>
                                 </div>
                             </div>
 

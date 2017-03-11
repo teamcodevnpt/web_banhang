@@ -108,11 +108,17 @@
                                     </div>
                                 </div>
                                     <div class="col-md-3 col-xs-3">
-                                        <asp:Image ID="imgSanPham" runat="server" Width="100%" Height="165px" />
+                                        <asp:Image ID="imgSanPham" runat="server" Width="100%" Height="180px" />
                                         <div class="form-group">
+                                        
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-5 col-xs-12"></div>
+                                    <div class="col-md-2 col-xs-12">
                                         <asp:Button ID="btnThemSP" runat="server" CssClass="btn btn-default bgm-lightgreen form-control" Text="Thêm sản phẩm" OnClick="btnThemSP_Click"/>
                                         <asp:Button ID="btnCapNhatSP" runat="server" CssClass="btn btn-default bgm-lightgreen form-control" Text="Cập nhật" OnClick="btnCapNhatSP_Click"/>
-                                    </div>
                                     </div>
                                 </div>
                                 <div class="row">
