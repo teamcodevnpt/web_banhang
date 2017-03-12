@@ -54,6 +54,7 @@
         routes.MapPageRoute("DanhSachSanPhamPT", "Danh-sach-san-pham/{Ten-nhom-san-pham}/{ID_NHOM_SAN_PHAM}/Page/{Page_Num}", "~/Pages/DanhSachSanPham.aspx");
         routes.MapPageRoute("ChiTietSanPham", "Chi-tiet-san-pham/{Ten-san-pham}/{ID_SAN_PHAM}", "~/Pages/ChiTietSanPham.aspx");
 		routes.MapPageRoute("TimKiem", "Tim-kiem/{TimKiem_ID}", "~/Pages/TimKiem.aspx");
+        routes.MapPageRoute("GioiThieu", "Gioi-Thieu", "~/Pages/GioiThieu.aspx");
         routes.MapPageRoute("TimKiemPT", "Tim-kiem/{TimKiem_ID}/Page/{TimKiemPage_Num}", "~/Pages/TimKiem.aspx");																		
     }
 </script>

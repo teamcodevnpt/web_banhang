@@ -107,7 +107,7 @@ public partial class Pages_TimKiem : System.Web.UI.Page
                 {
                     str += "<li>";
                 }
-                str += "<a href = '" + ResolveUrl("~/Danh-sach-san-pham/" + strsplit[4] + "/" + strsplit[5] + "/Page/" + i) + "'>" + i + "</a></li>";
+                str += "<a href = '" + ResolveUrl("~/Tim-Kiem/" + keyword + "/Page/" + i) + "'>" + i + "</a></li>";
             }
         }
         str += "</ul>";

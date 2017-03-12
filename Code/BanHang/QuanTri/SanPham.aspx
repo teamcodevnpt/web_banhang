@@ -52,7 +52,13 @@
                 <br />
                 <asp:DropDownList ID="cmbNhomSP" AutoPostBack="true" runat="server" CssClass="form-control" DataSourceID="sourceNhomSP" DataTextField="TENNHOM_SANPHAM" DataValueField="MANHOM_SANPHAM"></asp:DropDownList>
             </div></div></div>
-            <asp:GridView ID="gridSanPham" runat="server" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" CssClass="table table-bordered" Width="100%" DataSourceID="sourceSanPham" DataKeyNames="MA_SANPHAM" AllowPaging="True" AllowSorting="True">
+            <asp:GridView ID="gridSanPham" runat="server" 
+                ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" 
+                CssClass="table table-bordered" Width="100%" DataSourceID="sourceSanPham" 
+                DataKeyNames="MA_SANPHAM" AllowPaging="True" AllowSorting="True" 
+                BorderColor="White" BorderStyle="Ridge"
+                CellSpacing="1" CellPadding="3" GridLines="None"
+                BackColor="White" BorderWidth="2px" >
                 <PagerSettings Mode="NumericFirstLast" Visible="true" />
                 <Columns>
                     <asp:BoundField  DataField="THUTU" HeaderText="Thứ tự"/>
