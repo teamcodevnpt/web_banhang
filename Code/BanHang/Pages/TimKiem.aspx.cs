@@ -13,26 +13,27 @@ public partial class Pages_TimKiem : System.Web.UI.Page
     clsSanPham mySanPham = new clsSanPham();
     protected void Page_Load(object sender, EventArgs e)
     {
-
-       
-        try
+        if(!IsPostBack)
         {
-            string keyword = RouteData.Values["TimKiem_ID"].ToString();
-            int page = 1;
             try
             {
-                page = Convert.ToInt32(RouteData.Values["TimKiemPage_Num"].ToString());
+                string keyword = RouteData.Values["TimKiem_ID"].ToString();
+                int page = 1;
+                try
+                {
+                    page = Convert.ToInt32(RouteData.Values["TimKiemPage_Num"].ToString());
+                }
+                catch
+                {
+                    page = 1;
+                }
+                loadSanPham(keyword, page);
+                PhanTrang(keyword, page);
             }
             catch
             {
-                page = 1;
+                Response.Redirect("~/Trang-chu");
             }
-            loadSanPham(keyword, page);
-            PhanTrang(keyword, page);
-        }
-        catch
-        {
-            Response.Redirect("~/Trang-chu");
         }
     }
     void loadSanPham(String keyword, int page)
@@ -96,6 +97,18 @@ public partial class Pages_TimKiem : System.Web.UI.Page
             str +=  "<a href = '" + ResolveUrl("~/Tim-Kiem/" + keyword + "/Page/" + i) + "'>" + i + "</a></li>";
             tongsp = tongsp - 20;
             i++;
+            if (tongsp <= 20)
+            {
+                if (Session["page"].ToString() == i.ToString())
+                {
+                    str += "<li class = 'active'>";
+                }
+                else
+                {
+                    str += "<li>";
+                }
+                str += "<a href = '" + ResolveUrl("~/Danh-sach-san-pham/" + strsplit[4] + "/" + strsplit[5] + "/Page/" + i) + "'>" + i + "</a></li>";
+            }
         }
         str += "</ul>";
         ltrPhanTrang.Text = str;
