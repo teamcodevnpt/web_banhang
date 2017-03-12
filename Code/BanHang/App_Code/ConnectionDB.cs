@@ -62,11 +62,21 @@ public class ConnectionDB
         int rowsAffected = SqlHelper.ExecuteNonQuery(SQLConnection, CommandType.StoredProcedure, storename, parameters.ToArray());
         return rowsAffected;
     }
+    public object Stored_ExcuteScalar(String storename, List<SqlParameter> parameters)
+    {
+        object o = new object();
+        o= SqlHelper.ExecuteScalar (SQLConnection, CommandType.StoredProcedure, storename, parameters.ToArray());
+        //cmd = new SqlCommand(s, ketnoi);
+        //o = cmd.ExecuteScalar();
+        return o;
+    }
     public int Stored_ExecuteNonQuery_noPara(String storename)
     {
         int rowsAffected = SqlHelper.ExecuteNonQuery(SQLConnection, CommandType.StoredProcedure, storename);
         return rowsAffected;
     }
+
+
     #endregion 
 
     #region query

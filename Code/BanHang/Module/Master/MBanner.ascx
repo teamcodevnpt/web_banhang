@@ -33,7 +33,7 @@
                     <div class="form-group">
                     <input type="text" id="txtTimKiem" class="form-control" placeholder="Tìm kiếm" onkeydown="EnterTimKiem(event)">
                     </div>
-                <a href="#" onclick="btnTimKiem()"><span id="btnsearch" class="glyphicon glyphicon-search"></span></a>
+                <a href="#" style="color:black;" onclick="btnTimKiem()"><span id="btnsearch" class="glyphicon glyphicon-search"></span></a>
                 <%--<asp:Button ID="btnTimKiem" runat="server" Text="Tìm Kiếm" OnClick="btnTimKiem_Click" />--%>
             </form>
             </li>
@@ -46,7 +46,7 @@
         if (e.keyCode == 13) {
             e.preventDefault();
             if (document.getElementById("txtTimKiem").value != "") {
-                var url = "../Tim-Kiem/" + document.getElementById("txtTimKiem").value;
+                var url = "../Tim-Kiem/" + document.getElementById("txtTimKiem").value + "/Page/1";
                 window.location.href = url
             }
         }
@@ -55,7 +55,7 @@
     {
         if (document.getElementById("txtTimKiem").value != "")
         {
-            var url = "../Tim-Kiem/" + document.getElementById("txtTimKiem").value;
+            var url = "../Tim-Kiem/" + document.getElementById("txtTimKiem").value + "/Page/1";
             window.location.href = url
         }    
        // alert(url);
