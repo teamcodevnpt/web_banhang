@@ -99,7 +99,7 @@ public partial class Pages_TimKiem : System.Web.UI.Page
             i++;
             if (tongsp <= 20)
             {
-                if (Session["page"].ToString() == i.ToString())
+                if (page == i)
                 {
                     str += "<li class = 'active'>";
                 }
