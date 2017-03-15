@@ -34,12 +34,14 @@ public class ConnectionDB
     public DataSet Stored_ExecuteQuery_Dataset(String storename, List<SqlParameter> parameters)
     {
         DataSet dts = SqlHelper.ExecuteDataset(SQLConnection, CommandType.StoredProcedure, storename, parameters.ToArray());
+        Conn.Close();
         return dts;
 
     }
     public DataSet Stored_ExecuteQuery_Dataset_noPara(String storename)
     {
         DataSet dts = SqlHelper.ExecuteDataset(SQLConnection, CommandType.StoredProcedure, storename);
+        Conn.Close();
         return dts;
 
     }
@@ -48,6 +50,7 @@ public class ConnectionDB
         DataTable dts = new DataTable();
         SqlDataReader sdr = SqlHelper.ExecuteReader(SQLConnection, CommandType.StoredProcedure, storename, parameters.ToArray());
         dts.Load(sdr);
+        Conn.Close();
         return dts;
     }
     public DataTable Stored_ExecuteQuery_Datatable_noPara(String storename)
@@ -55,11 +58,13 @@ public class ConnectionDB
         DataTable dts = new DataTable();
         SqlDataReader sdr = SqlHelper.ExecuteReader(SQLConnection, CommandType.StoredProcedure, storename);
         dts.Load(sdr);
+        Conn.Close();
         return dts;
     }
     public int Stored_ExecuteNonQuery(String storename, List<SqlParameter> parameters)
     {
         int rowsAffected = SqlHelper.ExecuteNonQuery(SQLConnection, CommandType.StoredProcedure, storename, parameters.ToArray());
+        Conn.Close();
         return rowsAffected;
     }
     public object Stored_ExcuteScalar(String storename, List<SqlParameter> parameters)
@@ -68,11 +73,13 @@ public class ConnectionDB
         o= SqlHelper.ExecuteScalar (SQLConnection, CommandType.StoredProcedure, storename, parameters.ToArray());
         //cmd = new SqlCommand(s, ketnoi);
         //o = cmd.ExecuteScalar();
+        Conn.Close();
         return o;
     }
     public int Stored_ExecuteNonQuery_noPara(String storename)
     {
         int rowsAffected = SqlHelper.ExecuteNonQuery(SQLConnection, CommandType.StoredProcedure, storename);
+        Conn.Close();
         return rowsAffected;
     }
 
@@ -83,6 +90,7 @@ public class ConnectionDB
     public DataSet Query_ExecuteQuery_Dataset(String query)
     {
         DataSet dts = SqlHelper.ExecuteDataset(SQLConnection, CommandType.Text, query);
+        Conn.Close();
         return dts;
 
     }
@@ -91,11 +99,13 @@ public class ConnectionDB
         DataTable dts = new DataTable();
         SqlDataReader sdr = SqlHelper.ExecuteReader(SQLConnection, CommandType.Text, query);
         dts.Load(sdr);
+        Conn.Close();
         return dts;
     }
     protected int Query_ExecuteNonQuery(String query)
     {
         int rowsAffected = SqlHelper.ExecuteNonQuery(SQLConnection, CommandType.Text, query);
+        Conn.Close();
         return rowsAffected;
     }
     #endregion
