@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="MBanner.ascx.cs" Inherits="Module_Master_MBanner" %>
 
-<base href="http://127.0.0.1" />
+<base href="http://10.83.30.52:81" />
 
 <nav class="navbar navbar-inverse" style="margin-bottom:2px;">
     <div class="container-fluid">

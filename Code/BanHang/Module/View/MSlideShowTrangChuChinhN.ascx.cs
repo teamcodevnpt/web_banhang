@@ -20,10 +20,17 @@ public partial class Module_View_MSlideShowTrangChuChinhN : System.Web.UI.UserCo
         {
             for (int i = 0; i < dts.Rows.Count - 1; i++)
             {
-                ltrSilder.Text += "<div class='item'>";
+                //ltrSilder.Text += "<div class='item'>";
+                //ltrSilder.Text += "<a href='" + ResolveUrl(dts.Rows[i]["URL"].ToString()) + "'>";
+                //ltrSilder.Text += "<img style='height:300px; width=100%' class='img-responsive' src='" + ResolveUrl(dts.Rows[i]["AVATAR"].ToString()) + "' alt='" + dts.Rows[i]["TEN_SANPHAM"].ToString() + "'>";
+                //ltrSilder.Text += "</a></div>";
+                ltrSilder.Text += "<div>";
                 ltrSilder.Text += "<a href='" + ResolveUrl(dts.Rows[i]["URL"].ToString()) + "'>";
-                ltrSilder.Text += "<img style='height:350px; width=100%' class='img-responsive' src='" + ResolveUrl(dts.Rows[i]["AVATAR"].ToString()) + "' alt='" + dts.Rows[i]["TEN_SANPHAM"].ToString() + "'>";
-                ltrSilder.Text += "</a></div>";
+                ltrSilder.Text += "<img data-u='image' src='" + ResolveUrl(dts.Rows[i]["AVATAR"].ToString()) + "' /></a>";
+                ltrSilder.Text += "<div data-u='thumb'>";
+                ltrSilder.Text += "<img class='i' src='"+ResolveUrl(dts.Rows[i]["AVATAR"].ToString())+"' />";
+                ltrSilder.Text +=  "<div class='t'>"+dts.Rows[i]["TEN_SANPHAM"].ToString()+"</div>";
+                ltrSilder.Text += "</div></div>";
             }
         }
         //for (int i=1; i<6; i++)
